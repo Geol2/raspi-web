@@ -8,7 +8,7 @@
 
 	<body>
 		<from method="POST">
-			<input type="button" value="send value" onclick="location.href='localhost/send.php'">sdfsdf
+			<input type="button" value="send value" onclick="location.href='/send.php'">
 		</form>
 
 		<?php
