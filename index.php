@@ -8,7 +8,7 @@
 	</head>
 
 	<body>
-    <a href="javascript:void(0);" onclick="goActEvent()">ajax로 값 전달</a>
+    <a href="javascript:void(0);" onclick="goActEvent()">ajax로 값을 send.php로 전달</a>
     <script>
         // ajax로 값 전달
         function goActEvent() {

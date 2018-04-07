@@ -16,7 +16,8 @@
                 }
 
                 $result['success'] = true;
-
+                $url = "203.250.32.128:5672";
+                
             } catch(exception $e) {
 
                 $result['success'] = false;
