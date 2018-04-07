@@ -1,0 +1,5 @@
+{
+  "require" : {
+    "php-amqplib/php-amqlib" : ">=2.6.1"
+  }
+}
