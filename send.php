@@ -16,24 +16,25 @@
 //                $param1 = $_POST['param1'];
 
 
-  //              if(!$param1) {
-    //                throw new exception("No value param1.");
-      //          }
+        //              if(!$param1) {
+        //
+        //                throw new exception("No value param1.");
+        //          }
 
-    //            $result['success'] = true;
+        //            $result['success'] = true;
                 //$url = "203.250.32.128:5672";
 
-    //        } catch(exception $e) {
+        //        } catch(exception $e) {
 
-      //          $result['success'] = false;
-      //          $result['msg'] = $e->getMessage();
-      //          $result['code'] = $e->getCode();
+        //          $result['success'] = false;
+        //          $result['msg'] = $e->getMessage();
+        //          $result['code'] = $e->getCode();
 
-       //     } finally {
+        //     } finally {
 
                 //echo json_encode($result, JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE);
 
-                $connection = new AMQStreamConnection('203.250.32.181', 5672, guest, guest);
+                $connection = new AMQPStreamConnection('203.250.32.181', 5672, guest, guest);
                 $channel = $connection->channel();
 
                 $channel->exchange_declare('logs', 'fanout', false, false, false);
@@ -50,7 +51,7 @@
 
                 $channel->close();
                 $connection->close();
-     //       }
+         //       }
         ?>
     </body>
 </html>
