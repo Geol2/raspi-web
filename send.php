@@ -36,9 +36,7 @@
                 echo json_encode($result, JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE);
 
                 $connection = new AMQPStreamConnection('203.250.32.181', 5672, 'guest', 'guest');
-                if(!$connection)
-                    echo ' ';
-                else
+                if($connection)
                     echo json_encode($result, JSON_PRETTY_PRINT);
 
                $channel->close();
