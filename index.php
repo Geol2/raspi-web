@@ -7,11 +7,29 @@
 	</head>
 
 	<body>
-		<from method="POST">
-			<input type="button" value="send value" onclick="location.href='/send.php'">
-		</form>
+    <a href="javascript:void(0);" onclick="goActEvent()">ajax로 값 전달</a>
+    <script>
+        // ajax로 값 전달
+        function goActEvent() {
+            $.ajax({
+                url				: '/send.php',
+                data			: {
+                    param1		: '10',
+                    param2		: '20'
+                },
+                type			: 'POST',
+                dataType		: 'json',
+                success		: function(result) {
+                    if(result.success == false) {
+                        alert(result.msg);
+                        return;
+                    }
+                    alert(result.data);
+                }
+            });
+        }
 
-		<?php
+        <?php
 
 			echo "Hello World!!<br/>";
 
