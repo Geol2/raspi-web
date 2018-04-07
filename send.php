@@ -8,7 +8,7 @@
 
     <body>
         <?php
-        require_once __DIR__ . '/var/www/html/send.php';
+        require_once __DIR__ . '/library/vendor/autoload.php';
         use PhpQmqLib\Connection\AMQPStreamConnection;
         use PhpAmqLib\Message\AMQPMessage;
 
