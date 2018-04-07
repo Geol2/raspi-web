@@ -15,8 +15,7 @@
             $.ajax({
                 url				: 'send.php',
                 data			: {
-                    param1		: '10',
-                    param2		: '20'
+                    param1		: '10'
                 },
                 type			: 'POST',
                 dataType		: 'json',
