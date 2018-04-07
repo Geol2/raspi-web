@@ -36,6 +36,8 @@
                 //echo json_encode($result, JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE);
 
                 $connection = new AMQPStreamConnection('203.250.32.181', 5672, 'guest', 'guest');
+                if(!$connection) echo 'No Connect!';
+
                 $channel = $connection->channel();
 
                 $channel->queue_declare('hello', false, false, false, false);
