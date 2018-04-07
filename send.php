@@ -34,10 +34,10 @@
 
                 //echo json_encode($result, JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE);
 
-                $connection = new AMQPStreamConnection('localhost', 5672, guest, guest);
+                $connection = new AMQPStreamConnection('localhost', 5672, 'guest', 'guest');
                 $channel = $connection->channel();
 
-                $channel->exchange_declare('logs', 'fanout', false, false, false);
+                $channel->queue_declare('hello', false, false, false, false);
 
                 $msg = new AMQPMessage('Hello World!');
                 $channel->basic_publish($msg, 'hello');
