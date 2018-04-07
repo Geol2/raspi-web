@@ -34,7 +34,7 @@
 
                 //echo json_encode($result, JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE);
 
-                $connection = new AMQPStreamConnection('localhost', 5672, rabbitmq, 123);
+                $connection = new AMQPStreamConnection('localhost', 5672, guest, guest);
                 $channel = $connection->channel();
 
                 $channel->exchange_declare('logs', 'fanout', false, false, false);
