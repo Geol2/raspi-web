@@ -3,7 +3,8 @@
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width">
-		<title>Control</title>
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+        <title>Control</title>
 	</head>
 
 	<body>
@@ -12,7 +13,7 @@
         // ajax로 값 전달
         function goActEvent() {
             $.ajax({
-                url				: './send.php',
+                url				: 'send.php',
                 data			: {
                     param1		: '10',
                     param2		: '20'
@@ -28,8 +29,10 @@
                 }
             });
         }
+    </script>
 
-        <?php
+
+    <?php
 
 			echo "Hello World!!<br/>";
 
