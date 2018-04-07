@@ -37,9 +37,12 @@
 
                 $connection = new AMQPStreamConnection('203.250.32.181', 5672, 'guest', 'guest');
                 if(!$connection)
-                    echo 'No Connect!';
+                    echo ' ';
                 else
-                    echo 'Connect!!';
+                    echo json_encode($result, JSON_PRETTY_PRINT);
+
+               $channel->close();
+               $connection->close();
             }
         ?>
     </body>
