@@ -12,7 +12,7 @@
         // ajax로 값 전달
         function goActEvent() {
             $.ajax({
-                url				: '/send.php',
+                url				: './send.php',
                 data			: {
                     param1		: '10',
                     param2		: '20'
