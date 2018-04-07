@@ -39,15 +39,10 @@
 
                 $channel->exchange_declare('logs', 'fanout', false, false, false);
 
-                $data = implode(' ', array_slice($argv, 1));
+                $msg = new AMQPMessage('Hello World!');
+                $channel->basic_publish($msg, 'hello');
 
-                if(empty($data)) $data = "info: Hello World!";
-                $msg = new AMQPMessage($data);
-
-
-                $channel->basic_publish($msg, 'logs');
-
-                echo "[x] Sent ", $data, "\n";
+                echo "[x] Sent 'Hello World!' \n";
 
                 $channel->close();
                 $connection->close();
