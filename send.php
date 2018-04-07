@@ -34,7 +34,7 @@
 
                 //echo json_encode($result, JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE);
 
-                $connection = new AMQPStreamConnection('203.250.32.169', 5672, guest, guest);
+                $connection = new AMQPStreamConnection('203.250.32.181', 5672, guest, guest);
                 $channel = $connection->channel();
 
                 $channel->exchange_declare('logs', 'fanout', false, false, false);
