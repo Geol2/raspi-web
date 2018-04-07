@@ -9,8 +9,8 @@
     <body>
         <?php
         require_once __DIR__ . '/library/vendor/autoload.php';
-        use PhpQmqLib\Connection\AMQPStreamConnection;
-        use PhpAmqLib\Message\AMQPMessage;
+        use PhpAmqpLib\Connection\AMQPStreamConnection;
+        use PhpAmqpLib\Message\AMQPMessage;
 
             try{
                 $param1 = $_POST['param1'];
