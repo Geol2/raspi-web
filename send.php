@@ -33,14 +33,15 @@
            finally
            {
 
-                echo json_encode($result, JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE);
+                //echo json_encode($result, JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE);
 
                 $connection = new AMQPStreamConnection('203.250.32.181', 5672, 'guest', 'guest');
-                if($connection)
-                    echo json_encode($result, JSON_PRETTY_PRINT);
+                $connection->getConnection() or die("Cannot connect to the broker!\n");
 
-               $channel->close();
-               $connection->close();
+
+
+                $channel->close();
+                $connection->close();
             }
         ?>
     </body>
