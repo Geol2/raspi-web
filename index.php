@@ -5,21 +5,23 @@
 		<meta name="viewport" content="width=device-width">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <title>Control</title>
-	</head>
+
+        <script>
+            // ajax로 값 전달
+            function goActEvent() {
+                $.ajax({
+                    url				: 'send.php',
+                    type			: 'POST',
+                    success		: function(result) {
+                    }
+                });
+            }
+        </script>
+
+    </head>
 
 	<body>
-    <a href="javascript:void(0);" onclick="goActEvent()">ajax로 값을 send.php로 전달</a>
-    <script>
-        // ajax로 값 전달
-        function goActEvent() {
-            $.ajax({
-                url				: 'send.php',
-                type			: 'POST',
-                success		: function(result) {
-                }
-            });
-        }
-    </script>
+    <a onclick="goActEvent()">ajax로 값을 send.php로 전달</a>
 
 
     <?php
