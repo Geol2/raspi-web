@@ -4,10 +4,10 @@ use PhpAmqpLib\Connection\AMQPStreamConnection;
 use PhpAmqpLib\Message\AMQPMessage;
 define("HOST", "192.168.0.23");
 define("PORT", 5672);
-define("USER", 'guest');
+define("USER", "guest");
 define("PASS", "guest");
 
-//$connection = new AMQPStreamConnection(HOST, PORT, USER, PASS);
+$connection = new AMQPStreamConnection(HOST, PORT, USER, PASS);
 //$channel = $connection->channel();
 
 //$channel->queue_declare('myQueue', false, false, false, false);
