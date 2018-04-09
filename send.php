@@ -27,7 +27,7 @@
     $data = json_encode($temp);
 
     $msg = new AMQPMessage( $data, [
-            'content_type' => 'text/json',
+            'content_type' => 'application/json',
             'delivery_mode' => AMQPMessage::DELIVERY_MODE_NON_PERSISTENT
     ]);
 
