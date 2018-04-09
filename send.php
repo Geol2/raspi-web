@@ -12,37 +12,44 @@
         use PhpAmqpLib\Connection\AMQPStreamConnection;
         use PhpAmqpLib\Message\AMQPMessage;
 
-            try
-            {
-                $param1 = $_POST['param1'];
+            //try
+            //{
+            //   $param1 = $_POST['param1'];
 
-                if(!$param1) {
-                    throw new exception("No value param1.");
-                }
+            //    if(!$param1) {
+            //        throw new exception("No value param1.");
+            //    }
 
-                $result['success'] = true;
-            }
-            catch(exception $e)
-            {
+            //    $result['success'] = true;
+            //}
+            //catch(exception $e)
+            //{
 
-                  $result['success'] = false;
-                  $result['msg'] = $e->getMessage();
-                  $result['code'] = $e->getCode();
+            //      $result['success'] = false;
+            //      $result['msg'] = $e->getMessage();
+            //      $result['code'] = $e->getCode();
 
-           }
-           finally
-           {
+           //}
+           //finally
+           //{
 
                 //echo json_encode($result, JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE);
 
-                $connection = new AMQPStreamConnection('203.250.32.181', 5672, 'guest', 'guest');
-                $connection->getConnection() or die("Cannot connect to the broker!\n");
+               $connection = new AMQPConnection('192.168.0.23', 5672, 'guest', 'guest');
+               $channel = $connection->channel();
+
+               $channel->queue_declare('myQueue', false, false, false, false);
 
 
+               $temp = ['id'=>'0', 'temp'=> '10'];
+               $data = json_encode($temp);
 
-                $channel->close();
-                $connection->close();
-            }
+               $msg = new AMQPMessage($data, array('delivery_mode' => 2));
+               $channel->basic_publish($msg, 'amq.direct', 'foo.bar');
+
+               $channel->close();
+               $connection->close();
+            //}
         ?>
     </body>
 </html>

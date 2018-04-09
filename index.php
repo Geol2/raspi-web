@@ -14,11 +14,8 @@
         function goActEvent() {
             $.ajax({
                 url				: 'send.php',
-                data			: {
-                    param1		: '10'
-                },
                 type			: 'POST',
-                dataType		: 'json',
+                //dataType		: 'json',
                 success		: function(result) {
                     if(result.success == false) {
                         alert(result.msg);
