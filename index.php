@@ -10,8 +10,8 @@
             // ajax로 값 전달
             function goActEvent() {
                 $.ajax({
-                    url				: './send.php',
-                    type			: 'POST',
+                    url				: 'send.php',
+                    type			: 'GET',
                     success		: function(result) {
 
                     }
