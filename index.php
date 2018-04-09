@@ -67,6 +67,8 @@
 			//	echo shell_exec("<pre>whoami</pre>");
 
 			//	echo shell_exec("<pre>ls -al</pre>");
+
+
 		?>
 	</body>
 </html>

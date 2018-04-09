@@ -22,8 +22,6 @@
 
     //$channel->close();
     //$connection->close();
-?>
 
-<?php
-phpinfo();
+    echo 'OK';
 ?>
