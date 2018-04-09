@@ -11,7 +11,7 @@
 
     $channel = $connection->channel();
 
-    $channel->queue_declare('myQueue', false, false, false, false);
+    //$channel->queue_declare('myQueue', false, false, false, false);
     //$channel->exchange_declare('amq.direct', 'direct');
 
     //$temp = ['id'=>'0', 'temp'=> '10'];
