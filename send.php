@@ -26,8 +26,8 @@
     $temp = ['id'=> $id, 'temp'=> $temp];
     $data = json_encode($temp);
 
-    $msg = new AMQPMessage( $data );
-    $channel->basic_publish( $msg, 'amq.direct', 'foo.bar', array( 'content-type' => 'application/json' ));
+    $msg = new AMQPMessage( $data, array( 'content_type' => 'application/json', 'delivery_mode' => AMQPMessage::DELIVERY_MODE_NON_PERSISTENT) );
+    $channel->basic_publish( $msg, 'amq.direct', 'foo.bar');
 
     $channel->close();
     $connection->close();
