@@ -23,7 +23,7 @@
     $id = 0;
     $temp = 10;
 
-    $temp = ['id'=> $id, 'temp'=> $temp];
+    $temp = ['id'=> $id, 'temp'=> $_GET['temp']]; //get
     $data = json_encode($temp);
 
     $msg = new AMQPMessage( $data, [
@@ -38,19 +38,3 @@
 
     echo 'OK';
 ?>
-
-<!DOCTYPE html>
-<html>
-
-    <head>
-
-    </head>
-
-    <body>
-        <?php
-            static $com = 0;
-            $com++;
-            echo $com;
-        ?>
-    </body>
-</html>
