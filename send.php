@@ -3,6 +3,10 @@
     use PhpAmqpLib\Connection\AMQPStreamConnection;
     use PhpAmqpLib\Message\AMQPMessage;
 
+    header('Access-Control-Allow-Origin: *');
+    header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');
+    header('Content-Type: application/json');
+
     define("HOST", "203.250.32.171");
     define("PORT", 5672);
     define("USER", "manager");
@@ -16,14 +20,14 @@
     //$channel->queue_declare('myQueue', false, false, false, false);
     //$channel->exchange_declare('amq.direct', 'direct');
 
-    $id = "0";
-    $temp = "10";
+    $id = '0';
+    $temp = '10';
 
     $temp = ['id'=> $id, 'temp'=> $temp];
     $data = json_encode($temp);
 
     $msg = new AMQPMessage( $data, array( 'content_type' => 'application/json' ) );
-    $channel->basic_publish( $msg, 'amq.direct','foo.bar');
+    $channel->basic_publish( $msg, 'amq.direct', 'foo.bar');
 
     $channel->close();
     $connection->close();
