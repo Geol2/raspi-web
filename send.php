@@ -44,7 +44,7 @@
                $temp = ['id'=>'0', 'temp'=> '10'];
                $data = json_encode($temp);
 
-               $msg = new AMQPMessage($data, array('delivery_mode' => 2));
+               $msg = new AMQPMessage($data);
                $channel->basic_publish($msg, '', 'myQueue');
 
                $channel->close();
