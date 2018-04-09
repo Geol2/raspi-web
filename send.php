@@ -15,7 +15,7 @@
     //$channel->queue_declare('myQueue', false, false, false, false);
     //$channel->exchange_declare('amq.direct', 'direct');
 
-    $temp = ['id'=>'0', 'temp'=> '10'];
+    $temp = ['id'=>0, 'temp'=> 10];
     $data = json_encode($temp);
 
     $msg = new AMQPMessage($data, array('content_type' => 'application/json'));
@@ -30,7 +30,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-
     </head>
 
     <body>
