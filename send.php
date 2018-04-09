@@ -36,19 +36,20 @@
                 //echo json_encode($result, JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE);
 
                $connection = new AMQPConnection('192.168.0.23', 5672, 'guest', 'guest');
-               $channel = $connection->channel();
+               //$channel = $connection->channel();
 
-               $channel->queue_declare('myQueue', false, false, false, false);
+               //$channel->queue_declare('myQueue', false, false, false, false);
 
 
-               $temp = ['id'=>'0', 'temp'=> '10'];
-               $data = json_encode($temp);
+               //$temp = ['id'=>'0', 'temp'=> '10'];
+               //$data = json_encode($temp);
 
-               $msg = new AMQPMessage($data, array('delivery_mode' => 2));
-               $channel->basic_publish($msg, 'amq.direct', 'foo.bar');
+               //$msg = new AMQPMessage($data, array('delivery_mode' => 2));
+               //$channel->basic_publish($msg, 'amq.direct', 'foo.bar');
 
-               $channel->close();
-               $connection->close();
+               //$channel->close();
+               //$connection->close();
+
             //}
         ?>
     </body>
