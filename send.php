@@ -5,7 +5,7 @@
 
     //header('Access-Control-Allow-Origin: *');
     //header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');
-    header('Content-Type: application/json');
+    //header('Content-Type: application/json');
 
     define("HOST", "203.250.32.171");
     define("PORT", 5672);
