@@ -17,16 +17,16 @@
     $channel = $connection->channel();
 
 
-    //$channel->queue_declare('myQueue', false, false, false, false);
-    //$channel->exchange_declare('amq.direct', 'direct');
+    $channel->queue_declare('myQueue', false, false, false, false);
+    $channel->exchange_declare('amq.direct', 'direct');
 
     $id = 0;
     $temp = 10;
 
     $temp = ['id'=> $id, 'temp'=> $temp];
-    //$data = json_encode($temp);
+    $data = json_encode($temp);
 
-    $msg = new AMQPMessage( $temp, [
+    $msg = new AMQPMessage( $data, [
             'content_type' => 'application/json',
             'delivery_mode' => AMQPMessage::DELIVERY_MODE_NON_PERSISTENT
     ]);
