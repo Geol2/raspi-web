@@ -26,7 +26,7 @@
     $temp = ['id'=> $id, 'temp'=> $temp];
     $data = json_encode($temp);
 
-    $msg = new AMQPMessage( $data, array( 'Content-Type: ' => 'application/json' ) );
+    $msg = new AMQPMessage( $data, array( 'content_type' => 'text/json' ) );
     $channel->basic_publish( $msg, 'amq.direct', 'foo.bar');
 
     $channel->close();
