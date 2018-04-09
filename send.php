@@ -8,17 +8,17 @@ define('USER','guest');
 define('PASS','guest');
 
 $connection = new AMQPStreamConnection(HOST, PORT, USER, PASS);
-$channel = $connection->channel();
+//$channel = $connection->channel();
 
-$channel->queue_declare('myQueue', false, false, false, false);
-$channel->exchange_declare('amq.direct', 'direct');
+//$channel->queue_declare('myQueue', false, false, false, false);
+//$channel->exchange_declare('amq.direct', 'direct');
 
-$temp = ['id'=>'0', 'temp'=> '10'];
-$data = json_encode($temp);
+//$temp = ['id'=>'0', 'temp'=> '10'];
+//$data = json_encode($temp);
 
-$msg = new AMQPMessage($data, array('content_type' => 'application/json'));
-$channel->basic_publish($msg,'amq.direct','foo.bar');
+//$msg = new AMQPMessage($data, array('content_type' => 'application/json'));
+//$channel->basic_publish($msg,'amq.direct','foo.bar');
 
-$channel->close();
-$connection->close();
+//$channel->close();
+//$connection->close();
 ?>
