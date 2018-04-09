@@ -2,7 +2,7 @@
     require_once __DIR__ . '/vendor/autoload.php';
     use PhpAmqpLib\Connection\AMQPStreamConnection;
     use PhpAmqpLib\Message\AMQPMessage;
-    define("HOST", "192.168.0.23");
+    define("HOST", "203.250.32.171");
     define("PORT", 5672);
     define("USER", "manager");
     define("PASS", "manager");
