@@ -25,3 +25,18 @@
 
     echo 'OK';
 ?>
+
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <?php
+            static $com =0;
+            $com++;
+            echo $com;
+        ?>
+    </body>
+</html>
