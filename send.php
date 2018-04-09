@@ -15,11 +15,12 @@
     //$channel->queue_declare('myQueue', false, false, false, false);
     //$channel->exchange_declare('amq.direct', 'direct');
 
-    $temp = ['id'=>0, 'temp'=> 10];
+    $id = 0;
+    $temp = ['id'=> $id, 'temp'=> 10];
     $data = json_encode($temp);
 
     $msg = new AMQPMessage($data, array('content_type' => 'application/json'));
-    $channel->basic_publish($msg,'amq.direct','foo.bar');
+    $channel->basic_publish($msg,'','foo.bar');
 
     $channel->close();
     $connection->close();
