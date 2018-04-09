@@ -8,7 +8,7 @@
 
     <body>
         <?php
-        require_once __DIR__ . '/library/vendor/autoload.php';
+        require_once __DIR__ . '/vendor/autoload.php';
         use PhpAmqpLib\Connection\AMQPStreamConnection;
         use PhpAmqpLib\Message\AMQPMessage;
 
@@ -44,7 +44,7 @@
                $temp = ['id'=>'0', 'temp'=> '10'];
                $data = json_encode($temp);
 
-               $msg = new AMQPMessage($data, $data);
+               $msg = new AMQPMessage($data, array('delivery_mode' => 2));
                $channel->basic_publish($msg, '', 'myQueue');
 
                $channel->close();
