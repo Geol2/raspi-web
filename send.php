@@ -3,10 +3,6 @@
     use PhpAmqpLib\Connection\AMQPStreamConnection;
     use PhpAmqpLib\Message\AMQPMessage;
 
-    //header('Access-Control-Allow-Origin: *');
-    //header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');
-    //header('Content-Type: application/json');
-
     define("HOST", "203.250.32.171");
     define("PORT", 5672);
     define("USER", "manager");
@@ -16,12 +12,7 @@
 
     $channel = $connection->channel();
 
-
-    //$channel->queue_declare('myQueue', false, false, false, false);
-    //$channel->exchange_declare('amq.direct', 'direct');
-
-    $id = 0;
-    $temp = 10;
+    $id = 0; //user_code 로 변경해야 함..
 
     $temp = ['id'=> $id, 'temp'=> $_GET['data']]; //get
     $data = json_encode($temp);
