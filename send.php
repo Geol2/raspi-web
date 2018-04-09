@@ -7,7 +7,7 @@
     define("USER", "manager");
     define("PASS", "manager");
 
-    //$connection = new AMQPStreamConnection(HOST, PORT, USER, PASS);
+    $connection = new AMQPStreamConnection(HOST, PORT, USER, PASS);
 
     //$channel = $connection->channel();
 
@@ -34,7 +34,7 @@
 
     <body>
         <?php
-            static $com =0;
+            static $com = 0;
             $com++;
             echo $com;
         ?>
