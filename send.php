@@ -20,8 +20,8 @@
     //$channel->queue_declare('myQueue', false, false, false, false);
     //$channel->exchange_declare('amq.direct', 'direct');
 
-    $id = '0';
-    $temp = '10';
+    $id = 0;
+    $temp = 10;
 
     $temp = ['id'=> $id, 'temp'=> $temp];
     $data = json_encode($temp);
