@@ -7,8 +7,8 @@ define("PORT", 5672);
 define("USER", 'guest');
 define("PASS", "guest");
 
-$connection = new AMQPStreamConnection(HOST, PORT, USER, PASS);
-$channel = $connection->channel();
+//$connection = new AMQPStreamConnection(HOST, PORT, USER, PASS);
+//$channel = $connection->channel();
 
 //$channel->queue_declare('myQueue', false, false, false, false);
 //$channel->exchange_declare('amq.direct', 'direct');
