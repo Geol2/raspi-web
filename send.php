@@ -7,7 +7,7 @@
     define("USER", "manager");
     define("PASS", "manager");
 
-    $connection = new AMQPStreamConnection(HOST, PORT, USER, PASS);
+    //$connection = new AMQPStreamConnection(HOST, PORT, USER, PASS);
 
     //$channel = $connection->channel();
 
