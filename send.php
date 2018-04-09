@@ -5,7 +5,7 @@
 
     //header('Access-Control-Allow-Origin: *');
     //header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');
-    //header('Content-Type: application/json');
+    header('Content-Type: application/json');
 
     define("HOST", "203.250.32.171");
     define("PORT", 5672);
@@ -26,7 +26,7 @@
     $temp = ['id'=> $id, 'temp'=> $temp];
     $data = json_encode($temp);
 
-    $msg = new AMQPMessage( $data, array( 'Content-type' => 'application/json' ) );
+    $msg = new AMQPMessage( $data, array( 'Content-Type: ' => 'application/json' ) );
     $channel->basic_publish( $msg, 'amq.direct', 'foo.bar');
 
     $channel->close();
