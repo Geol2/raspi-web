@@ -36,7 +36,7 @@ define('PASS','guest');
 
 //echo json_encode($result, JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE);
 
-$connection = new AMQPConnection(HOST, PORT, USER, PASS);
+$connection = new AMQPStreamConnection(HOST, PORT, USER, PASS);
 $channel = $connection->channel();
 
 $channel->queue_declare('myQueue', false, true, false, false);
