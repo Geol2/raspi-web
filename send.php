@@ -1,24 +1,29 @@
 <?php
-require_once __DIR__ . '/vendor/autoload.php';
-use PhpAmqpLib\Connection\AMQPStreamConnection;
-use PhpAmqpLib\Message\AMQPMessage;
-define("HOST", "192.168.0.23");
-define("PORT", 5672);
-define("USER", "manager");
-define("PASS", "manager");
+    require_once __DIR__ . '/vendor/autoload.php';
+    use PhpAmqpLib\Connection\AMQPStreamConnection;
+    use PhpAmqpLib\Message\AMQPMessage;
+    define("HOST", "192.168.0.23");
+    define("PORT", 5672);
+    define("USER", "manager");
+    define("PASS", "manager");
 
-$connection = new AMQPStreamConnection(HOST, PORT, USER, PASS);
-//$channel = $connection->channel();
+    $connection = new AMQPStreamConnection(HOST, PORT, USER, PASS);
 
-//$channel->queue_declare('myQueue', false, false, false, false);
-//$channel->exchange_declare('amq.direct', 'direct');
+    //$channel = $connection->channel();
 
-//$temp = ['id'=>'0', 'temp'=> '10'];
-//$data = json_encode($temp);
+    //$channel->queue_declare('myQueue', false, false, false, false);
+    //$channel->exchange_declare('amq.direct', 'direct');
 
-//$msg = new AMQPMessage($data, array('content_type' => 'application/json'));
-//$channel->basic_publish($msg,'amq.direct','foo.bar');
+    //$temp = ['id'=>'0', 'temp'=> '10'];
+    //$data = json_encode($temp);
 
-//$channel->close();
-//$connection->close();
+    //$msg = new AMQPMessage($data, array('content_type' => 'application/json'));
+    //$channel->basic_publish($msg,'amq.direct','foo.bar');
+
+    //$channel->close();
+    //$connection->close();
+?>
+
+<?php
+phpinfo();
 ?>
