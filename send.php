@@ -4,8 +4,8 @@ use PhpAmqpLib\Connection\AMQPStreamConnection;
 use PhpAmqpLib\Message\AMQPMessage;
 define("HOST", "192.168.0.23");
 define("PORT", 5672);
-define("USER", "guest");
-define("PASS", "guest");
+define("USER", "manager");
+define("PASS", "manager");
 
 $connection = new AMQPStreamConnection(HOST, PORT, USER, PASS);
 //$channel = $connection->channel();
