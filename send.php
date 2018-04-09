@@ -38,7 +38,7 @@
                $connection = new AMQPStreamConnection('192.168.0.23', 5672, 'guest', 'guest');
                $channel = $connection->channel();
 
-               $channel->queue_declare('myQueue', false, false, false, false);
+               $channel->queue_declare('myQueue', direct, false, false, false);
 
 
                $temp = ['id'=>'0', 'temp'=> '10'];
