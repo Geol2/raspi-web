@@ -2,6 +2,7 @@
     require_once __DIR__ . '/vendor/autoload.php';
     use PhpAmqpLib\Connection\AMQPStreamConnection;
     use PhpAmqpLib\Message\AMQPMessage;
+
     define("HOST", "203.250.32.171");
     define("PORT", 5672);
     define("USER", "manager");
@@ -15,14 +16,14 @@
     //$channel->queue_declare('myQueue', false, false, false, false);
     //$channel->exchange_declare('amq.direct', 'direct');
 
-    $id = 0;
-    $temp = 10;
+    $id = "0";
+    $temp = "10";
 
     $temp = ['id'=> $id, 'temp'=> $temp];
     $data = json_encode($temp);
 
-    $msg = new AMQPMessage($data, array('content_type' => 'application/json'));
-    $channel->basic_publish($msg,'amq.direct','foo.bar');
+    $msg = new AMQPMessage( $data, array( 'content_type' => 'application/json' ) );
+    $channel->basic_publish( $msg, 'amq.direct','foo.bar');
 
     $channel->close();
     $connection->close();
