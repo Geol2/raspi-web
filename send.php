@@ -1,70 +1,34 @@
 <!DOCTYPE html>
-    <head>
-        <meta charset="UTF-8" name="viewport" content="width=device-width">
-        <title>send</title>
-    </head>
+<html>
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width">
+    <title>send</title>
+</head>
 
-    <body>
-        <?php
-            $cnn = new AMQPConnection();
+<body>
+<?php
+require_once __DIR__ . '/vendor/autoload.php';
+use PhpAmqpLib\Connection\AMQPConnection;
+use PhpAmqpLib\Message\AMQPMessage;
+define('HOST','192.168.0.23');
+define('PORT',5672);
+define('USER','guest');
+define('PASS','guest');
 
-            $cnn ->setLogin('guest');
-            $cnn ->setPassword('guest');
+$connection = new AMQPConnection(HOST, PORT, USER, PASS);
+$channel = $connection->channel();
 
-            if($cnn->connect()){
-                echo "Establaished a connection to the broker";
-            }
-            else {
-                echo "Cannot connect to the broker.";
-            }
-            //require_once __DIR__ . '/vendor/autoload.php';
-            //use PhpAmqpLib\Connection\AMQPStreamConnection;
-            //use PhpAmqpLib\Message\AMQPMessage;
+$channel->queue_declare('myQueue', false, false, false, false);
+$channel->exchange_declare('amq.direct', 'direct');
 
-            //define('HOST','192.168.0.23');
-            //define('PORT', 5672);
-            //define('USER','guest');
-            //define('PASS','guest');
-            //try
-            //{
-            //   $param1 = $_POST['param1'];
+$temp = ['id'=>'0', 'temp'=> '10'];
+$data = json_encode($temp);
 
-            //    if(!$param1) {
-            //        throw new exception("No value param1.");
-            //    }
+$msg = new AMQPMessage($data, array('content_type' => 'application/json'));
+$channel->basic_publish($msg,'amq.direct','foo.bar');
 
-            //    $result['success'] = true;
-            //}
-            //catch(exception $e)
-            //{
-
-            //      $result['success'] = false;
-            //      $result['msg'] = $e->getMessage();
-            //      $result['code'] = $e->getCode();
-
-            //}
-            //finally
-            //{
-
-            //echo json_encode($result, JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE);
-
-            //$connection = new AMQPStreamConnection(HOST, PORT, USER, PASS);
-            //$channel = $connection->channel();
-
-            //$channel->queue_declare('myQueue', false, true, false, false);
-            //$channel->exchange_declare('amq.direct', 'direct', false, true, false);
-            //$channel->queue_bind('myQueue','amq.direct');
-
-            //$temp = ['id'=>'0', 'temp'=> '10'];
-            //$data = json_encode($temp);
-
-            //$msg = new AMQPMessage($data, array('content_type' => 'application/json'));
-            //$channel->basic_publish($msg,'amq.direct');
-
-            //$channel->close();
-            //$connection->close();
-
-            //}
-        ?>
-    </body>
+$channel->close();
+$connection->close();
+?>
+</body>
 </html>
