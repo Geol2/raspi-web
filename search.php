@@ -29,6 +29,6 @@
 	if( array_key_exists("user_code", $json) ){
 		 $res = 'FAIL';
 	}
-	$data = ['state'=> $res ,'ssid' => 'pi3-ap' ,'inner_ip' => ['192.168.4.2' , '192.168.4.3'] ];
+	$data = ['state'=> $res ,'ssid' => 'pi3-ap' ,'inner_ip' => $result ];
 	echo json_encode($data);
 ?>
