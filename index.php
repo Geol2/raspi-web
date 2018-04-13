@@ -4,8 +4,7 @@
     $db_passwd = "619412";
     $db_name = "water_middle_server";
 
-    $conn = mysqli_connect($db_host, $db_user, $db_passwd) or die("Connected Failed!!!!");
-    mysqli_select_db($db_name, $conn);
+    $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connected Failed!!!!");
 ?>
 
 <!DOCTYPE html>
