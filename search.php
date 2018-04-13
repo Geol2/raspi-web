@@ -38,4 +38,6 @@
 	}
 	$data = ['state'=> $res ,'ssid' => 'pi3-ap' ,'inner_ip' => $return_arr ];
 	echo json_encode($data);
+
+	mysqli_close($conn);
 ?>

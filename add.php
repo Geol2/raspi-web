@@ -1,21 +1,33 @@
 <?php
 	header("Access-Control-Allow-Origin: *");
-        header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+	header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 	header("Content-Type: application/json");
 
-	$method = $_SERVER['REQUEST_METHOD'];
+    $db_host = "localhost";
+    $db_user = "root";
+    $db_passwd = "619412";
+    $db_name = "water_middle_server";
 
-	if($method == "POST" ){
+    $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connected Failed!!!!");
 
-	chmod("./var/www/html/user_code.json", 777);
+	$result = mysqli_query($conn, $query) or die ('Error Querying database.');
 
-	$request_body = file_get_contents("php://input");
-	$info = json_decode(stripcslashes($request_body), true);
-	$user_code = $info['user_code'];
-	file_put_contents("user_code.json", json_encode(array('user_code' => $user_code), JSON_PRETTY_PRINT) );
+    if($method == "POST" ){
 
-	$key = ['result'=>'OK'];
-	echo json_encode($key);
+		//chmod("./var/www/html/user_code.json", 777);
+
+		//$request_body = file_get_contents("php://input");
+		//$info = json_decode(stripcslashes($request_body), true);
+		$user_code = $info['user_code'];
+		//file_put_contents("user_code.json", json_encode(array('user_code' => $user_code), JSON_PRETTY_PRINT) );
+
+        $query = "INSERT INTO Sys_info( USER_CODE ) VALUES ('$user_code')";
+        $result = mysqli_query($conn, $query) or die ('Error database.');
+
+        $key = ['result'=>'OK'];
+		echo json_encode($key);
+
+		mysqli_close($conn);
 	}
 
 //	if($method == "GET"){
