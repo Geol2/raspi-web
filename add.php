@@ -10,8 +10,6 @@
 
     $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connected Failed!!!!");
 
-	$result = mysqli_query($conn, $query) or die ('Error Querying database.');
-
     if($method == "POST" ){
 
 		//chmod("./var/www/html/user_code.json", 777);
