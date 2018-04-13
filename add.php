@@ -17,7 +17,7 @@
 		//chmod("./var/www/html/user_code.json", 777);
 
 		//$request_body = file_get_contents("php://input");
-		//$info = json_decode(stripcslashes($request_body), true);
+		$info = json_decode(stripcslashes($request_body), true);
 		$user_code = $info['user_code'];
 		//file_put_contents("user_code.json", json_encode(array('user_code' => $user_code), JSON_PRETTY_PRINT) );
 
