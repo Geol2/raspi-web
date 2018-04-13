@@ -3,6 +3,8 @@
 	header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 	header("Content-Type: application/json");
 
+	$ip = $_SERVER['REMOTE_ADDR'];
+
     $db_host = "localhost";
     $db_user = "root";
     $db_passwd = "619412";
@@ -22,7 +24,7 @@
         //echo $user_code;
 		//file_put_contents("user_code.json", json_encode(array('user_code' => $user_code), JSON_PRETTY_PRINT) );
 
-        $query = "INSERT INTO Sys_info( USER_CODE ) VALUES ('$user_code')";
+        $query = "INSERT INTO Sys_info( PUBLIC _IP, USER_CODE ) VALUES ('$ip','$user_code')";
         $result = mysqli_query($conn, $query) or die ('Error database.');
 
         $key = ['result'=>'OK'];
