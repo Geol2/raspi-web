@@ -52,9 +52,9 @@
 
             if( $ip ){
                 echo "get ip<br/>";
-                $led = 'N';
-                $state = 'N';
-                $register = 'N';
+                $led = 'n';
+                $state = 'n';
+                $register = 'n';
 
                 $query = "INSERT INTO product_info VALUES ('$ip', '$led', '$state', '$register')";
                 mysqli_query($conn, $query) or die ('Error database.');
