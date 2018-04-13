@@ -1,13 +1,17 @@
 <?php
-$db_host = "localhost";
-$db_user = "root";
-$db_passwd = "619412";
-$db_name = "water_middle_server";
+	$db_host = "localhost";
+	$db_user = "root";
+	$db_passwd = "619412";
+	$db_name = "water_middle_server";
 
-$conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connected Failed!!!!");
+	$conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connected Failed!!!!");
 
-$query = "SELECT INNER_IP FROM product_info ";
-mysqli_query($conn, $query) or die ('Error Querying database.');
+	$query = "SELECT INNER_IP FROM product_info ";
+	$result = mysqli_query($conn, $query) or die ('Error Querying database.');
+
+	while($row = mysqli_fetch_array($result)) {
+		$INNER_IP = $row['INNER_IP'];
+	}
 
 ?>
 
