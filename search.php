@@ -24,12 +24,16 @@
 	header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');
 	header('Content-Type: application/json');
 
-	$str1 = file_get_contents('/var/www/html/user_code.json');
+	//$str1 = file_get_contents('/var/www/html/user_code.json');
 
-	$json = json_decode($str1, true);
+	//$json = json_decode($str1, true);
+
+
+	$query_user = "SELECT COUNT(*) FROM Sys_info ";
+	$result = mysqli_query($conn, $query) or die ('Error Querying database.');
 
 	$res = 'OK';
-	if( array_key_exists("user_code", $json) ){
+	if( $result ){
 		 $res = 'FAIL';
 	}
 	$data = ['state'=> $res ,'ssid' => 'pi3-ap' ,'inner_ip' => $return_arr ];
