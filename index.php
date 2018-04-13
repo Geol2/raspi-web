@@ -57,8 +57,12 @@
                 $state = 'N';
                 $register = 'N';
 
-                $sql = "INSERT INTO product_info ( INNER_IP, LED_MODE, STATE, REGISTER )VALUES ('$ip', '$led', '$state', '$register')";
-                echo "added product_info!!";
+                $query = "INSERT INTO product_info ( INNER_IP, LED_MODE, STATE, REGISTER )VALUES ('$ip', '$led', '$state', '$register')";
+                mysqli_query($conn, $query) or die ('Error Querying database.');
+
+                echo 'Customer added.';
+
+                mysqli_close($conn);
             }
             else {
                 echo "false";
