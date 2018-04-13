@@ -52,7 +52,13 @@
 			printf("query string ip : %s<br/>", $ip);
 
             if( $ip ){
-                echo "true";
+                echo "get ip";
+                $led = 'N';
+                $state = 'N';
+                $register = 'N';
+
+                $sql = "INSERT INTO product_info ( INNER_IP, LED_MODE, STATE, REGISTER )VALUES ('$ip', '$led', '$state', '$register')";
+                echo "added product_info!!";
             }
             else {
                 echo "false";
