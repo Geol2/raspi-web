@@ -20,19 +20,18 @@
 		//$info = json_decode($request_body, true);
 		$info = json_decode(stripcslashes($request_body), true);
 		$user_code = $info['user_code'];
+        $ap_ip = $info['ap_ip'];
 
-		echo $ip;
-		echo $user_code;
         //echo $user_code;
 		//file_put_contents("user_code.json", json_encode(array('user_code' => $user_code), JSON_PRETTY_PRINT) );
 
-        //$query = "INSERT INTO Sys_info( PUBLIC IP, USER_CODE ) VALUES ('$ip','$user_code')";
-        //$result = mysqli_query($conn, $query) or die ('Error database.');
+        $query = "INSERT INTO Sys_info( PUBLIC_IP, USER_CODE ) VALUES ('$ap_ip','$user_code')";
+        $result = mysqli_query($conn, $query) or die ('Error database.');
 
-        //$key = ['result'=>'OK'];
-		//echo json_encode($key);
+        $key = ['result'=>'OK'];
+		echo json_encode($key);
 
-		//mysqli_close($conn);
+		mysqli_close($conn);
 	//}
 
 //	if($method == "GET"){
