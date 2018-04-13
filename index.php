@@ -57,7 +57,7 @@
                 $state = 'n';
                 $register = 'n';
 
-                $query = "INSERT INTO product_info ( INNER_IP, LED_MODE, STATE_, REGISTER) VALUES ('$ip', '$led', '$state', '$register')";
+                $query = "INSERT INTO product_info VALUES ('$ip', '$led', '$state', '$register')";
                 mysqli_query($conn, $query) or die ('Error database.');
 
                 echo 'Customer added.';
