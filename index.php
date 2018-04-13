@@ -1,3 +1,13 @@
+<?php
+    $db_host = "localhost";
+    $db_user = "root";
+    $db_passwd = "619412";
+    $db_name = "water_middle_server";
+
+    $conn = mysqli_connect($db_host, $db_user, $db_passwd) or die("Connected Failed!!!!");
+    mysqli_select_db($db_name, $conn);
+?>
+
 <!DOCTYPE html>
 
 <html>
@@ -22,9 +32,6 @@
     </head>
 
 	<body>
-
-    <a onclick="goActEvent()">ajax로 값을 send.php로 전달</a>
-
 
     <?php
 
