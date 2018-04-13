@@ -14,15 +14,12 @@
 
 		//chmod("./var/www/html/user_code.json", 777);
 
-		//$request_body = $_POST['user_code']; //file_get_contents("php://input");
+		$request_body = $_POST['user_code']; //file_get_contents("php://input");
 		//$info = json_decode($request_body, true);
-		//$info = json_decode(stripcslashes($request_body), true);
-		//$user_code = $info['user_code'];
+		$info = json_decode(stripcslashes($request_body), true);
+		$user_code = $info['user_code'];
 
-		$request_body = $_POST['user_code'];
-		$info = json_decode($request_body, true);
-		echo $user_code;
-		
+        echo $user_code;
 		//file_put_contents("user_code.json", json_encode(array('user_code' => $user_code), JSON_PRETTY_PRINT) );
 
         $query = "INSERT INTO Sys_info( USER_CODE ) VALUES ('$user_code')";
