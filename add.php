@@ -19,7 +19,7 @@
 		$info = json_decode(stripcslashes($request_body), true);
 		$user_code = $info['user_code'];
 
-        echo $user_code;
+        //echo $user_code;
 		//file_put_contents("user_code.json", json_encode(array('user_code' => $user_code), JSON_PRETTY_PRINT) );
 
         $query = "INSERT INTO Sys_info( USER_CODE ) VALUES ('$user_code')";
