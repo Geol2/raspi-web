@@ -22,6 +22,7 @@
 		$user_code = $info['user_code'];
 		$submit_ip = $info['submit_ip'];
 
+		echo $submit_ip;
         //echo $user_code;
 		//file_put_contents("user_code.json", json_encode(array('user_code' => $user_code), JSON_PRETTY_PRINT) );
 
