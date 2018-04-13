@@ -3,7 +3,7 @@
 	header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 	header("Content-Type: application/json");
 
-	$ip = $_SERVER['HTTP_X_FORWARD_FOR'];
+	$ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
 
     $db_host = "localhost";
     $db_user = "root";
