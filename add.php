@@ -26,7 +26,7 @@
         //echo $user_code;
 		//file_put_contents("user_code.json", json_encode(array('user_code' => $user_code), JSON_PRETTY_PRINT) );
 
-        $query = "INSERT INTO Sys_info VALUES ('$submit_ip', '$user_code')";
+        $query = "INSERT INTO Sys_info VALUES ('$user_code', '$submit_ip' )";
         $result = mysqli_query($conn, $query) or die ('Error database.');
 
         $key = ['result'=>'OK'];
