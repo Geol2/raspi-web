@@ -49,12 +49,17 @@
 			printf("ip : %s<br/>",$self_ip);
 			printf("user ip : %s<br/>", $whois_user);
 			printf("port num : %s<br/>", $using_port);
-
 			printf("query string ip : %s<br/>", $ip);
 
-			chmod("./var/www/html/inner_ip.json", 777);
+            if( $ip ){
+                echo "true";
+            }
+            else {
+                echo "false";
+            }
+			//chmod("./var/www/html/inner_ip.json", 777);
 
-			$is_file_exist = file_exists('/var/www/html/inner_ip.json');
+			//$is_file_exist = file_exists('/var/www/html/inner_ip.json');
 
 			//	$iptables_version = shell_exec("sudo iptables --version");
 			//	echo "<pre> $iptables_version </pre>";
