@@ -52,12 +52,12 @@
 			printf("query string ip : %s<br/>", $ip);
 
             if( $ip ){
-                echo "get ip";
+                echo "get ip<br/>";
                 $led = 'N';
                 $state = 'N';
                 $register = 'N';
 
-                $query = "INSERT INTO product_info ( INNER_IP, LED_MODE, STATE, REGISTER )VALUES ('$ip', '$led', '$state', '$register')";
+                $query = "INSERT INTO product_info ( INNER_IP, LED_MODE, STATE_, REGISTER ) VALUES ('$ip', '$led', '$state', '$register')";
                 mysqli_query($conn, $query) or die ('Error Querying database.');
 
                 echo 'Customer added.';
