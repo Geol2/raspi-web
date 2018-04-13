@@ -10,7 +10,7 @@
 
     $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connected Failed!!!!");
 
-    if($method == "POST" ){
+    //if($method == "POST" ){
 
 		//chmod("./var/www/html/user_code.json", 777);
 
@@ -28,7 +28,7 @@
 		echo json_encode($key);
 
 		mysqli_close($conn);
-	}
+	//}
 
 //	if($method == "GET"){
 
