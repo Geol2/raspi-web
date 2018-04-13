@@ -6,14 +6,17 @@
 
 	$conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connected Failed!!!!");
 
+	$return_arr = array();
+
 	$query = "SELECT INNER_IP FROM product_info ";
 	$result = mysqli_query($conn, $query) or die ('Error Querying database.');
 
-	while($row = mysqli_fetch_array($result)) {
-		$INNER_IP = $row['INNER_IP'];
-	}
+	while($row = mysqli_fetch_array($result, MYSQL_ASSOC)) {
+		$row_array['INNER_IP'] = $row['INNER_IP'];
 
-?>
+		array_push($return_arr, $row_array);
+	}
+	?>
 
 
 <?php
@@ -29,6 +32,6 @@
 	if( array_key_exists("user_code", $json) ){
 		 $res = 'FAIL';
 	}
-	$data = ['state'=> $res ,'ssid' => 'pi3-ap' ,'inner_ip' => $result ];
+	$data = ['state'=> $res ,'ssid' => 'pi3-ap' ,'inner_ip' => $return_arr ];
 	echo json_encode($data);
 ?>
