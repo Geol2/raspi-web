@@ -11,7 +11,7 @@
 	$query = "SELECT INNER_IP FROM product_info ";
 	$result = mysqli_query($conn, $query) or die ('Error Querying database.');
 
-	while($row = mysqli_fetch_array($result, MYSQL_ASSOC)) {
+	while($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
 		$row_array['INNER_IP'] = $row['INNER_IP'];
 
 		array_push($return_arr, $row_array);
