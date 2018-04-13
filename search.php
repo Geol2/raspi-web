@@ -33,7 +33,7 @@
 	$result = mysqli_query($conn, $query);
 
 	$res = 'OK';
-	if( $result ){
+	if( !$result ){
 		 $res = 'FAIL';
 	}
 	$data = ['state'=> $res ,'ssid' => 'pi3-ap' ,'inner_ip' => $return_arr ];
