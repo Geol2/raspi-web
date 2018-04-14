@@ -26,7 +26,9 @@
 	# Get as an object
 	$json_obj = json_decode($json_str);
 	$user_code = $json_obj->{"user_code"};
+	echo $user_code."<br/>";
 	$submit_ip = $json_obj->{"submit_ip"};
+	echo $submit_ip."<br/>";
 	//$submit_ip = $_POST['submit_ip'];
 	//echo $submit_ip;
 	//echo $user_code;
