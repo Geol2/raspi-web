@@ -37,9 +37,10 @@
 	//$str1 = file_get_contents('/var/www/html/user_code.json');
 
 	//$json = json_decode($str1, true);
+    $conn_user = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connected Failed!!!!");
 
-	$query_user = "SELECT COUNT(*) FROM Sys_info";
-	$result_user = mysqli_query($conn, $query_user) or die ('Error Query_user Databases.');
+    $query_user = "SELECT COUNT(*) FROM Sys_info";
+	$result_user = mysqli_query($conn_user, $query_user) or die ('Error Query_user Databases.');
 	//true 참 1, false 거짓 0
 
 
