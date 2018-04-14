@@ -16,14 +16,13 @@
 
 		//chmod("./var/www/html/user_code.json", 777);
 
-		$request_body = file_get_contents("php://input");
-		//$info = json_decode($request_body, true);
-		$info = json_decode(stripcslashes($request_body), true);
+		//$request_body = file_get_contents("php://input");
+		//$info = json_decode(stripcslashes($request_body), true);
+
+		$request_body = $_POST["user_code"];
+		$info = json_decode($request_body, true);
 
 		$user_code = $info['user_code'];
-
-		$request_body1 = file_get_contents("php://input");
-		$info1 = json_decode(stripcslashes($request_body), true);
 		$submit_ip = $info1['submit_ip'];
 
 		//echo $submit_ip;
