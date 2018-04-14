@@ -33,7 +33,7 @@
 
 
 	$res = 'OK';
-	if( $result_user == false ){
+	if( $result_user == true ){
 		 $res = 'FAIL';
 	}
 	$data = ['state'=> $res ,'ssid' => 'pi3-ap' ,'inner_ip' => $return_arr ];
