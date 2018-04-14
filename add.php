@@ -3,6 +3,7 @@
 	header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 	header("Content-Type: application/json");
 
+	$referer = parse_url($_SERVER['HTTP_REFERER']);
 	$ip = gethostbyname($referer[host]);
 
     $db_host = "localhost";
