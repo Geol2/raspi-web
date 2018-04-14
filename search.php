@@ -21,9 +21,8 @@
 
 		array_push($return_arr, $row_array);
 	}
-	mysqli_close($conn);
 
-
+	
 	//$str1 = file_get_contents('/var/www/html/user_code.json');
 
 	//$json = json_decode($str1, true);
