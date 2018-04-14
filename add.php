@@ -25,7 +25,6 @@
 		$submit_ip = $_SERVER['SERVER_ADDR'];
 		//$submit_ip = $_POST['submit_ip'];
 
-		echo $submit_ip;
 		//echo $submit_ip;
         //echo $user_code;
 		//file_put_contents("user_code.json", json_encode(array('user_code' => $user_code), JSON_PRETTY_PRINT) );
