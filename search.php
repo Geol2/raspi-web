@@ -1,4 +1,9 @@
 <?php
+
+	header('Access-Control-Allow-Origin: *');
+	header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');
+	header('Content-Type: application/json');
+
 	$db_host = "localhost";
 	$db_user = "root";
 	$db_passwd = "619412";
@@ -16,13 +21,7 @@
 
 		array_push($return_arr, $row_array);
 	}
-	?>
 
-
-<?php
-	header('Access-Control-Allow-Origin: *');
-	header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');
-	header('Content-Type: application/json');
 
 	//$str1 = file_get_contents('/var/www/html/user_code.json');
 
@@ -31,7 +30,7 @@
 	$query_user = "SELECT COUNT(*) FROM Sys_info ";
 	$result = mysqli_query($conn, $query_user) or die ('Error Query_user Databases.');
 
-	echo $result;
+	echo "$result";
 
 	$res = 'OK';
 	if( $result == 0){
