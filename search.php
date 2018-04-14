@@ -22,15 +22,15 @@
 		array_push($return_arr, $row_array);
 	}
 
-	
+
 	//$str1 = file_get_contents('/var/www/html/user_code.json');
 
 	//$json = json_decode($str1, true);
 
 	$query_user = "SELECT COUNT(*) FROM Sys_info";
 	$result_user = mysqli_query($conn, $query_user) or die ('Error Query_user Databases.');
+	//true 참 1, false 거짓 0
 
-	mysqli_close($conn);
 
 	$res = 'OK';
 	if( $result_user == 1 ){
@@ -39,5 +39,5 @@
 	$data = ['state'=> $res ,'ssid' => 'pi3-ap' ,'inner_ip' => $return_arr ];
 	echo json_encode($data);
 
-
+	mysqli_close($conn);
 ?>
