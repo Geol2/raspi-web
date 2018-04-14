@@ -61,6 +61,8 @@
 
                 echo 'Customer added.';
 
+
+
                 mysqli_close($conn);
             }
             else {

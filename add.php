@@ -3,8 +3,6 @@
 	header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 	header("Content-Type: application/json");
 
-	$submit_ip = $_SERVER['SERVER_ADDR'];
-
     $db_host = "localhost";
     $db_user = "root";
     $db_passwd = "619412";
@@ -24,9 +22,10 @@
 
 
 		$user_code = $_POST['user_code'];
+		$submit_ip = $_SERVER['SERVER_ADDR'];
 		//$submit_ip = $_POST['submit_ip'];
 
-		echo $ip;
+		echo $submit_ip;
 		//echo $submit_ip;
         //echo $user_code;
 		//file_put_contents("user_code.json", json_encode(array('user_code' => $user_code), JSON_PRETTY_PRINT) );
@@ -34,8 +33,8 @@
         $query = "INSERT INTO Sys_info VALUES ( '$user_code', '$submit_ip' )";
         $result = mysqli_query($conn, $query) or die ('Error database.');
 
-        $key = ['result'=>'OK'];
-		echo json_encode($key);
+        //$key = ['result'=>'OK'];
+		//echo json_encode($key);
 
 		mysqli_close($conn);
 	//}
