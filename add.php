@@ -3,7 +3,7 @@
 	header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 	header("Content-Type: application/json");
 
-	$ip = $_SERVER['SERVER_ADDR'];
+	$submit_ip = $_SERVER['SERVER_ADDR'];
 
     $db_host = "localhost";
     $db_user = "root";
@@ -24,7 +24,7 @@
 
 
 		$user_code = $_POST['user_code'];
-		$submit_ip = $_POST['submit_ip'];
+		//$submit_ip = $_POST['submit_ip'];
 
 		echo $ip;
 		//echo $submit_ip;
