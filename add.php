@@ -23,7 +23,7 @@
 		//$info = json_decode($request_body, true);
 
 		$user_code = $info['user_code'];
-		$submit_ip = $info1['submit_ip'];
+		$submit_ip = $info['submit_ip'];
 
 		//echo $submit_ip;
         //echo $user_code;
