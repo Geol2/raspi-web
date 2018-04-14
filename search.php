@@ -27,7 +27,7 @@
 
 	//$json = json_decode($str1, true);
 
-	$query_user = "SELECT COUNT(*) AS USER_CODE, OUTER_IP FROM Sys_info GROUP BY USER_CODE";
+	$query_user = "SELECT COUNT(*) FROM Sys_info";
 	$result = mysqli_query($conn, $query_user) or die ('Error Query_user Databases.');
 
 	mysqli_close($conn);
