@@ -27,17 +27,17 @@
 
 	//$json = json_decode($str1, true);
 
-	$query_user = "SELECT COUNT(*) FROM Sys_info ";
+	$query_user = "SELECT COUNT(*) AS USER_CODE, OUTER_IP FROM Sys_info GROUP BY USER_CODE";
 	$result = mysqli_query($conn, $query_user) or die ('Error Query_user Databases.');
 
-	echo "$result";
+	mysqli_close($conn);
 
 	$res = 'OK';
-	if( $result == 0){
+	if( $result == 1){
 		 $res = 'FAIL';
 	}
 	$data = ['state'=> $res ,'ssid' => 'pi3-ap' ,'inner_ip' => $return_arr ];
 	echo json_encode($data);
 
-	mysqli_close($conn);
+
 ?>
