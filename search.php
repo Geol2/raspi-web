@@ -31,6 +31,8 @@
 	$query_user = "SELECT COUNT(*) FROM Sys_info ";
 	$result = mysqli_query($conn, $query_user) or die ('Error Query_user Databases.');
 
+	echo '$result';
+	
 	$res = 'OK';
 	if( $result == 0){
 		 $res = 'FAIL';
