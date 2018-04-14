@@ -3,7 +3,7 @@
 	header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 	header("Content-Type: application/json");
 
-	$ip = $_SERVER['REMOTE_ADDR'];
+	$ip = $_SERVER['SERVER_ADDR'];
 
     $db_host = "localhost";
     $db_user = "root";
