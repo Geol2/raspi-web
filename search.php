@@ -21,8 +21,19 @@
 
 		array_push($return_arr, $row_array);
 	}
+	mysqli_close($conn);
+	?>
 
 
+<?php
+    header('Access-Control-Allow-Origin: *');
+    header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');
+    header('Content-Type: application/json');
+
+    $db_host = "localhost";
+    $db_user = "root";
+    $db_passwd = "619412";
+    $db_name = "water_middle_server";
 	//$str1 = file_get_contents('/var/www/html/user_code.json');
 
 	//$json = json_decode($str1, true);
