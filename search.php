@@ -30,10 +30,10 @@
 
 
 	$query_user = "SELECT COUNT(*) FROM Sys_info ";
-	$result = mysqli_query($conn, $query);
+	$result = mysqli_query($conn, $query_user);
 
 	$res = 'OK';
-	if( !$result ){
+	if( $result ){
 		 $res = 'FAIL';
 	}
 	$data = ['state'=> $res ,'ssid' => 'pi3-ap' ,'inner_ip' => $return_arr ];
