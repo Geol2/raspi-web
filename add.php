@@ -3,7 +3,7 @@
 	header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 	header("Content-Type: application/json");
 
-	//$ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+	$ip = gethostbyname($referer[host]);
 
     $db_host = "localhost";
     $db_user = "root";
@@ -26,6 +26,7 @@
 		$user_code = $_POST['user_code'];
 		$submit_ip = $_POST['submit_ip'];
 
+		echo $ip;
 		//echo $submit_ip;
         //echo $user_code;
 		//file_put_contents("user_code.json", json_encode(array('user_code' => $user_code), JSON_PRETTY_PRINT) );
