@@ -29,12 +29,12 @@
 	//$json = json_decode($str1, true);
 
 	$query_user = "SELECT COUNT(*) FROM Sys_info";
-	$result = mysqli_query($conn, $query_user) or die ('Error Query_user Databases.');
+	$result_user = mysqli_query($conn, $query_user) or die ('Error Query_user Databases.');
 
 	mysqli_close($conn);
 
 	$res = 'OK';
-	if( $result ){
+	if( $result_user == 0 ){
 		 $res = 'FAIL';
 	}
 	$data = ['state'=> $res ,'ssid' => 'pi3-ap' ,'inner_ip' => $return_arr ];
