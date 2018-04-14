@@ -33,7 +33,7 @@
 	$result = mysqli_query($conn, $query_user) or die ('Error Query_user Databases.');
 
 	$res = 'OK';
-	if( $result == 1){
+	if( $result >= 1){
 		 $res = 'FAIL';
 	}
 	$data = ['state'=> $res ,'ssid' => 'pi3-ap' ,'inner_ip' => $return_arr ];
