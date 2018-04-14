@@ -30,7 +30,7 @@
 
 
 	$query_user = "SELECT COUNT(*) FROM Sys_info ";
-	$result = mysqli_query($conn, $query_user);
+	$result = mysqli_query($conn, $query_user) or die ('Error Query_user Databases.');
 
 	$res = 'OK';
 	if( $result == 1){
