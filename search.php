@@ -42,7 +42,7 @@
     $query_user = "SELECT COUNT(*) FROM Sys_info";
 	$result_user = mysqli_query($conn_user, $query_user);
 	//true 참 0 이외의 값 , false 거짓 0
-
+    echo "$result_user";
 
 	$res = 'OK';
 	if( $result_user != 0 ){
