@@ -50,7 +50,9 @@
 	if(  $num >= 1 ){
 		 $res = 'FAIL';
 	}
-	$data = ['state'=> $res , 'ssid' => 'pi3-ap' , 'inner_ip' => $return_arr ];
+	else if( $num == 0) {
+        $data = ['state' => $res, 'ssid' => 'pi3-ap', 'inner_ip' => $return_arr];
+    }
 	echo json_encode($data);
 
 	mysqli_close($conn);
