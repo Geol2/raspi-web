@@ -13,7 +13,7 @@
 
 	$return_arr = array();
 
-	$query = "SELECT INNER_IP FROM product_info ";
+	$query = "SELECT INNER_IP FROM product_info";
 	$result = mysqli_query($conn, $query) or die ('Error Querying database.');
     //echo "$result";
 
@@ -23,7 +23,8 @@
 		array_push($return_arr, $row_array);
 	}
 	mysqli_close($conn);
-	?>
+
+    ?>
 
 
 <?php
@@ -42,14 +43,13 @@
 
     $query_user = "SELECT COUNT(*) FROM Sys_info";
 	$result_user = mysqli_query($conn_user, $query_user);
-	//true 참 0 이외의 값 , false 거짓 0
-    print("$result_user");
+	//true 참 0 이외의 값 , false 거짓 0 //
 
 	$res = 'OK';
-	if( $result_user != 0 ){
+	if( $result_user == 0 ){
 		 $res = 'FAIL';
 	}
-	$data = ['state'=> $res ,'ssid' => 'pi3-ap' ,'inner_ip' => $return_arr ];
+	$data = ['state'=> $res , 'ssid' => 'pi3-ap' , 'inner_ip' => $return_arr ];
 	echo json_encode($data);
 
 	mysqli_close($conn);
