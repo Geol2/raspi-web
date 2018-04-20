@@ -48,7 +48,8 @@
 	// 데이터베이스의개수.
 	$res = 'OK';
 	if(  $num >= 1 ){
-		 $data = ['state' => $res];
+		$res = 'FAIL';
+		$data = ['state' => $res];
 	}
 	else if( $num == 0) {
         $data = ['state' => $res, 'ssid' => 'pi3-ap', 'inner_ip' => $return_arr];
