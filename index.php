@@ -33,8 +33,8 @@
 
         $query = "INSERT INTO product_info  VALUES ('$ip', '$led', '$state', '$register')";
         $result_ip = mysqli_query($conn, $query) or die ('Error database.. not connect product table.');
-        echo '  Customer added.';
-        mysqli_close($conn);
+        echo '  Customer added.'; echo "</br>";
+
 
         // 아랫줄부터 user_code의 존재여부를 확인 후 POST 방식으로 전송함.
         $query_user_code = "SELECT * FROM Sys_info";
