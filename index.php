@@ -56,15 +56,15 @@
             $state = 'N';
             $register = 'N';
 
-            $query = "INSERT INTO product_info  VALUES ('$ip', '$led', '$state', '$register')";
-            mysqli_query($conn, $query) or die ('Error database.');
+            //$query = "INSERT INTO product_info  VALUES ('$ip', '$led', '$state', '$register')";
+            //mysqli_query($conn, $query) or die ('Error database.');
 
-            echo 'Customer added.';
+            //echo 'Customer added.';
 
-            mysqli_close($conn);
+            //mysqli_close($conn);
         }
         else {
-            echo "Plase get ip...";
+            echo "Please get ip...";
         }
 /*
         // 아랫줄부터 user_code의 존재여부를 확인 후 POST 방식으로 전송함.
