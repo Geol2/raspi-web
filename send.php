@@ -38,7 +38,7 @@
     //mysql - ampq
     $id = $user_code; //user_code 로 변경.
 
-    $temp = ['id'=> $id, 'temp'=> $_GET['data']];
+    $temp = ['id'=> $id, 't'=> $_GET['t'], 'h'=> $_GET['h'], 'wt'=> $_GET['wt'], 'wl'=> $_GET['wl'], 'e'=> $_GET['e']];
     //get arduino data..
     $data = json_encode($temp);
 

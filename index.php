@@ -69,7 +69,7 @@
             curl_setopt($ch, CURLOPT_POSTFIELDS, $json_data);
 
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, “POST”);
-            
+
             curl_setopt($ch, CURLOPT_POST, 1);
             $contents = curl_exec($ch);
             curl_close($ch);
