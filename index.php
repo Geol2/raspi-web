@@ -47,8 +47,7 @@
         printf("SERVER_IP : %s<br/>",$self_ip);
         printf("USER_IP : %s<br/>", $whois_user);
         printf("PORT : %s<br/>", $using_port);
-        printf("QUERY_STRING_IP : %s<br/>", $ip);
-
+        
         //if( $ip != NULL ){
             //echo "get ip<br/>";
             //$led = 'N';
