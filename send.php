@@ -13,7 +13,7 @@
     $db_passwd = "619412";
     $db_name = "water_middle_server";
 
-    $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name);
+    $mysqli = mysqli_connect($db_host, $db_user, $db_passwd, $db_name);
 
     /* check connection */
     if ($mysqli->connect_errno) {
@@ -21,7 +21,7 @@
         exit();
     }
 
-    $query = "SELECT user_code FROM Sys_info";
+    $query = "SELECT * FROM Sys_info";
     $result = $mysqli->query($query);
 
     $row = $result->fetch_array(MYSQLI_BOTH);
