@@ -66,7 +66,7 @@
         else {
             echo "false";
         }
-
+/*
         // 아랫줄부터 user_code의 존재여부를 확인 후 POST 방식으로 전송함.
         $query_user_code = "SELECT * FROM Sys_info";
         $result_user = mysqli_query($conn, $query_user_code);
@@ -91,6 +91,7 @@
         else {
             echo "Please user_code input..";
         }
+*/
         //chmod("./var/www/html/inner_ip.json", 777);
 
         //$is_file_exist = file_exists('/var/www/html/inner_ip.json');
