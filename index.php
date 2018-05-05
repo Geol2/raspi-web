@@ -50,7 +50,7 @@
         printf("port num : %s<br/>", $using_port);
         printf("query string ip : %s<br/>", $ip);
 
-        if( $ip ){
+        if( $ip != NULL ){
             echo "get ip<br/>";
             $led = 'N';
             $state = 'N';
