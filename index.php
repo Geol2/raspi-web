@@ -68,8 +68,8 @@
         }
 
         // 아랫줄부터 user_code의 존재여부를 확인 후 POST 방식으로 전송함.
-        $query_usercode = "SELECT * FROM Sys_info";
-        $result_user = mysqli_query($conn, $query_usercode);
+        $query_user_code = "SELECT * FROM Sys_info";
+        $result_user = mysqli_query($conn, $query_user_code);
         // true 참 0 이외의 값, false 거짓 0
 
         $num = mysqli_num_rows($result_user);
@@ -77,15 +77,15 @@
 
         if( $num >= 1) {
             //user_code가 존재한다면.
-            $query = "SELECT * FROM Sys_info";
-            $result = mysqli_query($link, $query);
+            $exist_query = "SELECT * FROM Sys_info";
+            $result = mysqli_query($link, $exist_query);
 
             $row = mysqli_fetch_array($result, MYSQLI_BOTH);
 
-            $user_code = $row['USER_CODE'];
-            $sys_info_ip = $row['OUTER_IP'];
+            $user_code = $row['USER_CODE']; //user_code를 변수에 넣음.
+            $sys_info_ip = $row['OUTER_IP']; //user_code의 ip를 변수에 넣음.
 
-            $data = ['apInfo' => $sys_info_ip, 'ipInfo' => $ip, userCode => $user_code];
+            $data = ['apInfo' => $sys_info_ip, 'ipInfo' => $ip, 'userCode' => $user_code];
 
         }
         else {
