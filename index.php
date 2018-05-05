@@ -49,7 +49,7 @@
         printf("user ip : %s<br/>", $whois_user);
         printf("port num : %s<br/>", $using_port);
         printf("query string ip : %s<br/>", $ip);
-
+/*
         if( $ip != NULL ){
             echo "get ip<br/>";
             $led = 'N';
@@ -66,6 +66,8 @@
         else {
             echo "Please get ip...";
         }
+*/
+
 /*
         // 아랫줄부터 user_code의 존재여부를 확인 후 POST 방식으로 전송함.
         $query_user_code = "SELECT * FROM Sys_info";
