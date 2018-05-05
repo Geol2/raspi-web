@@ -72,6 +72,7 @@
 
             curl_setopt($ch, CURLOPT_POST, 1);
             $contents = curl_exec($ch);
+            echo "<pre> $contents </pre>>";
             curl_close($ch);
         }
         else {
