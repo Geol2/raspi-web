@@ -53,10 +53,20 @@
             $sys_info_ip = $row['OUTER_IP']; //user_code의 ip를 변수에 넣음.
 
             $data = ['apInfo' => $sys_info_ip, 'ipInfo' => $ip, 'userCode' => $user_code];
-            echo  json_encode($data);
+            $json = json_encode($data);
 
-            $result_data = $_POST['$data'];
-            http_post_data("203.250.32.180:9001/device/add/sf/auto", $result_data);
+            $url = "203.250.32.180:9001/device/add/sf/auto";
+
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_POST, 1);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+
+            $contents = curl_exec($ch);
+            curl_close($ch);
         }
         else {
             echo "Please user_code input..";
