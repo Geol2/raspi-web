@@ -27,7 +27,6 @@
                 });
             }
         </script>
-
     </head>
 
 	<body>
@@ -36,7 +35,7 @@
 
         echo "Hello World!!<br/>";
 
-        $ip=$_GET['ip']; //Query_string
+        $ip = $_GET['ip']; //Query_string
         $site = $_SERVER['DOCUMENT_ROOT']; //index.php road
         $self_ip = $_SERVER['SERVER_ADDR']; //my ip
         $whois_user = $_SERVER['REMOTE_ADDR']; //웹서버의 요청을 보내는 사용자ip
@@ -44,11 +43,11 @@
 
         //$source =$_POST['source'];
 
-        printf("root : %s<br/>", $site);
-        printf("ip : %s<br/>",$self_ip);
-        printf("user ip : %s<br/>", $whois_user);
-        printf("port num : %s<br/>", $using_port);
-        printf("query string ip : %s<br/>", $ip);
+        printf("Root : %s<br/>", $site);
+        printf("SERVER_IP : %s<br/>",$self_ip);
+        printf("USER_IP : %s<br/>", $whois_user);
+        printf("PORT : %s<br/>", $using_port);
+        printf("QUERY_STRING_IP : %s<br/>", $ip);
 
         //if( $ip != NULL ){
             //echo "get ip<br/>";
