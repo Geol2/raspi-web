@@ -3,6 +3,10 @@
     //header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');
     //header('Content-Type: application/json');
 
+    error_reporting(E_ALL);
+
+    ini_set("display_errors", 1);
+
     $db_host = "localhost";
     $db_user = "root";
     $db_passwd = "619412";
@@ -67,7 +71,6 @@
             );
 
             $result = curl_exec($ch);
-            echo curl_errno($ch);
 
             # Print response.
             echo "<pre>$result</pre>";
