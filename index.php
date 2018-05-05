@@ -12,10 +12,6 @@
 ?>
 
 <?php
-    header("Access-Control-Allow-Origin: *");
-    header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
-    header("Content-Type: application/json");
-    
     $ip = $_GET['ip']; //Query_string
     //$site = $_SERVER['DOCUMENT_ROOT']; //index.php road
     //$self_ip = $_SERVER['SERVER_ADDR']; //my ip
@@ -57,7 +53,7 @@
             $sys_info_ip = $row['OUTER_IP']; //user_code의 ip를 변수에 넣음.
 
             $data = ['apInfo' => $sys_info_ip, 'ipInfo' => $ip, 'userCode' => $user_code];
-            echo $data;
+            echo  json_encode($data);
             $result_data = $_POST['$data'];
         }
         else {
