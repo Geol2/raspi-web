@@ -25,9 +25,12 @@
     $result = mysqli_query($link, $query);
 
     $row = mysqli_fetch_array($result, MYSQLI_BOTH);
-    printf ("%s (%s)\n", $row[0], $row["CountryCode"]);
 
-    //ampq
+    $user_code = $row['USER_CODE'];
+
+    printf ("%s \n", $user_code);
+
+    // ampq //
     $connection = new AMQPStreamConnection(HOST, PORT, USER, PASS);
 
     $channel = $connection->channel();
