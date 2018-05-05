@@ -36,8 +36,8 @@
         echo '  Customer added.'; echo "</br>";
 
         // 아랫줄부터 user_code의 존재여부를 확인 후 POST 방식으로 전송함.
-        $query_user_code = "SELECT * FROM Sys_info";
-        $result_user = mysqli_query($conn, $query_user_code) or die ("Error database.. not connect Sys_info table.");
+        $query = "SELECT * FROM Sys_info"; echo $query; echo "</br>";
+        $result_user = mysqli_query($conn, $query) or die ("Error database.. not connect Sys_info table.");
         // true 참 0 이외의 값, false 거짓 0
 
         $num = mysqli_num_rows($result_user);
