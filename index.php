@@ -38,7 +38,7 @@
 
         $ip=$_GET['ip']; //Query_string
         $site = $_SERVER['DOCUMENT_ROOT']; //index.php road
-        $self_ip = $_SERVER['HTTP_X_FORWARD_FOR']; //my ip
+        $self_ip = $_SERVER['SERVER_ADDR']; //my ip
         $whois_user = $_SERVER['REMOTE_ADDR']; //웹서버의 요청을 보내는 사용자ip
         $using_port = $_SERVER['SERVER_PORT']; //클라이언트 포트
 
@@ -86,6 +86,7 @@
             $sys_info_ip = $row['OUTER_IP'];
 
             $data = ['apInfo' => $sys_info_ip, 'ipInfo' => $ip, userCode => $user_code];
+
         }
         else {
             echo "Please user_code input..";
