@@ -35,7 +35,8 @@
 
     $channel = $connection->channel();
 
-    $id = 0; //user_code 로 변경해야 함..
+    //mysql - ampq
+    $id = $user_code; //user_code 로 변경해야 함..
 
     $temp = ['id'=> $id, 'temp'=> $_GET['data']]; //get
     $data = json_encode($temp);
