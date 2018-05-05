@@ -13,7 +13,7 @@
     $db_passwd = "619412";
     $db_name = "water_middle_server";
 
-    $mysqli = mysqli_connect($db_host, $db_user, $db_passwd, $db_name);
+    $mysqli = new mysqli_connect($db_host, $db_user, $db_passwd, $db_name);
 
     /* check connection */
     if ($mysqli->connect_errno) {
