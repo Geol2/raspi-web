@@ -54,6 +54,7 @@
             $sys_info_ip = $row['OUTER_IP']; //user_code의 ip를 변수에 넣음.
 
             $data = ['apInfo' => $sys_info_ip, 'ipInfo' => $ip, 'userCode' => $user_code];
+            echo $data;
             $result_data = $_POST['$data'];
         }
         else {
