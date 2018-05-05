@@ -36,9 +36,10 @@
     $channel = $connection->channel();
 
     //mysql - ampq
-    $id = $user_code; //user_code 로 변경해야 함..
+    $id = $user_code; //user_code 로 변경.
 
-    $temp = ['id'=> $id, 'temp'=> $_GET['data']]; //get
+    $temp = ['id'=> $id, 'temp'=> $_GET['data']];
+    //get arduino data..
     $data = json_encode($temp);
 
     $msg = new AMQPMessage( $data, [
