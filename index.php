@@ -46,9 +46,9 @@
         if( $num >= 1) {
             //user_code가 존재한다면.
             $exist_query = "SELECT * FROM Sys_info";
-            $result = mysqli_query($link, $exist_query);
+            $exist_result = mysqli_query($conn, $exist_query);
 
-            $row = mysqli_fetch_array($result, MYSQLI_BOTH);
+            $row = mysqli_fetch_array($exist_result, MYSQLI_BOTH);
 
             $user_code = $row['USER_CODE']; //user_code를 변수에 넣음.
             $sys_info_ip = $row['OUTER_IP']; //user_code의 ip를 변수에 넣음.
