@@ -56,7 +56,7 @@
             echo  json_encode($data);
 
             $result_data = $_POST['$data'];
-            http_post_fields("203.250.32.180:9001/device/add/sf/auto", $result_data);
+            http_post_data("203.250.32.180:9001/device/add/sf/auto", $result_data);
         }
         else {
             echo "Please user_code input..";
