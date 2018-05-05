@@ -8,6 +8,19 @@
     define("USER", "manager");
     define("PASS", "manager");
 
+    $db_host = "localhost";
+    $db_user = "root";
+    $db_passwd = "619412";
+    $db_name = "water_middle_server";
+
+    $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connected Failed!!!!");
+
+    $query = "SELECT * FROM Sys_info";
+    while( $row = mysqli_fetch_array($query, MYSQLI_NUM) ) { //MYSQPLI_BOTH
+        $user_code = $row['USER_CODE'];
+        echo $user_code;
+    }
+
     $connection = new AMQPStreamConnection(HOST, PORT, USER, PASS);
 
     $channel = $connection->channel();
