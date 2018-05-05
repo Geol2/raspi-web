@@ -12,7 +12,10 @@
 ?>
 
 <?php
-
+    header("Access-Control-Allow-Origin: *");
+    header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+    header("Content-Type: application/json");
+    
     $ip = $_GET['ip']; //Query_string
     //$site = $_SERVER['DOCUMENT_ROOT']; //index.php road
     //$self_ip = $_SERVER['SERVER_ADDR']; //my ip
