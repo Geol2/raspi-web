@@ -53,7 +53,7 @@
             $sys_info_ip = $row['OUTER_IP']; //user_code의 ip를 변수에 넣음.
 
             $data = ['apInfo' => $sys_info_ip, 'ipInfo' => $ip, 'userCode' => $user_code];
-            $json = json_encode($data);
+            $json = json_encode($data); echo $json;
 
             $url = "203.250.32.180:9001/device/add/sf/auto";
 
