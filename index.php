@@ -14,25 +14,9 @@
 <!DOCTYPE html>
 
 <html>
-	<head>
-		<meta name="viewport" content="width=device-width">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <title>Control</title>
+    <head>
 
-        <script>
-            // ajax로 값 전달
-            function goActEvent() {
-                $.ajax({
-                    url				: 'send.php',
-                    type			: 'GET',
-                    success		: function(result) {
-
-                    }
-                });
-            }
-        </script>
     </head>
-
 	<body>
 
     <?php
