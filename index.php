@@ -46,7 +46,7 @@
     printf("SERVER_IP : %s<br/>",$self_ip);
     printf("USER_IP : %s<br/>", $whois_user);
     printf("PORT : %s<br/>", $using_port);
-    echo $ip;
+    echo "QUERY_STRING_IP : ".$ip;
 
     if( $ip ){
         echo "get ip<br/>";
