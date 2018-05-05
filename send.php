@@ -28,7 +28,7 @@
 
     $user_code = $row['USER_CODE'];
 
-    printf ("%s \n", $user_code);
+    printf ("test: %s\n", $user_code);
 
     // ampq //
     $connection = new AMQPStreamConnection(HOST, PORT, USER, PASS);
