@@ -46,7 +46,7 @@
         if( $num >= 1) {
             //user_code가 존재한다면.
             $exist_query = "SELECT * FROM Sys_info";
-            $exist_result = mysqli_query($conn, $exist_query);
+            $exist_result = mysqli_query($conn, $exist_query) or die ("Error database.. not connect Sys_info 2 table.");
 
             $row = mysqli_fetch_array($exist_result, MYSQLI_BOTH);
 
