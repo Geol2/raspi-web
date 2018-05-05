@@ -13,14 +13,21 @@
     $db_passwd = "619412";
     $db_name = "water_middle_server";
 
-    $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connected Failed!!!!");
+    $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name);
 
-    $query = "SELECT * FROM Sys_info";
-    while( $row = mysqli_fetch_array($query, MYSQLI_BOTH) ) { //MYSQPLI_BOTH
-        $user_code = $row['USER_CODE'];
-        echo 'user_code : '.$user_code;
+    /* check connection */
+    if ($mysqli->connect_errno) {
+        printf("Connect failed: %s\n", $mysqli->connect_error);
+        exit();
     }
 
+    $query = "SELECT user_code FROM Sys_info";
+    $result = $mysqli->query($query);
+
+    $row = $result->fetch_array(MYSQLI_BOTH);
+    printf("%d", $row[0]);
+
+    //ampq
     $connection = new AMQPStreamConnection(HOST, PORT, USER, PASS);
 
     $channel = $connection->channel();
