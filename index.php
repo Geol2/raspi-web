@@ -23,7 +23,7 @@
     //printf("SERVER_IP : %s<br/>",$self_ip);
     //printf("USER_IP : %s<br/>", $whois_user);
     //printf("PORT : %s<br/>", $using_port);
-    echo "QUERY_STRING_IP : ".$ip;
+    echo "QUERY_STRING_IP : ".$ip; echo "</br>";
 
     if( $ip ){
         //echo "get ip<br/>";
@@ -34,7 +34,7 @@
         $query = "INSERT INTO product_info  VALUES ('$ip', '$led', '$state', '$register')";
         mysqli_query($conn, $query) or die ('Error database.');
 
-        echo 'Customer added.';
+        echo '  Customer added.';
 
         // 아랫줄부터 user_code의 존재여부를 확인 후 POST 방식으로 전송함.
         $query_user_code = "SELECT * FROM Sys_info";
