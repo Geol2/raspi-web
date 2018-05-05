@@ -59,8 +59,7 @@
 
             $ch = curl_init($url);
             curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-                    'Content-Type : application/json',
-                    'Content_Length : '.strlen($json)
+                    'Content-Type : application/json'
             ));
             curl_setopt($ch, CURLOPT_URL, $url);
 
