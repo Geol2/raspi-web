@@ -49,12 +49,12 @@
         printf("user ip : %s<br/>", $whois_user);
         printf("port num : %s<br/>", $using_port);
         printf("query string ip : %s<br/>", $ip);
-/*
-        if( $ip != NULL ){
-            echo "get ip<br/>";
-            $led = 'N';
-            $state = 'N';
-            $register = 'N';
+
+        //if( $ip != NULL ){
+            //echo "get ip<br/>";
+            //$led = 'N';
+            //$state = 'N';
+            //$register = 'N';
 
             //$query = "INSERT INTO product_info  VALUES ('$ip', '$led', '$state', '$register')";
             //mysqli_query($conn, $query) or die ('Error database.');
@@ -62,11 +62,10 @@
             //echo 'Customer added.';
 
             //mysqli_close($conn);
-        }
-        else {
-            echo "Please get ip...";
-        }
-*/
+        //}
+        //else {
+            //echo "Please get ip...";
+        //}
 
 /*
         // 아랫줄부터 user_code의 존재여부를 확인 후 POST 방식으로 전송함.
