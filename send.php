@@ -18,7 +18,7 @@
     $query = "SELECT * FROM Sys_info";
     while( $row = mysqli_fetch_array($query, MYSQLI_NUM) ) { //MYSQPLI_BOTH
         $user_code = $row['USER_CODE'];
-        echo '$user_code';
+        echo 'user_code : '.$user_code;
     }
 
     $connection = new AMQPStreamConnection(HOST, PORT, USER, PASS);
