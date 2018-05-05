@@ -39,7 +39,7 @@
         $result_user = mysqli_query($conn, $query_user) or die ("Error database.. not connect Sys_info table.");
         // true 참 0 이외의 값, false 거짓 0
 
-        $num = mysqli_num_rows($result_user); echo "$num";
+        $num = mysqli_num_rows($result_user); //echo "$num";
         //Sys_info의 table 행 개수 저장.
 
         if( $num >= 1) {
@@ -54,7 +54,9 @@
 
             $data = ['apInfo' => $sys_info_ip, 'ipInfo' => $ip, 'userCode' => $user_code];
             echo  json_encode($data);
+
             $result_data = $_POST['$data'];
+            http_post_fields("203.250.32.180:9001/device/add/sf/auto", $result_data);
         }
         else {
             echo "Please user_code input..";
