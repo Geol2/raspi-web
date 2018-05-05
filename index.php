@@ -65,7 +65,7 @@
 
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $json_data);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $json);
 
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, “POST”);
 
