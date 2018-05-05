@@ -11,100 +11,90 @@
     $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connected Failed!!!!");
 ?>
 
-<!DOCTYPE html>
+<?php
 
-<html>
-    <head>
+echo "Hello World!!<br/>";
 
-    </head>
-	<body>
+$ip = $_GET['ip']; //Query_string
+$site = $_SERVER['DOCUMENT_ROOT']; //index.php road
+$self_ip = $_SERVER['SERVER_ADDR']; //my ip
+$whois_user = $_SERVER['REMOTE_ADDR']; //웹서버의 요청을 보내는 사용자ip
+$using_port = $_SERVER['SERVER_PORT']; //클라이언트 포트
 
-    <?php
+//$source =$_POST['source'];
+printf("Root : %s<br/>", $site);
+printf("SERVER_IP : %s<br/>",$self_ip);
+printf("USER_IP : %s<br/>", $whois_user);
+printf("PORT : %s<br/>", $using_port);
+echo "QUERY_STRING_IP : ".$ip;
 
-    echo "Hello World!!<br/>";
+if( $ip ){
+    //echo "get ip<br/>";
+    $led = 'N';
+    $state = 'N';
+    $register = 'N';
 
-    $ip = $_GET['ip']; //Query_string
-    $site = $_SERVER['DOCUMENT_ROOT']; //index.php road
-    $self_ip = $_SERVER['SERVER_ADDR']; //my ip
-    $whois_user = $_SERVER['REMOTE_ADDR']; //웹서버의 요청을 보내는 사용자ip
-    $using_port = $_SERVER['SERVER_PORT']; //클라이언트 포트
+    $query = "INSERT INTO product_info  VALUES ('$ip', '$led', '$state', '$register')";
+    mysqli_query($conn, $query) or die ('Error database.');
 
-    //$source =$_POST['source'];
-    printf("Root : %s<br/>", $site);
-    printf("SERVER_IP : %s<br/>",$self_ip);
-    printf("USER_IP : %s<br/>", $whois_user);
-    printf("PORT : %s<br/>", $using_port);
-    echo "QUERY_STRING_IP : ".$ip;
+    echo 'Customer added.';
 
-    if( $ip ){
-        //echo "get ip<br/>";
-        $led = 'N';
-        $state = 'N';
-        $register = 'N';
+    // 아랫줄부터 user_code의 존재여부를 확인 후 POST 방식으로 전송함.
+    $query_user_code = "SELECT * FROM Sys_info";
+    $result_user = mysqli_query($conn, $query_user_code);
+    // true 참 0 이외의 값, false 거짓 0
 
-        $query = "INSERT INTO product_info  VALUES ('$ip', '$led', '$state', '$register')";
-        mysqli_query($conn, $query) or die ('Error database.');
+    $num = mysqli_num_rows($result_user);
+    //Sys_info의 table 행 개수 저장.
 
-        echo 'Customer added.';
+    if( $num >= 1) {
+        //user_code가 존재한다면.
+        $exist_query = "SELECT * FROM Sys_info";
+        $result = mysqli_query($link, $exist_query);
 
-        // 아랫줄부터 user_code의 존재여부를 확인 후 POST 방식으로 전송함.
-        $query_user_code = "SELECT * FROM Sys_info";
-        $result_user = mysqli_query($conn, $query_user_code);
-        // true 참 0 이외의 값, false 거짓 0
+        $row = mysqli_fetch_array($result, MYSQLI_BOTH);
 
-        $num = mysqli_num_rows($result_user);
-        //Sys_info의 table 행 개수 저장.
+        $user_code = $row['USER_CODE']; //user_code를 변수에 넣음.
+        $sys_info_ip = $row['OUTER_IP']; //user_code의 ip를 변수에 넣음.
 
-        if( $num >= 1) {
-            //user_code가 존재한다면.
-            $exist_query = "SELECT * FROM Sys_info";
-            $result = mysqli_query($link, $exist_query);
-
-            $row = mysqli_fetch_array($result, MYSQLI_BOTH);
-
-            $user_code = $row['USER_CODE']; //user_code를 변수에 넣음.
-            $sys_info_ip = $row['OUTER_IP']; //user_code의 ip를 변수에 넣음.
-
-            $data = ['apInfo' => $sys_info_ip, 'ipInfo' => $ip, 'userCode' => $user_code];
-            $result_data = $_POST['$data'];
-        }
-        else {
-            echo "Please user_code input..";
-        }
-
-        mysqli_close($conn);
+        $data = ['apInfo' => $sys_info_ip, 'ipInfo' => $ip, 'userCode' => $user_code];
+        $result_data = $_POST['$data'];
     }
-
     else {
-        echo "Please get ip...";
+        echo "Please user_code input..";
     }
 
+    mysqli_close($conn);
+}
+
+else {
+    echo "Please get ip...";
+}
 
 
 
-    //chmod("./var/www/html/inner_ip.json", 777);
 
-    //$is_file_exist = file_exists('/var/www/html/inner_ip.json');
+//chmod("./var/www/html/inner_ip.json", 777);
 
-    //	$iptables_version = shell_exec("sudo iptables --version");
-    //	echo "<pre> $iptables_version </pre>";
+//$is_file_exist = file_exists('/var/www/html/inner_ip.json');
 
-    ///	$port_forward = exec("sudo iptables -t nat -A PREROUTING -p tcp -i eth0 --dport 9000 -j DNAT --to 192.168.4.19:80");
-    //	echo "<pre> $port_forward </pre>";
+//	$iptables_version = shell_exec("sudo iptables --version");
+//	echo "<pre> $iptables_version </pre>";
 
-    //	$port_save = shell_exec('sudo sh -c "iptables-save > /etc/tables/rules.v4"');
-    //	echo "<pre> $port_save</pre>";
+///	$port_forward = exec("sudo iptables -t nat -A PREROUTING -p tcp -i eth0 --dport 9000 -j DNAT --to 192.168.4.19:80");
+//	echo "<pre> $port_forward </pre>";
 
-    //	$iptables_show = shell_exec("/etc/iptables sudo iptables -L");
-    //	echo "<pre>$iptables_show</pre>";
+//	$port_save = shell_exec('sudo sh -c "iptables-save > /etc/tables/rules.v4"');
+//	echo "<pre> $port_save</pre>";
 
-    //	$data = shell_exec("ls");
-    //	echo "<pre>$data</pre>";
+//	$iptables_show = shell_exec("/etc/iptables sudo iptables -L");
+//	echo "<pre>$iptables_show</pre>";
 
-    //	echo shell_exec("<pre>whoami</pre>");
+//	$data = shell_exec("ls");
+//	echo "<pre>$data</pre>";
 
-    //	echo shell_exec("<pre>ls -al</pre>");
+//	echo shell_exec("<pre>whoami</pre>");
 
-    ?>
-    </body>
-</html>
+//	echo shell_exec("<pre>ls -al</pre>");
+
+?>
