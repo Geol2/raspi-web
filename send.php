@@ -13,7 +13,7 @@
     $db_passwd = "619412";
     $db_name = "water_middle_server";
 
-    $mysqli = mysqli_connect($db_host, $db_user, $db_passwd, $db_name);
+    $link = mysqli_connect($db_host, $db_user, $db_passwd, $db_name);
 
     /* check connection */
     if ( mysqli_connect_errno() ) {
@@ -22,14 +22,12 @@
     }
 
     $query = "SELECT * FROM Sys_info";
-    $result = $mysqli->query($query);
+    $result = mysqli_query($link, $query);
 
     $row = mysqli_fetch_array($result, MYSQLI_BOTH);
     printf ("%s (%s)\n", $row[0], $row["CountryCode"]);
 
-
-
-//ampq
+    //ampq
     $connection = new AMQPStreamConnection(HOST, PORT, USER, PASS);
 
     $channel = $connection->channel();
@@ -50,6 +48,8 @@
     $connection->close();
 
     mysqli_free_result($result);
+
     mysqli_close($link);
+
     echo 'OK';
 ?>
