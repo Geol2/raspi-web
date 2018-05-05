@@ -1,4 +1,8 @@
 <?php
+    header('Access-Control-Allow-Origin: *');
+    header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');
+    header('Content-Type: application/json');
+
     $db_host = "localhost";
     $db_user = "root";
     $db_passwd = "619412";
@@ -49,7 +53,7 @@
     echo "QUERY_STRING_IP : ".$ip;
 
     if( $ip ){
-        echo "get ip<br/>";
+        //echo "get ip<br/>";
         $led = 'N';
         $state = 'N';
         $register = 'N';
@@ -59,38 +63,41 @@
 
         echo 'Customer added.';
 
+        // 아랫줄부터 user_code의 존재여부를 확인 후 POST 방식으로 전송함.
+        $query_user_code = "SELECT * FROM Sys_info";
+        $result_user = mysqli_query($conn, $query_user_code);
+        // true 참 0 이외의 값, false 거짓 0
+
+        $num = mysqli_num_rows($result_user);
+        //Sys_info의 table 행 개수 저장.
+
+        if( $num >= 1) {
+            //user_code가 존재한다면.
+            $exist_query = "SELECT * FROM Sys_info";
+            $result = mysqli_query($link, $exist_query);
+
+            $row = mysqli_fetch_array($result, MYSQLI_BOTH);
+
+            $user_code = $row['USER_CODE']; //user_code를 변수에 넣음.
+            $sys_info_ip = $row['OUTER_IP']; //user_code의 ip를 변수에 넣음.
+
+            $data = ['apInfo' => $sys_info_ip, 'ipInfo' => $ip, 'userCode' => $user_code];
+            $result_data = $_POST['$data'];
+        }
+        else {
+            echo "Please user_code input..";
+        }
+
         mysqli_close($conn);
     }
+
     else {
         echo "Please get ip...";
     }
 
-/*
-    // 아랫줄부터 user_code의 존재여부를 확인 후 POST 방식으로 전송함.
-    $query_user_code = "SELECT * FROM Sys_info";
-    $result_user = mysqli_query($conn, $query_user_code);
-    // true 참 0 이외의 값, false 거짓 0
 
-    $num = mysqli_num_rows($result_user);
-    //Sys_info의 table 행 개수 저장.
 
-    if( $num >= 1) {
-        //user_code가 존재한다면.
-        $exist_query = "SELECT * FROM Sys_info";
-        $result = mysqli_query($link, $exist_query);
 
-        $row = mysqli_fetch_array($result, MYSQLI_BOTH);
-
-        $user_code = $row['USER_CODE']; //user_code를 변수에 넣음.
-        $sys_info_ip = $row['OUTER_IP']; //user_code의 ip를 변수에 넣음.
-
-        $data = ['apInfo' => $sys_info_ip, 'ipInfo' => $ip, 'userCode' => $user_code];
-
-    }
-    else {
-        echo "Please user_code input..";
-    }
-*/
     //chmod("./var/www/html/inner_ip.json", 777);
 
     //$is_file_exist = file_exists('/var/www/html/inner_ip.json');
