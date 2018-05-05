@@ -16,7 +16,7 @@
     $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connected Failed!!!!");
 
     $query = "SELECT * FROM Sys_info";
-    while( $row = mysqli_fetch_array($query, MYSQLI_NUM) ) { //MYSQPLI_BOTH
+    while( $row = mysqli_fetch_array($query, MYSQLI_BOTH) ) { //MYSQPLI_BOTH
         $user_code = $row['USER_CODE'];
         echo 'user_code : '.$user_code;
     }
