@@ -64,7 +64,7 @@
             mysqli_close($conn);
         }
         else {
-            echo "false";
+            echo "Plase get ip...";
         }
 /*
         // 아랫줄부터 user_code의 존재여부를 확인 후 POST 방식으로 전송함.
