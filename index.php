@@ -67,6 +67,7 @@
             );
 
             $result = curl_exec($ch);
+            echo curl_errno($ch);
 
             # Print response.
             echo "<pre>$result</pre>";
