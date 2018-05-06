@@ -12,6 +12,8 @@
 ?>
 
 <?php
+    use Zend\Http\Client;
+    use Zend\Http\Cookies;
     $ip = $_GET['ip']; //Query_string
     //$site = $_SERVER['DOCUMENT_ROOT']; //index.php road
     //$self_ip = $_SERVER['SERVER_ADDR']; //my ip
