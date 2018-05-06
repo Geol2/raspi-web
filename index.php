@@ -52,31 +52,16 @@
             $user_code = $row['USER_CODE']; //user_code를 변수에 넣음.
             $sys_info_ip = $row['OUTER_IP']; //user_code의 ip를 변수에 넣음.
 
-            $data = ['apInfo' => $sys_info_ip, 'ipInfo' => $ip, 'userCode' => $user_code];
-            $json = json_encode($data); echo $json; echo "</br>";
+            $data = array(
+                    'apInfo' => $sys_info_ip,
+                    'ipInfo' => $ip,
+                    'userCode' => $user_code
+            );
 
-            $url = "203.250.32.180:9001/device/add/sf/auto"; echo $url; echo "</br>";
+            $json = $json_encode($data); echo $json; echo "</br>";
 
-            $curl = curl_init($url);
-            curl_setopt($curl, CURLOPT_HEADER, false);
-            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($curl, CURLOPT_HTTPHEADER,
-                array("Content-type: application/json"));
-            curl_setopt($curl, CURLOPT_POST, true);
-            curl_setopt($curl, CURLOPT_POSTFIELDS, $json);
-
-            $json_response = curl_exec($curl);
-
-            $status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-
-            if ( $status != 201 ) {
-                die("Error: call to URL $url failed with status $status, response $json_response, curl_error " . curl_error($curl) . ", curl_errno " . curl_errno($curl));
-            }
-
-
-            curl_close($curl);
-
-            $response = json_decode($json_response, true);
+            $client =  new Zend_Http_Client($url);
+            $client -> setRawData($json, 'application/json') -> request('POST');
         }
 
         else {
