@@ -53,11 +53,11 @@
             $sys_info_ip = $row['OUTER_IP']; //user_code의 ip를 변수에 넣음.
 
             $data = ['apInfo' => $sys_info_ip, 'ipInfo' => $ip, 'userCode' => $user_code];
-            $json = json_encode($data); echo $json;
+            $json = json_encode($data); echo $json; echo "</br>";
 
-            $url = "203.250.32.180:9001/device/add/sf/auto";
+            $url = "203.250.32.180:9001/device/add/sf/auto"; echo $url; echo "</br>";
 
-            $ch = curl_init($url); echo $ch;
+            $ch = curl_init($url); echo $ch; echo "</br>";
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
             curl_setopt($ch, CURLOPT_POSTFIELDS, $json);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
