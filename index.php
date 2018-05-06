@@ -57,7 +57,7 @@
 
             $url = "203.250.32.180:9001/device/add/sf/auto"; echo $url; echo "</br>";
 
-            $ch = curl_init($url); echo $ch; echo "</br>";
+            $ch = curl_init(); echo $ch; echo "</br>";
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
             curl_setopt($ch, CURLOPT_POSTFIELDS, $json);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
