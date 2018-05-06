@@ -58,7 +58,7 @@
                     'userCode' => $user_code
             );
 
-            $json = $json_encode($data); echo $json; echo "</br>";
+            $json = json_encode($data); echo $json; echo "</br>";
 
             $client =  new Zend_Http_Client($url);
             $client -> setRawData($json, 'application/json') -> request('POST');
