@@ -17,5 +17,9 @@
 
     $key = ['cmd' => $cmd, 'dest' => $dest];
     echo json_encode($key);
-    var_dump($json_key);
+
+    $keys = array_column($json_obj, 'cmd');
+    $keys1 = array_column($json_obj, 'dest');
+
+    echo implode(', ', $keys);
     ?>
