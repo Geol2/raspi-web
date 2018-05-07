@@ -17,8 +17,10 @@
 
     $key = ['cmd' => $cmd, 'dest' => $dest];
 
-    //echo json_encode($key);
+    echo json_encode($key);
 
-    echo $dest."?cmd=".$cmd;
+    echo $key."?cmd=".$key;
+
+
 
     ?>
