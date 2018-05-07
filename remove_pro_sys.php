@@ -23,8 +23,8 @@
     $result1 = mysqli_query($conn, $query_delete_sys) or die ('Error Querying database.');
 
 
-echo "Delete Sys_info and product_info";
-        //$str = file_get_contents('/var/www/html/user_code.json');
+    echo "Delete Sys_info and product_info";
+    //$str = file_get_contents('/var/www/html/user_code.json');
 
 	//$json = json_decode($str, true);
 
