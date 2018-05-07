@@ -7,7 +7,7 @@
     $json_str = file_get_contents("php://input");
 
     // Get as an object..
-    $decoded = json_decode($json_str, true);
+    $json_obj = json_decode($json_str, true);
 
     $cmd = $json_obj->{"cmd"};
     $dest = $json_obj->{"dest"};
@@ -16,7 +16,6 @@
 
     $key = ['cmd' => $cmd, 'dest' => $dest];
 
-    $key1 = ['result'=>'OK'];
-    echo json_encode($key1);
+    echo json_encode($key);
 
     ?>
