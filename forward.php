@@ -16,10 +16,11 @@
     //$dest = $_POST['dest'];
 
     $key = ['cmd' => $cmd, 'dest' => $dest];
+    $json_key = json_encode($key);
 
     echo json_encode($key);
 
-    echo json_encode($key.$cmd)."?cmd=".$key;
+    echo $json_key."?cmd=".;
 
 
 
