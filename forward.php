@@ -15,7 +15,7 @@
     //$cmd = $_POST['cmd'];
     //$dest = $_POST['dest'];
 
-    //$key = ['cmd' => $cmd, 'dest' => $dest];
+    $key = ['cmd' => $cmd, 'dest' => $dest];
 
     //echo json_encode($key);
 
