@@ -8,8 +8,10 @@
 ?>
 
 <?php
-    //use Middle;
-    //use GuzzleHttp\Promise\PromiseInterface
+    require_once __DIR__ .'/vendor/autoload.php';
+
+    use Middlew;
+    use
 
     $ip = $_GET['ip']; //Query_string
     //$site = $_SERVER['DOCUMENT_ROOT']; //index.php road

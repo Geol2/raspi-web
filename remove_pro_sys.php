@@ -16,7 +16,7 @@
     # Get as an object
     $json_obj = json_decode($json_str);
 
-    $query = "DELETE FROM Sys_info, product_info";
+    $query = "DELETE FROM ( Sys_info, product_info )";
     $result = mysqli_query($conn, $query) or die ('Error Querying database.');
 
     echo "Delete Sys_info and product_info";
