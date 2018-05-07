@@ -8,11 +8,12 @@
 
     // Get as an object..
     $decoded = json_decode($json_str, true);
-
+    echo json_decode($decoded, true);
     $cmd = $json_obj->{"cmd"};
     $dest = $json_obj->{"dest"};
 
     $key = ['cmd' => $cmd, 'dest' => $dest];
+
     echo json_encode($key);
 
     ?>
