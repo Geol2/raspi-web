@@ -7,7 +7,7 @@
     $json_str = file_get_contents("php://input");
 
     // Get as an object..
-    $json_obj = json_decode($json_str, true);
+    $json_obj = json_decode($json_str);
 
     $cmd = $json_obj->{"cmd"};
     $dest = $json_obj->{"dest"};
