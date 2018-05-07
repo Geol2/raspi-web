@@ -16,10 +16,14 @@
     # Get as an object
     $json_obj = json_decode($json_str);
 
-    $query = "DELETE FROM ( Sys_info, product_info )";
-    $result = mysqli_query($conn, $query) or die ('Error Querying database.');
+    $query_delete_pro = "DELETE FROM product_info";
+    $result = mysqli_query($conn, $query_delete_pro) or die ('Error Querying database.');
 
-    echo "Delete Sys_info and product_info";
+    $query_delete_sys = "DELETE FROM Sys_info";
+    $result1 = mysqli_query($conn, $query_delete_sys) or die ('Error Querying database.');
+
+
+echo "Delete Sys_info and product_info";
         //$str = file_get_contents('/var/www/html/user_code.json');
 
 	//$json = json_decode($str, true);
