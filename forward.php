@@ -3,12 +3,16 @@
     header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');
     header('Content-Type: application/json');
 
-    //Receive the RAW post data.
-    $content = trim(file_get_contents("php://input"));
+    //Get JSON as a string..
+    $json_str = file_get_contents("php://input");
 
-    //Attempt to decode the incoming RAW post data from JSON.
-    $decoded = json_decode($content, true);
+    // Get as an object..
+    $decoded = json_decode($json_str, true);
 
-    echo $decoded;
+    $cmd = $json_obj->{"cmd"};
+    $dest = $json_obj->{"dest"};
 
+    $key = ['cmd' => $cmd, 'dest' => $dest];
+    echo json_encode($key);
+    
     ?>
