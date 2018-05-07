@@ -19,7 +19,7 @@
 
     echo json_encode($key);
 
-    echo $key."?cmd=".$key;
+    echo $key.$cmd."?cmd=".$key;
 
 
 
