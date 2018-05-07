@@ -19,9 +19,5 @@
     $json_key = json_encode($key);
 
     echo json_encode($key);
-
-    echo $json_key."?cmd=";
-
-
-
+    var_dump($json_key);
     ?>
