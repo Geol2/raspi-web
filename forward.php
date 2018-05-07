@@ -12,7 +12,7 @@
     $cmd = $json_obj->{"cmd"};
     $dest = $json_obj->{"dest"};
 
-    $key = ['cmd' => $cmd, 'dest' => '$dest'];
+    $key = ['cmd' => $cmd, 'dest' => $dest];
     echo json_encode($key);
 
     ?>
