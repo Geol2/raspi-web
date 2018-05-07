@@ -16,7 +16,7 @@
 
     $key = ['cmd' => $cmd, 'dest' => $dest];
 
-    $key = ['result'=>'OK'];
-    echo json_encode($key);
+    $key1 = ['result'=>'OK'];
+    echo json_encode($key1);
 
     ?>
