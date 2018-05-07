@@ -9,14 +9,14 @@
     // Get as an object..
     $decoded = json_decode($json_str, true);
 
-    //$cmd = $json_obj->{"cmd"};
-    //$dest = $json_obj->{"dest"};
-
-    $cmd = $_POST['cmd'];
-    $dest = $_POST['dest'];
+    $cmd = $json_obj->{"cmd"};
+    $dest = $json_obj->{"dest"};
+    //$cmd = $_POST['cmd'];
+    //$dest = $_POST['dest'];
 
     $key = ['cmd' => $cmd, 'dest' => $dest];
 
+    $key = ['result'=>'OK'];
     echo json_encode($key);
 
     ?>
