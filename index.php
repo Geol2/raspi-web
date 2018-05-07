@@ -1,8 +1,4 @@
 <?php
-    //header('Access-Control-Allow-Origin: *');
-    //header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');
-    //header('Content-Type: application/json');
-
     $db_host = "localhost";
     $db_user = "root";
     $db_passwd = "619412";
@@ -12,8 +8,9 @@
 ?>
 
 <?php
-    use Zend\Http\Client;
-    use Zend\Http\Cookies;
+    //use Middle;
+    //use GuzzleHttp\Promise\PromiseInterface
+
     $ip = $_GET['ip']; //Query_string
     //$site = $_SERVER['DOCUMENT_ROOT']; //index.php road
     //$self_ip = $_SERVER['SERVER_ADDR']; //my ip
@@ -60,10 +57,9 @@
                     'userCode' => $user_code
             );
 
-            $json = json_encode($data); echo $json; echo "</br>";
+           //$client = new Client();
 
-            $client =  new Zend_Http_Client($url);
-            $client -> setRawData($json, 'application/json') -> request('POST');
+           //$response =
         }
 
         else {
