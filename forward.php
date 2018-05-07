@@ -20,5 +20,5 @@
     //echo json_encode($key);
 
     $get_cmd = $_GET['cmd'];
-    echo "QUERY_STRING".$get_cmd;
+    echo "QUERY_STRING : ".$get_cmd;
 ?>
