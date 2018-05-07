@@ -19,7 +19,10 @@
     $query = "DELETE FROM product_info";
     $result = mysqli_query($conn, $query) or die ('Error Querying database.');
 
+    $key = ['result'=>'OK'];
+    echo json_encode($key);
     echo "Delete product_info";
+
     //$str = file_get_contents('/var/www/html/user_code.json');
 
     //$json = json_decode($str, true);
