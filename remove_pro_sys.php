@@ -10,12 +10,6 @@
 
     $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connected Failed!!!!");
 
-    # Get JSON as a string
-    $json_str = file_get_contents('php://input');
-
-    # Get as an object
-    $json_obj = json_decode($json_str);
-
     $query_delete_pro = "DELETE FROM product_info";
     $result = mysqli_query($conn, $query_delete_pro) or die ('Error Querying database.');
 
