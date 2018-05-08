@@ -1,3 +1,5 @@
+<!-- AMQP를 이용하여 아두이노에서 받은 데이터를 받아 서버로 전송하는 코드. -->
+
 <?php
     require_once __DIR__ . '/vendor/autoload.php';
     use PhpAmqpLib\Connection\AMQPStreamConnection;
@@ -40,6 +42,7 @@
 
     $temp = ['id'=> $id, 't'=> $_GET['t'], 'h'=> $_GET['h'], 'wt'=> $_GET['wt'], 'wl'=> $_GET['wl'], 'e'=> $_GET['e']];
     //get arduino data..
+
     $data = json_encode($temp);
 
     $msg = new AMQPMessage( $data, [

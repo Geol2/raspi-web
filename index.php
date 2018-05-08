@@ -1,3 +1,5 @@
+<!-- 아두이노에서 오는 IP를 받아서 자동으로 장비를 추가해주는 코드. -->
+
 <?php
     $db_host = "localhost";
     $db_user = "root";
@@ -11,7 +13,6 @@
     require_once __DIR__ .'/vendor/autoload.php';
 
     use Middlew;
-    use
 
     $ip = $_GET['ip']; //Query_string
     //$site = $_SERVER['DOCUMENT_ROOT']; //index.php road

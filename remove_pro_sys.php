@@ -1,3 +1,5 @@
+<!-- product_info 와 Sys_info 두 개의 테이블의 내용을 삭제. -->
+
 <?php
     header('Access-Control-Allow-Origin: * ');
     header('Access-Control-Allow-Headers: Origin, X-Requested-With, Contentent-Type, Accept');

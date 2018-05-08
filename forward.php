@@ -1,3 +1,4 @@
+<!-- 포워딩 페이지 작성. -->
 <?php
     header('Access-Control-Allow-Origin: *');
     header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');
