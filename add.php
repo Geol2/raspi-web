@@ -1,6 +1,7 @@
-<!-- Sys_info 를 웹서버에서 수동으로 추가해주는 부분. -->
 
 <?php
+//Sys_info 를 웹서버에서 수동으로 추가해주는 부분.
+
 	header("Access-Control-Allow-Origin: *");
 	header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 	header("Content-Type: application/json");

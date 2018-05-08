@@ -1,7 +1,8 @@
-<!-- AMQP를 이용하여 아두이노에서 받은 데이터를 받아 서버로 전송하는 코드. -->
-<!-- usercode를 전역, 글로벌 변수로 만들어 한 번만 접근할 수 있게 만들어 보자.-->
 
 <?php
+// AMQP를 이용하여 아두이노에서 받은 데이터를 받아 서버로 전송하는 코드. -->
+// usercode를 전역, 글로벌 변수로 만들어 한 번만 접근할 수 있게 만들어 보자.-->
+
     require_once __DIR__ . '/vendor/autoload.php';
     use PhpAmqpLib\Connection\AMQPStreamConnection;
     use PhpAmqpLib\Message\AMQPMessage;
