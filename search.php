@@ -28,9 +28,10 @@
     ?>
 
 
-<!-- Sys_info의 내용을 조회에서 공유기의 추가중복을 방지하게 하기 위해 만듦.-->
 
 <?php
+// Sys_info의 내용을 조회에서 공유기의 추가중복을 방지하게 하기 위해 만듦.-->
+
     header('Access-Control-Allow-Origin: *');
     header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');
     header('Content-Type: application/json');
