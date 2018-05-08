@@ -1,4 +1,5 @@
-<!-- DB의 product_info 에 -->
+<!-- 유저코드를 통하여 웹서버에서 라즈베리파이 공유기를 찾게 해줌. -->
+
 <?php
 
 	header('Access-Control-Allow-Origin: *');
@@ -28,7 +29,7 @@
     ?>
 
 
-<!-- Sys_info의 내용을 조회에서 공유기의 추가중복을 방지하게 하기 위해 만듬.-->
+<!-- Sys_info의 내용을 조회에서 공유기의 추가중복을 방지하게 하기 위해 만듦.-->
 
 <?php
     header('Access-Control-Allow-Origin: *');

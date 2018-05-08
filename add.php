@@ -1,4 +1,4 @@
-<!-- Sys_info 를 수동으로 추가해주는 부분. -->
+<!-- Sys_info 를 웹서버에서 수동으로 추가해주는 부분. -->
 
 <?php
 	header("Access-Control-Allow-Origin: *");
