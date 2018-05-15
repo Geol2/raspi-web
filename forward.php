@@ -11,17 +11,17 @@
     // Get as an object..
     $json_obj = json_decode($json_str);
 
-    $cmd = $json_obj->{"cmd"};
-    $dest = $json_obj->{"dest"};
-    $user_code = $json_obj->{"userCode"};
+    $cmd = $json_obj -> {"cmd"};
+    $dest = $json_obj -> {"dest"};
+    $user_code = $json_obj -> {"userCode"};
     //$cmd = $_POST['cmd'];
     //$dest = $_POST['dest'];
 
     $key = ['cmd' => $cmd, 'dest' => $dest];
     echo json_encode($key);
 
-    $keys = array_column($json_obj, 'cmd');
-    $keys1 = array_column($json_obj, 'dest');
+    $keys = array_column($json_obj, "cmd");
+    $keys1 = array_column($json_obj, "dest");
 
     echo implode(', ', $keys);
     ?>

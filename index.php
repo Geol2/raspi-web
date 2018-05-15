@@ -15,7 +15,7 @@
 <?php
     require_once __DIR__ .'/vendor/autoload.php';
 
-    use Middlew;
+    use Middle;
 
     $ip = $_GET['ip']; //Query_string
     //$site = $_SERVER['DOCUMENT_ROOT']; //index.php road
@@ -57,15 +57,26 @@
             $user_code = $row['USER_CODE']; //user_code를 변수에 넣음.
             $sys_info_ip = $row['OUTER_IP']; //user_code의 ip를 변수에 넣음.
 
-            $data = array(
-                    'apInfo' => $sys_info_ip,
-                    'ipInfo' => $ip,
-                    'userCode' => $user_code
+            $fields = array(
+                    'apInfo' => urlencode($sys_info_ip),
+                    'ipInfo' => urlencode($ip),
+                    'userCode' => urlencode($user_code)
             );
+            
+            foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
+            $fields_string = rtrim($fields_string,'&');
 
-           //$client = new Client();
+            //open connection
+            $ch = curl_init();
 
-           //$response =
+            //set the url, number of POST vars, POST data
+            curl_setopt($ch,CURLOPT_URL,$url);
+            curl_setopt($ch,CURLOPT_POST,count($fields));
+            curl_setopt($ch,CURLOPT_POSTFIELDS,$fields_string);
+
+            //execute post
+            $result = curl_exec($ch);
+            print $result;
         }
 
         else {
