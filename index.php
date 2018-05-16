@@ -62,10 +62,11 @@
                     'ipInfo' => urlencode($ip),
                     'userCode' => urlencode($user_code)
             );
-            
+
             foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
             $fields_string = rtrim($fields_string,'&');
 
+            
             //open connection
             $ch = curl_init();
 
