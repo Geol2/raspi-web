@@ -31,7 +31,7 @@ $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connect
     $key = ['cmd' => $cmd, 'dest' => $dest]; // 받아온 cmd, userCode 값을 key에 넣음.
     //echo json_encode($key);
 
-    $query = "SELECT USER_CODE FROM Sys_info WHERE USER_CODE = $user_code";
+    $query = "SELECT USER_CODE FROM Sys_info WHERE USER_CODE = '$user_code'";
     $result = mysqli_query($conn, $query) or die ("Error Database connect!!");
 
     while($data = mysqli_fetch_assoc($result)){
