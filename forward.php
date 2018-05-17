@@ -48,17 +48,17 @@ $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connect
             //echo "success"; //출력 완료.
 
             $ardu_url = $dest."".$cmd_string; // 요청 url 주소.
-            echo $ardu_url;
+            //echo $ardu_url;
 
             $query_string_data = $dest."".$cmd_string.""."".$cmd; // 쿼리스트링을 전송하기 위한 변수를 만듬.
-            echo $query_string_data; // 출력 완료.
+            //echo $query_string_data; // 출력 완료.
 
             $ch = curl_init($query_string_data);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); // 요청 실행.
 
             curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10); // 타임아웃 설정.
 
-            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); //get 방식을 이용한다.
 
 
             $response = curl_exec($ch);
