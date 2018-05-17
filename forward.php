@@ -46,16 +46,21 @@ $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connect
 
         if( $user_code == $user_code_data) { //데이터베이스의 유저코드와 서버에서 받아온 유저코드가 같으면
             //echo "success"; //출력 완료.
+
             $ardu_url = $dest."".$cmd_string; // 요청 url 주소.
             echo $ardu_url;
+
             $query_string_data = $dest."".$cmd_string.""."".$cmd; // 쿼리스트링을 전송하기 위한 변수를 만듬.
             echo $query_string_data; // 출력 완료.
 
-            $ch = curl_init($dest);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, false);
-            curl_setopt($ch, CURLOPT_HEADER, false);
-            curl_setopt($ch, CURLOPT_POST, false);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $cmd);
+            $ch = curl_init($query_string_data);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); // 요청 실행.
+
+            curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10); // 타임아웃 설정.
+
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+
+
             $response = curl_exec($ch);
             echo $response;
         }
