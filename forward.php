@@ -46,7 +46,7 @@ $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connect
 
         if( $user_code == $user_code_data) { //데이터베이스의 유저코드와 서버에서 받아온 유저코드가 같으면
             //echo "success"; //출력 완료.
-            $query_string_data = /*$dest."".*/$cmd_string.""."".$cmd; // 쿼리스트링을 전송하기 위한 변수를 만듬.
+            $query_string_data = /*$dest."".$cmd_string.""."".*/$cmd; // 쿼리스트링을 전송하기 위한 변수를 만듬.
             echo $query_string_data; // 출력 완료.
 
             $response = http_post_fields( $dest, $query_string_data);
