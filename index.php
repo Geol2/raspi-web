@@ -43,7 +43,7 @@
         $result_user = mysqli_query($conn, $query_user) or die ("Error database.. not connect Sys_info table.");
         // true 참 0 이외의 값, false 거짓 0
 
-        $num = mysqli_num_rows($result_user); //echo "$num";
+        $num = mysqli_num_rows($result_user); echo "$num";
         //Sys_info의 table 행 개수 저장.
 
         if( $num >= 1) {
