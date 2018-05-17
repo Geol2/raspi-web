@@ -72,7 +72,7 @@
             curl_setopt($c, CURLOPT_POSTFIELDS, json_encode($fields));
 
             print curl_exec($c);
-            echo json_encode($fields);
+            
             curl_close($c);
         }
 
