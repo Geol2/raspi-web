@@ -65,7 +65,7 @@
 
             // set URL and other appropriate options
             curl_setopt($ch, CURLOPT_URL, "http://www.naver.com/");
-            curl_setopt($ch, CURLOPT_HEADER, 0);
+            curl_setopt($ch, CURLOPT_HEADER, 1);
 
             // grab URL and pass it to the browser
             curl_exec($ch);
