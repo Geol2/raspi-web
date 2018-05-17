@@ -29,9 +29,8 @@ $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connect
     $cmd = 4;
     $dest = "192.168.4.11";
     $user_code = 0; //명시적으로 준 값이므로 바로 윗줄 코드랑 바꾸어 주어야 함.
+
     $cmd_string = "?cmd=";
-    //$cmd = $_POST['cmd'];
-    //$dest = $_POST['dest'];
 
     $key = ['cmd' => $cmd, 'dest' => $dest]; // 받아온 cmd, userCode 값을 key에 넣음.
     //echo json_encode($key);
@@ -41,14 +40,18 @@ $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connect
 
     while($data = mysqli_fetch_array($result_query)){
 
-        print_r($data); // 유져코드 출력 완료. ( 배열로 출력됨. )
+        //print_r($data); // 유져코드 출력 완료. ( 배열로 출력됨. )
 
         $user_code_data = $data['USER_CODE']; //user_code 값을 변수에 저장.
 
         if( $user_code == $user_code_data) { //데이터베이스의 유저코드와 서버에서 받아온 유저코드가 같으면
-            echo "success"; //출력 완료.
-            $dest_data = $dest."".$cmd_string.""."".$cmd;
-            echo $dest_data;
+            //echo "success"; //출력 완료.
+            $query_string_data = /*$dest."".*/$cmd_string.""."".$cmd; // 쿼리스트링을 전송하기 위한 변수를 만듬.
+            //echo $query_string_data; // 출력 완료.
+
+            $response = http_post_fields( $dest, $query_string_data);
+
+            echo $response;
         }
         else {
             echo "Compare DB, json_obj fail";
