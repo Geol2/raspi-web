@@ -31,10 +31,16 @@ $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connect
     $key = ['cmd' => $cmd, 'dest' => $dest]; // 받아온 cmd, userCode 값을 key에 넣음.
     //echo json_encode($key);
 
-    $query = "SELECT OUTER_IP FROM Sys_info";
+    $query = "SELECT USER_CODE FROM Sys_info";
     $result = mysqli_query($conn, $query) or die ("Error Database connect!!");
 
     while($data = mysqli_fetch_array($result)){
-        print_r($data);
+        //print_r($data); // 유져코드 출력 완료.
+        if( $user_code == $data) {
+            echo "success";
+        }
+        else {
+            echo "fail";    
+        }
     }
     ?>
