@@ -37,7 +37,7 @@
         $query = "INSERT INTO product_info  VALUES ('$ip', '$led', '$state', '$register')";
         $result_ip = mysqli_query($conn, $query) or die ('Error database.. not connect product table.');
         echo '  Customer added.'; echo "</br>";
-
+        /*
         // 아랫줄부터 user_code의 존재여부를 확인 후 POST 방식으로 전송함.
         $query_user = "SELECT * FROM Sys_info"; //echo $query; echo "</br>";
         $result_user = mysqli_query($conn, $query_user) or die ("Error database.. not connect Sys_info table.");
@@ -85,7 +85,7 @@
     else {
         echo "Please get ip...";
     }
-
+*/
     //chmod("./var/www/html/inner_ip.json", 777);
 
     //$is_file_exist = file_exists('/var/www/html/inner_ip.json');
