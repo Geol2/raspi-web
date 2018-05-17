@@ -38,14 +38,14 @@ $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connect
 
         print_r($data); // 유져코드 출력 완료. ( 배열로 출력됨. )
 
-        echo $data['USER_CODE'].'=>'.$data[1];
-        /*
-        if( $user_code == $data) {
+        $user_code_data = $data['USER_CODE']; //user_code 값을 변수에 저장.
+
+        if( $user_code == $user_code_data) {
             echo "success";
         }
         else {
             echo "fail";
         }
-        */
+        
     }
     ?>
