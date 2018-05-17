@@ -25,7 +25,7 @@ $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connect
     $cmd = $json_obj -> {"cmd"};
     $dest = $json_obj -> {"dest"};
     //$user_code = $json_obj -> {"userCode"}; 명시적으로 줄거라서 일단 주석 침.
-    $user_code = 0;
+    $user_code = 0; //명시적으로 준 값이므로 바로 윗줄 코드랑 바꾸어 주어야 함.
     //$cmd = $_POST['cmd'];
     //$dest = $_POST['dest'];
 
@@ -41,11 +41,13 @@ $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connect
 
         $user_code_data = $data['USER_CODE']; //user_code 값을 변수에 저장.
 
-        if( $user_code == $user_code_data) {
-            echo "success";
+        if( $user_code == $user_code_data) { //데이터베이스의 유저코드와 서버에서 받아온 유저코드가 같으면
+            echo "success"; //출력 완료.
+            $dest_data = $dest.'?';
+            echo $dest_data;
         }
         else {
-            echo "fail";
+            echo "Compare DB, json_obj fail";
         }
 
     }
