@@ -45,12 +45,12 @@
 
         $num = mysqli_num_rows($result_user); echo "$num";
         //Sys_info의 table 행 개수 저장.
-/*
+
         if( $num >= 1) {
             //user_code가 존재한다면.
             $exist_query = "SELECT * FROM Sys_info";
             $exist_result = mysqli_query($conn, $exist_query) or die ("Error database.. not connect Sys_info 2 table.");
-
+/*
             $row = mysqli_fetch_array($exist_result, MYSQLI_ASSOC);
 
             $user_code = $row['USER_CODE']; //user_code를 변수에 넣음.
@@ -72,7 +72,7 @@
             curl_setopt($c, CURLOPT_POSTFIELDS, json_encode($fields));
 
             print curl_exec($c);
-
+*/
         }
 
         else {
@@ -84,7 +84,7 @@
 
     else {
         echo "Please get ip...";
-*/    }
+    }
 
     //chmod("./var/www/html/inner_ip.json", 777);
 
