@@ -62,7 +62,7 @@
                     'userCode' => $user_code
             );
 
-            $url = '203.250.32.157:9001/smart_plant/device/add/sf/auto'; //이것도 변경 가능성이 있음.
+            $url = 'http://203.250.32.157:9001/smart_plant/device/add/sf/auto'; //이것도 변경 가능성이 있음.
 
             $c = curl_init($url);
 
@@ -71,7 +71,7 @@
             curl_setopt($c, CURLOPT_HTTPHEADER, array('Content-Type: application/json')); //전송할 데이터를 JSON으로 가공하기.
             curl_setopt($c, CURLOPT_POSTFIELDS, json_encode($fields));
 
-            //print curl_exec($c);
+            print curl_exec($c);
             echo json_encode($fields);
             curl_close($c);
         }
