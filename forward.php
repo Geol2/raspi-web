@@ -22,18 +22,18 @@ $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connect
     // Get as an object..
     $json_obj = json_decode($json_str);
 
-    $cmd = $json_obj -> {"cmd"};
-    $dest = $json_obj -> {"dest"};
-    $user_code = $json_obj -> {"userCode"}; //명시적으로 줄거라서 일단 주석 침. cmd, dest도 마찬가지
+    //$cmd = $json_obj -> {"cmd"};
+    //$dest = $json_obj -> {"dest"};
+    //$user_code = $json_obj -> {"userCode"}; //명시적으로 줄거라서 일단 주석 침. cmd, dest도 마찬가지
 
-    //$cmd = 4;
-    //$dest = "192.168.4.11";
-    //$user_code = 0; //명시적으로 준 값이므로 바로 윗줄 코드랑 바꾸어 주어야 함.
+    $cmd = 4;
+    $dest = "192.168.4.11";
+    $user_code = 0; //명시적으로 준 값이므로 바로 윗줄 코드랑 바꾸어 주어야 함.
 
     $cmd_string = "?cmd=";
 
     $key = ['cmd' => $cmd, 'dest' => $dest]; // 받아온 cmd, userCode 값을 key에 넣음.
-    //echo json_encode($key);
+    echo json_encode($key);
 
     $query = "SELECT USER_CODE FROM Sys_info WHERE USER_CODE = '$user_code'"; //Sys_info 테이블의 USER_CODE와 $user_code를 비교하여 USER_CODE를 받는 쿼리문.
     $result_query = mysqli_query($conn, $query) or die ("Error Database connect!!");
@@ -49,8 +49,13 @@ $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connect
             $query_string_data = /*$dest."".$cmd_string.""."".*/$cmd; // 쿼리스트링을 전송하기 위한 변수를 만듬.
             echo $query_string_data; // 출력 완료.
 
-            $response = http_post_fields($dest."".$cmd_string, $query_string_data);
-
+            $ch    = curl_init();
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_HEADER, false);
+            curl_setopt($ch, CURLOPT_URL, $dest."".$cmd_string);
+            curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $cmd);
+            $response = curl_exec($ch);
             echo $response;
         }
         else {
