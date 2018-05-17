@@ -22,13 +22,13 @@ $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connect
     // Get as an object..
     $json_obj = json_decode($json_str);
 
-    //$cmd = $json_obj -> {"cmd"};
-    //$dest = $json_obj -> {"dest"};
-    //$user_code = $json_obj -> {"userCode"}; 명시적으로 줄거라서 일단 주석 침. cmd, dest도 마찬가지
+    $cmd = $json_obj -> {"cmd"};
+    $dest = $json_obj -> {"dest"};
+    $user_code = $json_obj -> {"userCode"}; //명시적으로 줄거라서 일단 주석 침. cmd, dest도 마찬가지
 
-    $cmd = 4;
-    $dest = "192.168.4.11";
-    $user_code = 0; //명시적으로 준 값이므로 바로 윗줄 코드랑 바꾸어 주어야 함.
+    //$cmd = 4;
+    //$dest = "192.168.4.11";
+    //$user_code = 0; //명시적으로 준 값이므로 바로 윗줄 코드랑 바꾸어 주어야 함.
 
     $cmd_string = "?cmd=";
 
