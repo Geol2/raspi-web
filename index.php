@@ -61,7 +61,7 @@
                     'ipInfo' => $ip,
                     'userCode' => $user_code
             );
-/*
+
             $url = '203.250.32.180:9001/smart_plant/device/sf/auto';
 
             $c = curl_init($url);
@@ -72,7 +72,7 @@
             curl_setopt($c, CURLOPT_POSTFIELDS, json_encode($fields));
 
             print curl_exec($c);
-*/
+
         }
 
         else {
