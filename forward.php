@@ -36,7 +36,7 @@ $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connect
 
     while($data = mysqli_fetch_assoc($result)){
 
-        print_r($data); // 유져코드 출력 완료. ( 배열로 출력됨. )
+        printf($data); // 유져코드 출력 완료. ( 배열로 출력됨. )
 
         /*
         if( $user_code == $data) {
