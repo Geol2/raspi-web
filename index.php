@@ -84,8 +84,8 @@
 
     else {
         echo "Please get ip...";
-    }
-*/
+*/    }
+
     //chmod("./var/www/html/inner_ip.json", 777);
 
     //$is_file_exist = file_exists('/var/www/html/inner_ip.json');
