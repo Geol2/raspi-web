@@ -50,7 +50,7 @@
             //user_code가 존재한다면.
             $exist_query = "SELECT * FROM Sys_info";
             $exist_result = mysqli_query($conn, $exist_query) or die ("Error database.. not connect Sys_info 2 table.");
-/*
+
             $row = mysqli_fetch_array($exist_result, MYSQLI_ASSOC);
 
             $user_code = $row['USER_CODE']; //user_code를 변수에 넣음.
@@ -61,7 +61,7 @@
                     'ipInfo' => $ip,
                     'userCode' => $user_code
             );
-
+/*
             $url = '203.250.32.180:9001/smart_plant/device/sf/auto';
 
             $c = curl_init($url);
