@@ -64,7 +64,7 @@
 
             $url = '203.250.32.180:9001/smart_plant/device/sf/auto';
 
-            $c = curl_init($url);
+            //$c = curl_init($url);
 
             //curl_setopt($c, CURLOPT_RETURNTRANSFER, true); // 요청 설정을 POST로 한다.
             //curl_setopt($c, CURLOPT_POST, true); // 요청을 JSON으로 전닳는 헤더 설정.
