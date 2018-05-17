@@ -27,7 +27,7 @@ $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connect
     //$user_code = $json_obj -> {"userCode"}; 명시적으로 줄거라서 일단 주석 침. cmd, dest도 마찬가지
 
     $cmd = 4;
-    $dest = 192.168.4.11;
+    $dest = "192.168.4.11";
     $user_code = 0; //명시적으로 준 값이므로 바로 윗줄 코드랑 바꾸어 주어야 함.
     $cmd_string = "?cmd=";
     //$cmd = $_POST['cmd'];
