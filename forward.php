@@ -31,13 +31,14 @@ $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connect
     $key = ['cmd' => $cmd, 'dest' => $dest]; // 받아온 cmd, userCode 값을 key에 넣음.
     //echo json_encode($key);
 
-    $query = "SELECT USER_CODE FROM Sys_info WHERE USER_CODE = '$user_code'";
-    $result = mysqli_query($conn, $query) or die ("Error Database connect!!");
+    $query = "SELECT USER_CODE FROM Sys_info WHERE USER_CODE = '$user_code'"; //Sys_info 테이블의 USER_CODE와 $user_code를 비교하여 USER_CODE를 받는 쿼리문.
+    $result_query = mysqli_query($conn, $query) or die ("Error Database connect!!");
 
-    while($data = mysqli_fetch_assoc($result)){
+    while($data = mysqli_fetch_array($result_query)){
 
-        printf($data); // 유져코드 출력 완료. ( 배열로 출력됨. )
+        print_r($data); // 유져코드 출력 완료. ( 배열로 출력됨. )
 
+        echo $data['USER_CODE'].'=>'.$data[1];
         /*
         if( $user_code == $data) {
             echo "success";
