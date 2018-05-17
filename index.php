@@ -1,7 +1,7 @@
 
 <?php
 // 아두이노에서 오는 IP를 받아서 자동으로 product_info 테이블에 장비를 추가해주는 코드. -->
-// userCode를 이용하여 데이터의 내용을 URL(203.250.32.180:9001/device/sf/auto)로 전송해야함 -->
+// userCode를 이용하여 데이터의 내용을 URL(203.250.32.157:9001/device/sf/auto)로 전송해야함 -->
 
     $db_host = "localhost";
     $db_user = "root";
@@ -43,7 +43,7 @@
         $result_user = mysqli_query($conn, $query_user) or die ("Error database.. not connect Sys_info table.");
         // true 참 0 이외의 값, false 거짓 0
 
-        $num = mysqli_num_rows($result_user); echo "$num";
+        $num = mysqli_num_rows($result_user); //echo "$num";
         //Sys_info의 table 행 개수 저장.
 
         if( $num >= 1) {
@@ -62,7 +62,7 @@
                     'userCode' => $user_code
             );
 
-            $url = '203.250.32.180:9001/smart_plant/device/add/sf/auto';
+            $url = '203.250.32.157:9001/smart_plant/device/add/sf/auto'; //이것도 변경 가능성이 있음.
 
             $c = curl_init($url);
 
