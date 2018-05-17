@@ -49,7 +49,7 @@ $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connect
             $query_string_data = /*$dest."".$cmd_string.""."".*/$cmd; // 쿼리스트링을 전송하기 위한 변수를 만듬.
             echo $query_string_data; // 출력 완료.
 
-            $response = http_post_fields( $dest, $query_string_data);
+            $response = http_post_fields($dest."".$cmd_string, $query_string_data);
 
             echo $response;
         }
