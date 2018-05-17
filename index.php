@@ -12,7 +12,7 @@
 ?>
 
 <?php
-    require_once __DIR__ .'/vendor/autoload.php';
+    //require_once __DIR__ .'/vendor/autoload.php';
 
 
     $ip = $_GET['ip']; //Query_string
@@ -29,9 +29,10 @@
 
     if( $ip ){
         //echo "get ip<br/>";
-        $led = 'N';
-        $state = 'N';
-        $register = 'N';
+        $led = 'N'; // led 수동'n' / 자동'y' 모드
+        $state = 'N'; // 수경재배기 펌프 최초 작동 상태. 'n' : 작동x, 'y':작동o.
+        $register = 'N'; //등록 상태
+        //데이터 베이스에 sfcode 추가하자.
 
         $query = "INSERT INTO product_info  VALUES ('$ip', '$led', '$state', '$register')";
         $result_ip = mysqli_query($conn, $query) or die ('Error database.. not connect product table.');
@@ -66,7 +67,7 @@
             $c = curl_init($url);
 
             curl_setopt($c, CURLOPT_RETURNTRANSFER, true); // 요청 설정을 POST로 한다.
-            curl_setopt($c, CURLOPT_POST, ture); // 요청을 JSON으로 전닳는 헤더 설정.
+            curl_setopt($c, CURLOPT_POST, true); // 요청을 JSON으로 전닳는 헤더 설정.
             curl_setopt($c, CURLOPT_HTTPHEADER, array('Content-Type: application/json')); //전송할 데이터를 JSON으로 가공하기.
             curl_setopt($c, CURLOPT_POSTFIELDS, json_encode($fields));
 

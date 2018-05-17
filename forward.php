@@ -1,6 +1,17 @@
+<?php
+$db_host = "localhost";
+$db_user = "root";
+$db_passwd = "619412";
+$db_name = "water_middle_server";
+
+$conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connected Database Failed!!!!");
+?>
+
 
 <?php
 // 포워딩 페이지 작성.
+// 웹서버에서 버튼을 누르면 라즈베리가 받아서 유저코드의 값을 통하여 아두이노 장비로 ip주소와 cmd 값을 넘겨줘야 한다.
+
     header('Access-Control-Allow-Origin: *');
     header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');
     header('Content-Type: application/json');
@@ -17,11 +28,13 @@
     //$cmd = $_POST['cmd'];
     //$dest = $_POST['dest'];
 
-    $key = ['cmd' => $cmd, 'dest' => $dest];
-    echo json_encode($key);
+    $key = ['cmd' => $cmd, 'dest' => $dest]; // 받아온 cmd, userCode 값을 key에 넣음.
+    //echo json_encode($key);
 
-    $keys = array_column($json_obj, "cmd");
-    $keys1 = array_column($json_obj, "dest");
+    $query = "SELECT USER_CODE FROM Sys_info";
+    $result = mysqli_query($conn, $query) or die ("Error Database connect!!");
 
-    echo implode(', ', $keys);
+    while($data = mysqli_fetch_array($result)){
+        print_r($data);
+    }
     ?>
