@@ -33,7 +33,7 @@ $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connect
     $cmd_string = "?cmd=";
 
     $key = ['cmd' => $cmd, 'dest' => $dest]; // 받아온 cmd, userCode 값을 key에 넣음.
-    echo json_encode($key);
+    //echo json_encode($key);
 
     $query = "SELECT USER_CODE FROM Sys_info WHERE USER_CODE = '$user_code'"; //Sys_info 테이블의 USER_CODE와 $user_code를 비교하여 USER_CODE를 받는 쿼리문.
     $result_query = mysqli_query($conn, $query) or die ("Error Database connect!!");
@@ -51,10 +51,9 @@ $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connect
             $query_string_data = $dest."".$cmd_string.""."".$cmd; // 쿼리스트링을 전송하기 위한 변수를 만듬.
             echo $query_string_data; // 출력 완료.
 
-            $ch = curl_init();
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            $ch = curl_init($dest);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, false);
             curl_setopt($ch, CURLOPT_HEADER, false);
-            curl_setopt($ch, CURLOPT_URL, $dest);
             curl_setopt($ch, CURLOPT_POST, false);
             curl_setopt($ch, CURLOPT_POSTFIELDS, $cmd);
             $response = curl_exec($ch);
