@@ -46,20 +46,21 @@ $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connect
 
         if( $user_code == $user_code_data) { //데이터베이스의 유저코드와 서버에서 받아온 유저코드가 같으면
             //echo "success"; //출력 완료.
+            $ardu_url = $dest."".$cmd_string; // 요청 url 주소.
             $query_string_data = /*$dest."".$cmd_string.""."".*/$cmd; // 쿼리스트링을 전송하기 위한 변수를 만듬.
             echo $query_string_data; // 출력 완료.
 
-            $ch    = curl_init();
+            $ch = curl_init();
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($ch, CURLOPT_HEADER, false);
-            curl_setopt($ch, CURLOPT_URL, $dest."".$cmd_string);
+            curl_setopt($ch, CURLOPT_URL, $ardu_url);
             curl_setopt($ch, CURLOPT_POST, true);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $cmd);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $query_string_data);
             $response = curl_exec($ch);
             echo $response;
         }
         else {
-            echo "Compare DB, json_obj fail";
+            echo "Compare DB value, json_obj fail";
         }
 
     }
