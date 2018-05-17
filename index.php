@@ -62,7 +62,7 @@
                     'userCode' => $user_code
             );
 
-            $url = '203.250.35.169:9001/device/sf/auto';
+            $url = '203.250.32.180:9001/smart_plant/device/sf/auto';
 
             $c = curl_init($url);
 
