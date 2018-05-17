@@ -24,7 +24,8 @@ $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connect
 
     $cmd = $json_obj -> {"cmd"};
     $dest = $json_obj -> {"dest"};
-    $user_code = $json_obj -> {"userCode"};
+    //$user_code = $json_obj -> {"userCode"}; 명시적으로 줄거라서 일단 주석 침.
+    $user_code = 0;
     //$cmd = $_POST['cmd'];
     //$dest = $_POST['dest'];
 
@@ -46,6 +47,6 @@ $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connect
         else {
             echo "fail";
         }
-        
+
     }
     ?>
