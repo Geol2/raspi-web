@@ -61,17 +61,16 @@
                     'userCode' => $user_code
             );
 
-            $ch = curl_init();
+            $url = '203.250.35.169:9001/device/sf/auto';
 
-            // set URL and other appropriate options
-            curl_setopt($ch, CURLOPT_URL, "http://www.naver.com/");
-            curl_setopt($ch, CURLOPT_HEADER, 1);
+            $c = curl_init($url);
 
-            // grab URL and pass it to the browser
-            curl_exec($ch);
+            curl_setopt($c, CURLOPT_RETURNTRANSFER, true); // 요청 설정을 POST로 한다.
+            curl_setopt($c, CURLOPT_HTTPHEADER, array('Content-Type: aplication/json')); //전송할 데이터를 JSON으로 가공하기.
+            curl_setopt($c, CURLOPT_POSTFIELDS, json_encode($fields));
 
-            // close cURL resource, and free up system resources
-            curl_close($ch);
+            print curl_exec($c);
+
         }
 
         else {
