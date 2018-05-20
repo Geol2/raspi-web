@@ -101,10 +101,10 @@ To add a Raspberry Pi-based access point to an existing network, see this sectio
 
 (바로 내려가다보면 큰 글씨로 USING the raspberrypi ~~ 이 단락부분을 말한다.)
 
-"'
+```
 sudo apt-get update  
 sudo apt-get upgrade
-"`
+```
 
 ####sudo apt-get install dnsmasq hostapd
 
