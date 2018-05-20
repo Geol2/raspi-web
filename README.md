@@ -234,9 +234,9 @@ The network SSID you specified in the hostapd configuration should now be presen
 그래서 StackOverFlow를 통하여 검색하면서 해결하여보았다.
 
 일단 재부팅만 한다고 해서 바로 AP모드로 작동하는 것은 아닌 것 같다.
-
-$sudo hostapd /etc/hostapd/hostapd.conf
-
+```
+sudo hostapd /etc/hostapd/hostapd.conf
+```
 하면
 
 AP모드가 작동하지 않고 ERROR가 발생하게 되었다.
@@ -244,7 +244,6 @@ AP모드가 작동하지 않고 ERROR가 발생하게 되었다.
 에러는 Line2 : invalid/unknown driver 'nl80211'
 
 이라고 하면서 앞에서 hostapd.conf에서 설정을 해준 'nl80211'이 뭐가 잘 안되는 것을 느꼈다.
-
 
 
 https://askubuntu.com/questions/288437/how-fix-hostapd-invalid-unknown-driver-nl80211-error
@@ -287,28 +286,30 @@ cd hostapd-x.y.z/hostapd
 ```
 cp defconfig .config
 ```
-
-####nano .config
-
+```
+nano .config
+```
 .config 파일로 들어가서 찾아준다.
-
-####/#CONFIG_DRIVER_NL80211=y
-
+```
+/#CONFIG_DRIVER_NL80211=y
+```
 /#부분을 없앤다. 최근버젼인 2.6버젼에는 애초에 #이 없었다. /는 깃허브에 올릴려고 추가적으로 붙인 것이니 원래 없는 부분... 신경쓰지 말자!!
 
 Next, compile hostapd:
-
-####make
+```
+make
+```
 컴파일을 해준다. 여기서 분명 안되는 것 처럼?? 나오는 걸로 알고있다. 
 
 ../src/drivers/driver_nl080211.c:17:31: fatal error~~ 에러가 뜨는데 딱히 신경 쓰지말자..
 
 여기서 이제
-
-####$sudo apt-get hostapd hostapd/hostapd.conf 를 해보도록하자.
-
-####$sudo /usr/sbin/hostapd /etc/hostapd/hostapd.conf 도 같은 거라고 생각하면 될 것 같다.
-
+```
+sudo apt-get hostapd hostapd/hostapd.conf 를 해보도록하자.
+```
+```
+$sudo /usr/sbin/hostapd /etc/hostapd/hostapd.conf 도 같은 거라고 생각하면 될 것 같다.
+```
 
 드디어!! 성공!!
 
