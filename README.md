@@ -8,8 +8,11 @@ AP란?
 
 즉, 공유기와 비슷한 역할을 하게 된다고 합니다.
 ```
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 7e79b9cc3d2438dd8684ac3242e86e253afc8114
 ref
 https://www.raspberrypi.org/documentation/configuration/wireless/access-point.md
 
@@ -106,9 +109,17 @@ To add a Raspberry Pi-based access point to an existing network, see this sectio
 ```
 sudo apt-get update  
 sudo apt-get upgrade
+<<<<<<< HEAD
 
 sudo apt-get install dnsmasq hostapd
 
+=======
+```
+```
+sudo apt-get install dnsmasq hostapd
+```
+```
+>>>>>>> 7e79b9cc3d2438dd8684ac3242e86e253afc8114
 sudo systemctl stop dnsmasq  
 sudo systemctl stop hostapd
 ```
@@ -143,6 +154,7 @@ The DHCP service is provided by dnsmasq.
 By default, the configuration file contains a lot of information that is not needed, 
 
 and it is easier to start from scratch. Rename this configuration file, and edit a new one:
+<<<<<<< HEAD
 
 ```
 sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig 
@@ -152,6 +164,15 @@ sudo nano /etc/dnsmasq.conf
 
 Type or copy the following information into the dnsmasq configuration file and save it:
 
+=======
+```
+sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig 
+```
+```
+sudo nano /etc/dnsmasq.conf
+```
+Type or copy the following information into the dnsmasq configuration file and save it:
+>>>>>>> 7e79b9cc3d2438dd8684ac3242e86e253afc8114
 ```
 interface=wlan0      # Use the require wireless interface - usually wlan0
   
@@ -167,7 +188,10 @@ You need to edit the hostapd configuration file, located at /etc/hostapd/hostapd
 
 sudo nano /etc/hostapd/hostapd.conf
 Add the information below to the configuration file. This configuration assumes we are using channel 7, with a network name of NameOfNetwork, and a password AardvarkBadgerHedgehog. Note that the name and password should not have quotes around them.
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7e79b9cc3d2438dd8684ac3242e86e253afc8114
 ```
 interface=wlan0
 driver=nl80211
@@ -184,22 +208,29 @@ wpa_key_mgmt=WPA-PSK
 wpa_pairwise=TKIP
 rsn_pairwise=CCMP
 ```
+<<<<<<< HEAD
 
 We now need to tell the system where to find this configuration file.
 
+=======
+We now need to tell the system where to find this configuration file.
+>>>>>>> 7e79b9cc3d2438dd8684ac3242e86e253afc8114
 ```
 sudo nano /etc/default/hostapd
 ```
 
 Find the line with #DAEMON_CONF, and replace it with this:
 
-
+```
 DAEMON_CONF="/etc/hostapd/hostapd.conf"
-
+```
 Start it up
 
 Now start up the remaining services:
+```
+sudo systemctl start hostapd
 
+<<<<<<< HEAD
 ```
 sudo systemctl start hostapd
 
@@ -209,6 +240,13 @@ sudo systemctl start dnsmasq
 ADD ROUTING AND MASQUERADE
 
 Edit ```/etc/sysctl.conf``` and uncomment this line:
+=======
+sudo systemctl start dnsmasq
+```
+ADD ROUTING AND MASQUERADE
+
+Edit /etc/sysctl.conf and uncomment this line:
+>>>>>>> 7e79b9cc3d2438dd8684ac3242e86e253afc8114
 
 ```
 net.ipv4.ip_forward=1
@@ -218,6 +256,7 @@ Add a masquerade for outbound traffic on eth0:
 ```
 sudo iptables -t nat -A  POSTROUTING -o eth0 -j MASQUERADE
 ```
+<<<<<<< HEAD
 
 Save the iptables rule.
 
@@ -227,6 +266,13 @@ sudo sh -c "iptables-save > /etc/iptables.ipv4.nat"
 
 Edit /etc/rc.local and add this just above "exit 0" to install these rules on boot.
 
+=======
+Save the iptables rule.
+```
+sudo sh -c "iptables-save > /etc/iptables.ipv4.nat"
+```
+Edit /etc/rc.local and add this just above "exit 0" to install these rules on boot.
+>>>>>>> 7e79b9cc3d2438dd8684ac3242e86e253afc8114
 ```
 iptables-restore < /etc/iptables.ipv4.nat
 ```
@@ -245,11 +291,17 @@ The network SSID you specified in the hostapd configuration should now be presen
 그래서 StackOverFlow를 통하여 검색하면서 해결하여보았다.
 
 일단 재부팅만 한다고 해서 바로 AP모드로 작동하는 것은 아닌 것 같다.
+<<<<<<< HEAD
 
 ```
 $sudo hostapd /etc/hostapd/hostapd.conf
 ```
 
+=======
+```
+sudo hostapd /etc/hostapd/hostapd.conf
+```
+>>>>>>> 7e79b9cc3d2438dd8684ac3242e86e253afc8114
 하면
 
 AP모드가 작동하지 않고 ERROR가 발생하게 되었다.
@@ -257,7 +309,6 @@ AP모드가 작동하지 않고 ERROR가 발생하게 되었다.
 에러는 Line2 : invalid/unknown driver 'nl80211'
 
 이라고 하면서 앞에서 hostapd.conf에서 설정을 해준 'nl80211'이 뭐가 잘 안되는 것을 느꼈다.
-
 
 
 https://askubuntu.com/questions/288437/how-fix-hostapd-invalid-unknown-driver-nl80211-error
@@ -270,7 +321,10 @@ Hostapd building instruction. 이라고 링크에 들어갈 수 있다.
 
 라이브러리가 필요하다고 하니까 이것도 설치를 해주자.
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7e79b9cc3d2438dd8684ac3242e86e253afc8114
 ```
 sudo apt-get install libssl-dev
 ```
@@ -283,6 +337,7 @@ https://wireless.wiki.kernel.org/en/users/Documentation/hostapd
 
 ```
 git clone git://w1.fi/srv/git/hostap.git
+<<<<<<< HEAD
 
 cd hostap/hostapd
 ```
@@ -323,13 +378,50 @@ Next, compile hostapd:
 make
 ```
 
+=======
+```
+```
+cd hostap/hostapd
+```
+Or you can get a stable release (0.6.8 or later recommended) by downloading the tarball from http://w1.fi/hostapd/ as follows:
+
+http://w1.fi/hostapd/ 이 링크에 들어가면 2018.02.21. 기준으로 가장 최근버젼인 2.6 버젼을 다운로드 받도록 하자
+```
+wget http://w1.fi/releases/hostapd-x.y.z.tar.gz
+tar xzvf hostapd-x.y.z.tar.gz
+cd hostapd-x.y.z/hostapd
+```
+여기서 x.y.z.는 버젼이다. 나는 ~ hostapd-2.6.tar.gz 라고 해주었다.
+
+상황에 따라 맞게 타이핑 쳐주자.
+```
+cp defconfig .config
+```
+```
+nano .config
+```
+.config 파일로 들어가서 찾아준다.
+```
+/#CONFIG_DRIVER_NL80211=y
+```
+/#부분을 없앤다. 최근버젼인 2.6버젼에는 애초에 #이 없었다. /는 깃허브에 올릴려고 추가적으로 붙인 것이니 원래 없는 부분... 신경쓰지 말자!!
+
+Next, compile hostapd:
+```
+make
+```
+>>>>>>> 7e79b9cc3d2438dd8684ac3242e86e253afc8114
 컴파일을 해준다. 여기서 분명 안되는 것 처럼?? 나오는 걸로 알고있다. 
 
 ../src/drivers/driver_nl080211.c:17:31: fatal error~~ 에러가 뜨는데 딱히 신경 쓰지말자..
 
 여기서 이제
 ```
+<<<<<<< HEAD
 $sudo apt-get hostapd hostapd/hostapd.conf 를 해보도록하자.
+=======
+sudo apt-get hostapd hostapd/hostapd.conf 를 해보도록하자.
+>>>>>>> 7e79b9cc3d2438dd8684ac3242e86e253afc8114
 ```
 ```
 $sudo /usr/sbin/hostapd /etc/hostapd/hostapd.conf 도 같은 거라고 생각하면 될 것 같다.
