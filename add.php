@@ -18,7 +18,8 @@
 	$json_str = file_get_contents('php://input');
 
 	# Get as an object
-	$json_obj = json_decode($json_str);
+	$json_obj = json_decode($json_str); //object 로 반환.
+    $value = json_decode(stripslashes($_POST), false); // array로 반환.
 
     /*
 	//명시적인 값들..
@@ -34,31 +35,10 @@
 	$user_code = $json_obj->{"user_code"};
 	$submit_ip = $json_obj->{"submit_ip"};
 
-	$sf_code = $json_obj->{"sf_code"}; // sf_code를 받아온다.
-    $ip = $json_obj->{'ip'};
-    $code = $json_obj->{'code'};
-    
-
 	$query = "INSERT INTO Sys_info (USER_CODE, OUTER_IP ) VALUES ( $user_code, '$submit_ip')";
 	$result = mysqli_query($conn, $query) or die ('Error insert Sys_info table.');
 
-	$sf_code_array = ['ip' => $ip, 'code' => $code];
-    $sf_key = ['user_code' => $user_code, 'submit_ip'=> $submit_ip, 'sf_code' => [$sf_code_array] ];
-
     echo json_encode($sf_key);// user_code 와 sf_code 안의 ip, code를 받아오는 부분을 출력한다. php의 배열은 동적이라 따로 정해두지 않아도 알아서 출력이 된다고 한다.
-
-    $array_slice = array_slice($sf_key, 2);
-    //print_r( $array_slice );
-    //echo sizeof($array_slice);
-
-
-    for( $i = 0 ; $i < sizeof($array_slice, 0) ; $i++){
-        $query_update = "UPDATE product_info SET sf_code = '$code' WHERE INNER_IP = '$ip'";
-        $result_update = mysqli_query($conn, $query_update) or die ('Error update product_info table.');
-
-        //$sf_key = ['user_code' => $user_code, 'sf_code' => [ 'ip' => $ip , 'code' => $code ] ];
-    }
-
 
     $key = ['result'=>'OK'];
 	echo json_encode( $key );

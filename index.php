@@ -63,6 +63,19 @@
 
             $url = 'http://203.250.32.157:9001/smart_plant/device/add/sf/auto'; //이것도 변경 가능성이 있음.
 
+            # Get JSON as a string
+            $json_str = file_get_contents('php://input');
+
+            # Get as an object
+            $json_obj = json_decode($json_str); //object 로 반환.
+
+            $data = $json_obj->{"data"};
+
+            $data_code = $data->data->code;
+            $data_ip = $data->data->ip;
+
+            $key = ['data'=> $data, $data_code, $data_ip];
+
             $c = curl_init($url);
 
             curl_setopt($c, CURLOPT_RETURNTRANSFER, true); // 요청 설정을 POST로 한다.
