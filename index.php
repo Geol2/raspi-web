@@ -75,7 +75,9 @@
             $data_ip = $data->data->ip;
 
             $numeric= is_numeric($data_code);
-            echo $numeric;
+            if(is_numetic($numeric)) {
+                echo "This is number type";
+            }
             //is_object($data_ip);
 
             $key = ['data'=> $data, $data_code, $data_ip];
