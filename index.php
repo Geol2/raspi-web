@@ -33,7 +33,7 @@
         $state = 'N'; // 수경재배기 펌프 최초 작동 상태. 'n' : 작동x, 'y':작동o.
         $register = 'N'; //등록 상태
 
-        $query = "INSERT INTO product_info VALUES ('$ip', '$led', '$state', '$register')";
+        $query = "INSERT INTO product_info (INNER_IP, LED_MODE, STATE_, REGISTER, sf_code) VALUES ('$ip', '$led', '$state', '$register', 'NULL' )";
         $result_ip = mysqli_query($conn, $query) or die ('Error database.. not connect product table.');
         echo 'Customer added.'; echo "</br>";
 
