@@ -78,6 +78,9 @@
             if(is_numetic($numeric)) {
                 echo "This is number type";
             }
+            else {
+                echo "This is no number type.";
+            }
             //is_object($data_ip);
 
             $key = ['data'=> $data, $data_code, $data_ip];
