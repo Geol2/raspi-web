@@ -84,7 +84,7 @@
             }
             //is_object($data_ip);
 
-            $key = ['data'=> $data, $data_code, $data_ip];
+            $key = ['data'=> ['code'=>$data_code, 'ip' => $data_ip]];
             echo json_encode($key);
 
             $query_data = "UPDATE product_info SET sf_code = $data_code WHERE INNER_IP='$data_ip'";
