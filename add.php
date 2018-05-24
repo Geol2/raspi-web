@@ -20,15 +20,21 @@
 	# Get as an object
 	$json_obj = json_decode($json_str);
 
-	$user_code = $json_obj->{"user_code"};
-	$submit_ip = $json_obj->{"submit_ip"};
-    $sf_code = $json_obj->{"sf_code"}; // sf_code를 받아온다.
+    $user_code = "1";
+    $submit_ip = "203.250.32.123";
+
+	//$user_code = $json_obj->{"user_code"};
+	//$submit_ip = $json_obj->{"submit_ip"};
+
+	$sf_code = $json_obj->{"sf_code"}; // sf_code를 받아온다.
+    $ip = $json_obj->{'ip'};
+    $code = $json_obj->{'code'};
 
 	$query = "INSERT INTO Sys_info (USER_CODE, OUTER_IP ) VALUES ( $user_code, '$submit_ip')";
 	$result = mysqli_query($conn, $query) or die ('Error database.');
 
-	//$sf_key = ['user_code' => $user_code, 'sf_code' => [ 'ip'=> $ip ,'code'=> $code ]];
-    //echo json_encode( $sf_code );
+	$sf_key = ['user_code' => $user_code, 'sf_code' => [ 'ip'=> $ip ,'code'=> $code ]];
+	echo json_encode( $sf_code );
 
     $key = ['result'=>'OK'];
 	echo json_encode( $key );
