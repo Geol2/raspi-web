@@ -34,10 +34,12 @@
     $row = mysqli_fetch_array($result, MYSQLI_BOTH);
 
     $user_code = $row['USER_CODE'];
-    $current_time = date("Y/m/d");
-    echo $current_time;
+    $current_time = date("Y/m/d"); //날짜 시간 추가..
 
-    //printf ("test: %s\n", $user_code);
+    $time_json = json_encode($current_time); //날짜시간 json 형식으로 바꿈.
+
+    $data_time = ['d'=> $time_json ];
+    echo $data_time;
 
     // ampq //
     $connection = new AMQPStreamConnection(HOST, PORT, USER, PASS);
