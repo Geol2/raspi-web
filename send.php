@@ -34,9 +34,9 @@
     $row = mysqli_fetch_array($result, MYSQLI_BOTH);
 
     $user_code = $row['USER_CODE'];
-    $current_time = date("Y/m/d/h/i"); //날짜 시간 추가..
+    $current_time = date("Y/m/d/H/i"); //날짜 시간 추가..
     echo $current_time;
-    
+
     // ampq //
     $connection = new AMQPStreamConnection(HOST, PORT, USER, PASS);
 
@@ -49,7 +49,7 @@
     //get arduino data..
 
     $data = json_encode($temp);
-    //echo $data;
+    echo $data;
 
     $msg = new AMQPMessage( $data, [
             'content_type' => 'application/json',
