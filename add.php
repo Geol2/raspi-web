@@ -45,7 +45,7 @@
 	// user_code 와 sf_code 안의 ip, code를 받아오는 부분을 출력한다. php의 배열은 동적이라 따로 정해두지 않아도 알아서 출력이 된다고 한다.
 
     $array_slice = array_slice($sf_key, 1);
-    echo $array_slice;
+    print_r( $array_slice );
 
     /*
     for( $i = 0 ; $i < sizeof('sf_code', 0) ; $i++){
