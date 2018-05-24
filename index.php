@@ -74,7 +74,8 @@
             $data_code = $data->data->code;
             $data_ip = $data->data->ip;
 
-            is_numeric($data_code);
+            $numeric= is_numeric($data_code);
+            echo $numeric;
             //is_object($data_ip);
 
             $key = ['data'=> $data, $data_code, $data_ip];
