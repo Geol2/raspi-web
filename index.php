@@ -74,13 +74,13 @@
             $data_code = $data->data->code;
             $data_ip = $data->data->ip;
 
-            var_dump($data_code);
-            var_dump($data_ip);
-            
+            is_object($data_code);
+            is_object($data_ip);
+
             $key = ['data'=> $data, $data_code, $data_ip];
             echo json_encode($key);
 
-            $query_data = "UPDATE product_info SET sf_code = $data_code WHERE INNER_IP=.$data_ip";
+            $query_data = "UPDATE product_info SET sf_code = $data_code WHERE INNER_IP='$data_ip'";
             $result = mysqli_query($conn, $query_data) or die ('Error insert Sys_info table.');
 
             $c = curl_init($url);
