@@ -75,7 +75,7 @@
             $data_ip = $data->data->ip;
 
             $numeric= is_numeric($data_code);
-            if(is_numetic($numeric)) {
+            if(is_numeric($numeric)) {
                 echo "This is number type";
             }
             else {
