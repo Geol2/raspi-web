@@ -20,7 +20,7 @@
 	# Get as an object
 	$json_obj = json_decode($json_str);
 
-
+    /*
 	//명시적인 값들..
     $user_code = "1";
     $submit_ip = "203.250.32.123";
@@ -28,8 +28,8 @@
     $sf_code = "23";
     $ip = "192.168.4.3";
     $code = "0";
+    */
 
-    /*
     // 실제로 받는 값들..
 	$user_code = $json_obj->{"user_code"};
 	$submit_ip = $json_obj->{"submit_ip"};
@@ -37,7 +37,7 @@
 	$sf_code = $json_obj->{"sf_code"}; // sf_code를 받아온다.
     $ip = $json_obj->{'ip'};
     $code = $json_obj->{'code'};
-    */
+    
 
 	$query = "INSERT INTO Sys_info (USER_CODE, OUTER_IP ) VALUES ( $user_code, '$submit_ip')";
 	$result = mysqli_query($conn, $query) or die ('Error insert Sys_info table.');
