@@ -48,7 +48,7 @@
     //get arduino data..
 
     $data = json_encode($temp);
-    //echo $data;
+    echo $data;
 
     $msg = new AMQPMessage( $data, [
             'content_type' => 'application/json',
