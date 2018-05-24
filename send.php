@@ -39,7 +39,7 @@
     $time_json = json_encode($current_time); //날짜시간 json 형식으로 바꿈.
 
     $data_time = ['d'=> $time_json ];
-    echo $data_time;
+    print_r($data_time);
 
     // ampq //
     $connection = new AMQPStreamConnection(HOST, PORT, USER, PASS);
