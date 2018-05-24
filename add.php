@@ -28,10 +28,10 @@
 	$result = mysqli_query($conn, $query) or die ('Error database.');
 
 	$sf_key = ['user_code' => $user_code, 'sf_code' => [ 'ip'=> $ip ,'code'=> $code ]];
-    echo $sf_code;
+    echo json_encode( $sf_code );
 
     $key = ['result'=>'OK'];
-	echo json_encode($key);
+	echo json_encode( $key );
     //Sys_info 의 user_code와 ouer_ip를 받아서 DB에 저장.
 
     mysqli_close($conn);
