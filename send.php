@@ -36,9 +36,6 @@
     $user_code = $row['USER_CODE'];
     $current_time = date("Y/m/d"); //날짜 시간 추가..
 
-    $time_json = json_encode($current_time); //날짜시간 json 형식으로 바꿈.
-
-
     // ampq //
     $connection = new AMQPStreamConnection(HOST, PORT, USER, PASS);
 
@@ -47,10 +44,11 @@
     //mysql - ampq
     $id = $user_code; //user_code 로 변경.
 
-    $temp = ['id'=> $id, 't'=> $_GET['t'], 'h'=> $_GET['h'], 'wt'=> $_GET['wt'], 'wl'=> $_GET['wl'], 'e'=> $_GET['e'], 'd'=> $time_json];
+    $temp = ['id'=> $id, 't'=> $_GET['t'], 'h'=> $_GET['h'], 'wt'=> $_GET['wt'], 'wl'=> $_GET['wl'], 'e'=> $_GET['e'], 'd'=> $current_time];
     //get arduino data..
 
     $data = json_encode($temp);
+    //echo $data;
 
     $msg = new AMQPMessage( $data, [
             'content_type' => 'application/json',
