@@ -46,9 +46,10 @@
 
     $array_slice = array_slice($sf_key, 1);
     print_r( $array_slice );
+    echo sizeof($array_slice);
 
     /*
-    for( $i = 0 ; $i < sizeof('sf_code', 0) ; $i++){
+    for( $i = 0 ; $i < sizeof($array_slice, 0) ; $i++){
         $query_update = "UPDATE product_info SET sf_code = '$code' WHERE INNER_IP = '$ip'";
         $result_update = mysqli_query($conn, $query_update) or die ('Error update product_info table.');
 
