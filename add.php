@@ -41,7 +41,9 @@
 	$result = mysqli_query($conn, $query) or die ('Error database.');
 
 	$sf_key = ['user_code' => $user_code, 'sf_code' => [ 'ip' => $ip , 'code' => $code ] ];
-	echo json_encode( $sf_key );
+	echo json_encode( $sf_key ); // user_code 와 sf_code 안의 ip, code를 받아오는 부분을 출력한다.
+
+
 
     $key = ['result'=>'OK'];
 	echo json_encode( $key );
