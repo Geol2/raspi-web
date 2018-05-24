@@ -74,8 +74,8 @@
             $data_code = $data->data->code;
             $data_ip = $data->data->ip;
 
-            is_object($data_code);
-            is_object($data_ip);
+            is_numeric($data_code);
+            //is_object($data_ip);
 
             $key = ['data'=> $data, $data_code, $data_ip];
             echo json_encode($key);
