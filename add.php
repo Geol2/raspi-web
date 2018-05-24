@@ -27,8 +27,8 @@
 	$query = "INSERT INTO Sys_info (USER_CODE, OUTER_IP ) VALUES ( $user_code, '$submit_ip')";
 	$result = mysqli_query($conn, $query) or die ('Error database.');
 
-	$sf_key = ['user_code' => $user_code, 'sf_code' => [ 'ip'=> $ip ,'code'=> $code ]];
-    echo json_encode( $sf_code );
+	//$sf_key = ['user_code' => $user_code, 'sf_code' => [ 'ip'=> $ip ,'code'=> $code ]];
+    //echo json_encode( $sf_code );
 
     $key = ['result'=>'OK'];
 	echo json_encode( $key );
