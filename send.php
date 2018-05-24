@@ -34,6 +34,8 @@
     $row = mysqli_fetch_array($result, MYSQLI_BOTH);
 
     $user_code = $row['USER_CODE'];
+    $current_time = date("Y/m/d");
+    echo $current_time;
 
     //printf ("test: %s\n", $user_code);
 

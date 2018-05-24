@@ -1,7 +1,7 @@
 
 <?php
-
 // product_info 의 테이블의 내용만 삭제.
+
     header('Access-Control-Allow-Origin: * ');
     header('Access-Control-Allow-Headers: Origin, X-Requested-With, Contentent-Type, Accept');
     header('Content-Type: application/json');
