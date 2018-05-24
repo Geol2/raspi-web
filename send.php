@@ -38,6 +38,11 @@
     date_default_timezone_set('Asia/Seoul'); // 분침 -30분 문제..
     $current_time = date("Y/m/d/H/i"); //날짜 시간 추가..
     //echo $current_time; //시간 출력.
+    $year = date("Y"); // 년
+    $month = date("m"); // 월
+    $day = date("d"); // 일
+    $hour = date("H"); // 시
+    $minute = date("i"); // 분
 
     // ampq //
     $connection = new AMQPStreamConnection(HOST, PORT, USER, PASS);
@@ -47,7 +52,7 @@
     //mysql - ampq
     $id = $user_code; //user_code 로 변경.
 
-    $temp = ['id'=> $id, 't'=> $_GET['t'], 'h'=> $_GET['h'], 'wt'=> $_GET['wt'], 'wl'=> $_GET['wl'], 'e'=> $_GET['e'], 'd'=> $current_time];
+    $temp = ['id'=> $id, 't'=> $_GET['t'], 'h'=> $_GET['h'], 'wt'=> $_GET['wt'], 'wl'=> $_GET['wl'], 'e'=> $_GET['e'], 'd'=> $year."/".$month."/".$day."/".$hour."/".$minute];
     //get arduino data..
 
     $data = json_encode($temp);
