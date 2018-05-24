@@ -37,7 +37,7 @@
 
     date_default_timezone_set('Asia/Seoul'); // 분침 -30분 문제..
     $current_time = date("Y/m/d/H/i"); //날짜 시간 추가..
-    echo $current_time;
+    //echo $current_time; //시간 출력.
 
     // ampq //
     $connection = new AMQPStreamConnection(HOST, PORT, USER, PASS);
