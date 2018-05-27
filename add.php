@@ -18,7 +18,8 @@
 	$json_str = file_get_contents('php://input');
 
 	# Get as an object
-	$json_obj = json_decode($json_str, false); //object 로 반환.
+	$json_obj = json_decode($json_str, true); // false : object 로 반환.
+                                                    // true : array로 반환.
 
 
 	//명시적인 값들..
@@ -31,14 +32,11 @@
 */
 
     // 실제로 받는 값들..
-
 	$user_code = $json_obj->{"user_code"};
 	$submit_ip = $json_obj->{"submit_ip"};
 
-    $sf_code = $json_obj->sf_code[0];
-
     //json 데이터 뿌리기
-    foreach ($sf_code["sf_code"] as $key => $value) {
+    foreach ($json_obj["sf_code"] as $key => $value) {
         echo $value['code']."<br/>";
         echo $value['ip']."<br/>";
 
