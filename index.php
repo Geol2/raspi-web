@@ -75,10 +75,10 @@
             $result = curl_exec($c); //
 
             $json = json_decode($result, true); //
-            //print_r($json);
+            print_r($json);
 
             echo $json['code']; //
-            echo $json['ip']; // 
+            echo $json['ip']; //
 
             curl_close($c);
         }
