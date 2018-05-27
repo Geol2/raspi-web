@@ -19,7 +19,7 @@
     # Get as an object
     $json_obj = json_decode($json_str);
 
-    var_dump($json_obj);
+    echo $json_obj;
 
     $query = "DELETE FROM product_info";
     $result = mysqli_query($conn, $query) or die ('Error Querying database.');
