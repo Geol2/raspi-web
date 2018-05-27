@@ -63,42 +63,6 @@
 
             $url = 'http://203.250.32.157:9001/smart_plant/device/add/sf/auto'; //이것도 변경 가능성이 있음.
 
-            # Get JSON as a string
-            $json_str = file_get_contents('php://input');
-
-            # Get as an object
-            $json_obj = json_decode($json_str); //object 로 반환.
-            var_dump($json_obj); // object 반환 후 출력.
-
-            $data = $json_obj->{"data"}; // {data: {'code' => 119, 'ip' => '192.168.4.3'}}
-
-            $data_code = $data->code;
-            $data_ip = $data->ip;
-
-            $numeric = is_numeric($data_code);
-            $numeric_result = (int)$numeric;
-            /*
-            if(is_numeric($data_code)) {
-                echo "This is number type";
-            }
-            else {
-                echo "This is no number type.";
-            }
-            //is_object($data_ip);
-
-            $key = array(
-                'data' =>
-                array(
-                    'code' => $numeric_result,
-                    'ip' => $data_ip
-                )
-            );
-            */
-            echo json_encode($key); // 키 값 출력.
-
-            $query_data = "UPDATE product_info SET sf_code= '$data_code' WHERE INNER_IP = '$data_ip' ";
-            $result = mysqli_query($conn, $query_data) or die ('Error insert Sys_info table.');
-
             $c = curl_init($url);
 
             curl_setopt($c, CURLOPT_RETURNTRANSFER, true); // 요청 설정을 POST로 한다.
@@ -107,6 +71,8 @@
             curl_setopt($c, CURLOPT_POSTFIELDS, json_encode($fields));
 
             print curl_exec($c);
+
+            
 
             curl_close($c);
         }
