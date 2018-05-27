@@ -78,7 +78,7 @@
             print_r($json); // 배열을 출력.
 
             echo $json['status']."<br/>";
-            echo $json['code']."<br/>";
+            echo $json['msg']."<br/>";
             echo $json['data']."<br/>";
 
             //json 데이터 뿌리기
