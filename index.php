@@ -68,15 +68,17 @@
             curl_setopt($c, CURLOPT_RETURNTRANSFER, true); // 요청 설정을 POST로 한다.
             curl_setopt($c, CURLOPT_POST, true); // 요청을 JSON으로 전달하는 헤더 설정.
             curl_setopt($c, CURLOPT_HTTPHEADER, array('Content-Type: application/json')); //전송할 데이터를 JSON으로 가공하기.
-            curl_setopt($c, CURLOPT_POSTFIELDS, json_encode($fields));
+            curl_setopt($c, CURLOPT_POSTFIELDS, json_encode($fields)); //
 
             print curl_exec($c); // ex.. {"status":"OK","msg":"success","data":{"code":129,"ip":"192.168.4.13"}}
 
+            $result = curl_exec($c); //
 
-            $result = curl_exec($c);
+            $json = json_decode($result, true); //
+            //print_r($json);
 
-            $json = json_decode($result, true);
-            print_r($json);
+            echo $json['code']; //
+            echo $json['ip']; // 
 
             curl_close($c);
         }
