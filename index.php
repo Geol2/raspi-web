@@ -77,8 +77,10 @@
             $json = json_decode($result, true); //json 데이터를 배열로 담기.
             print_r($json); // 배열을 출력.
 
+            echo $json['status']."<br/>";
+            echo $json['code']."<br/>";
             echo $json['data']."<br/>";
-            
+
             //json 데이터 뿌리기
             foreach ($json['data'] as $key => $value){
                 echo $value['code']."<br/>";
