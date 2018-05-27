@@ -82,12 +82,11 @@
             echo $json['data']."<br/>";
 
             //json 데이터 뿌리기
-            /*
             foreach ($json as $key => $value){
                 echo $value['code']."<br/>";
                 echo $value['ip']."<br/>";
             }
-            */
+            
             curl_close($c);
 
         }
