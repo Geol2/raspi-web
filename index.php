@@ -77,8 +77,8 @@
             $json = json_decode($result, true); //
             print_r($json);
 
-            echo $json['code']; //
-            echo $json['ip']; //
+            echo $json->code; //
+            echo $json->ip; //
 
             curl_close($c);
         }
