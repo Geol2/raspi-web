@@ -37,11 +37,14 @@
     $json = array(
         'user_code' => $user_code,
         'submit_ip' => $submit_ip,
-        'sf_code' => $sf_code
+        'sf_code' => array (
+            'ip' => $ip,
+            'code' => $code
+        )
     );
 
     echo json_encode($json);
-    
+
 	$query = "INSERT INTO Sys_info (USER_CODE, OUTER_IP ) VALUES ( $user_code, '$submit_ip')";
 	$result = mysqli_query($conn, $query) or die ('Error insert Sys_info table.');
 
