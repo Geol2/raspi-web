@@ -20,7 +20,7 @@
 	# Get as an object
 	$json_obj = json_decode($json_str, false); //object 로 반환.
 
-    var_dump($json_obj); // 객체를 출력.
+    echo $json_obj;
     /*
 	//명시적인 값들..
     $user_code = "1";
