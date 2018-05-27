@@ -82,13 +82,21 @@
             //echo $json['data']."<br/>";
 
             //json 데이터 뿌리기
+
+            /*
             foreach ($json as $key => $value){
                 echo $value['code']."<br/>";
                 echo $value['ip']."<br/>";
             }
+            */
+
+            $data_code = $value['code'];
+            $data_ip = $value['ip'];
 
             curl_close($c);
 
+            $update1_query = "UPDATE product_info SET sf_code = '$data_code' WHERE INNER_IP = '$data_ip'";
+            $update1_result = mysqli_query($conn, $update1_query) or die ("Error database.. not connect product_info table.");
         }
 
         else {
