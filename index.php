@@ -68,6 +68,7 @@
 
             # Get as an object
             $json_obj = json_decode($json_str); //object 로 반환.
+            var_dump($json_obj); // object 반환 후 출력.
 
             $data = $json_obj->{"data"}; // {data: {'code' => 119, 'ip' => '192.168.4.3'}}
 
