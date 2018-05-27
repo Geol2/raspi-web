@@ -20,7 +20,7 @@
 	# Get as an object
 	$json_obj = json_decode($json_str, false); //object 로 반환.
 
-    
+
 	//명시적인 값들..
     $user_code = "1";
     $submit_ip = "203.250.32.123";
@@ -38,9 +38,11 @@
     $json = array(
         'user_code' => $user_code,
         'submit_ip' => $submit_ip,
-        'sf_code' => array (
+        'sf_code' => array(
+            array (
             'ip' => $ip,
             'code' => $code
+            )
         )
     );
 
