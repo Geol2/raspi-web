@@ -74,11 +74,18 @@
 
             $result = curl_exec($c); //
 
-            $json = json_decode($result, true); //
-            print_r($json);
+            $json = json_decode($result, true); //json 데이터를 배열로 담기.
+            print_r($json); // 배열을 출력.
 
-            echo $json->code; //
-            echo $json->ip; //
+            //json 데이터 뿌리기
+            foreach ($json['data'] as $key => $value){
+                echo $value['code']."<br/>";
+                echo $value['ip']."<br/>";
+                echo "<br/>";
+
+            };
+
+            출처: http://gocoder.tistory.com/28 [고코더의 IT Express]
 
             curl_close($c);
         }
