@@ -73,11 +73,11 @@
             print curl_exec($c); // ex.. {"status":"OK","msg":"success","data":{"code":129,"ip":"192.168.4.13"}}
 
             curl_close($c);
-            
+
             $result = curl_exec($c); //
 
             $json = json_decode($result, true); //json 데이터를 배열로 담기.
-            print_r($json); // 배열을 출력.
+            //print_r($json); // 배열을 출력.
 
             //echo $json['status']."<br/>";
             //echo $json['msg']."<br/>";
@@ -87,8 +87,7 @@
             foreach ($json as $key => $value){
                 echo $value['code']."<br/>";
                 echo $value['ip']."<br/>";
-                echo "<br/>";
-            };
+            }
 
         }
 
