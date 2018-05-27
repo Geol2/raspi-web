@@ -88,9 +88,6 @@
                 echo "<br/>";
 
             };
-
-            출처: http://gocoder.tistory.com/28 [고코더의 IT Express]
-
             curl_close($c);
         }
 
