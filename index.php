@@ -35,7 +35,7 @@
 
         $query = "INSERT INTO product_info (INNER_IP, LED_MODE, STATE_, REGISTER, sf_code) VALUES ('$ip', '$led', '$state', '$register', 'NULL' )";
         $result_ip = mysqli_query($conn, $query) or die ('Error database.. not connect product table.');
-        echo 'Cust  omer added.'; echo "</br>";
+        echo 'Customer added.'; echo "</br>";
 
         // 아랫줄부터 user_code의 존재여부를 확인 후 POST 방식으로 전송함.
         $query_user = "SELECT * FROM Sys_info"; //echo $query; echo "</br>";
@@ -70,7 +70,14 @@
             curl_setopt($c, CURLOPT_HTTPHEADER, array('Content-Type: application/json')); //전송할 데이터를 JSON으로 가공하기.
             curl_setopt($c, CURLOPT_POSTFIELDS, json_encode($fields));
 
-            print curl_exec($c);
+            print curl_exec($c); // ex.. {"status":"OK","msg":"success","data":{"code":129,"ip":"192.168.4.13"}}
+
+
+            $result = curl_exec($c);
+            print $result;
+            
+            $json = json_decode($result, true);
+            print r($json);
 
             curl_close($c);
         }
