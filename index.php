@@ -69,12 +69,9 @@
             # Get as an object
             $json_obj = json_decode($json_str); //object 로 반환.
 
-            $data = $json_obj->{"data"};
+            $data_code = $json_obj->{"data"};
 
-            $data_code = $data->data->code;
-            $data_ip = $data->data->ip;
-
-            $numeric= is_numeric($data_code);
+            $numeric = is_numeric($data_code);
             $numeric_result = (int)$numeric;
             if(is_numeric($numeric_result)) {
                 echo "This is number type";
@@ -84,7 +81,13 @@
             }
             //is_object($data_ip);
 
-            $key = ['data'=> ['code'=>$numeric_result, 'ip' => $data_ip]];
+            $key = array(
+                'data' =>
+                array(
+                    'code' => $numeric_result,
+                    'ip' => $ip
+                )
+            );
             echo json_encode($key);
 
             $query_data = "UPDATE product_info SET sf_code = $data_code WHERE INNER_IP='$data_ip'";
