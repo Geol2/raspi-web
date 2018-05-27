@@ -22,19 +22,20 @@
 
 
 	//명시적인 값들..
+/*
     $user_code = "1";
     $submit_ip = "203.250.32.123";
 
     $ip = "192.168.4.3";
     $code = "0";
-
+*/
 
     // 실제로 받는 값들..
-    /*
+
 	$user_code = $json_obj->{"user_code"};
 	$submit_ip = $json_obj->{"submit_ip"};
     $sf_code = $json_obj->{"sf_code"};
-*/
+
     $json = array(
         'user_code' => $user_code,
         'submit_ip' => $submit_ip,
