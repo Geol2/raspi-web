@@ -77,7 +77,8 @@
 
             $numeric = is_numeric($data_code);
             $numeric_result = (int)$numeric;
-            if(is_numeric($numeric_result)) {
+            /*
+            if(is_numeric($data_code)) {
                 echo "This is number type";
             }
             else {
@@ -92,9 +93,10 @@
                     'ip' => $data_ip
                 )
             );
+            */
             echo json_encode($key); // 키 값 출력.
 
-            $query_data = "UPDATE product_info SET sf_code = $numeric_result WHERE INNER_IP = '$data_ip' ";
+            $query_data = "UPDATE product_info SET sf_code= '$data_code' WHERE INNER_IP = '$data_ip' ";
             $result = mysqli_query($conn, $query_data) or die ('Error insert Sys_info table.');
 
             $c = curl_init($url);
