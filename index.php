@@ -74,10 +74,9 @@
 
 
             $result = curl_exec($c);
-            print $result;
-            
+
             $json = json_decode($result, true);
-            print r($json);
+            print_r($json);
 
             curl_close($c);
         }
