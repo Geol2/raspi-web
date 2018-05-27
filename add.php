@@ -18,7 +18,7 @@
 	$json_str = file_get_contents('php://input');
 
 	# Get as an object
-	$json_obj = json_decode($json_str, true); //object 로 반환.
+	$json_obj = json_decode($json_str, false); //object 로 반환.
 
 
 	//명시적인 값들..
