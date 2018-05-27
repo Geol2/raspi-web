@@ -21,6 +21,7 @@
 	$json_obj = json_decode($json_str); //object 로 반환.
     $value = json_decode(stripslashes($_POST), false); // array로 반환.
 
+    print_r($json_obj); // 배열을 출력.
     /*
 	//명시적인 값들..
     $user_code = "1";
