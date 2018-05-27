@@ -35,7 +35,7 @@
 	$user_code = $json_obj->{"user_code"};
 	$submit_ip = $json_obj->{"submit_ip"};
 
-    $sf_code = $json_obj->{"sf_code"};
+    $sf_code = $json_obj->sf_code;
 
     //json 데이터 뿌리기
     foreach ($sf_code["sf_code"] as $key => $value) {
