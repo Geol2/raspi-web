@@ -23,18 +23,19 @@
 
 
 	//명시적인 값들..
-/*
+
     $user_code = "1";
     $submit_ip = "203.250.32.123";
 
     $ip = "192.168.4.3";
     $code = "0";
-*/
+
 
     // 실제로 받는 값들..
+/*
 	$user_code = $json_obj->{"user_code"};
 	$submit_ip = $json_obj->{"submit_ip"};
-
+*/
     //json 데이터 뿌리기
     foreach ($json_obj["sf_code"] as $key => $value) {
         //echo $value['code']."<br/>";
