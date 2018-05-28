@@ -50,8 +50,8 @@
         'submit_ip' => $submit_ip,
         'sf_code' => array(
             array (
-            'ip' => $data_ip,
-            'code' => $data_code
+            'ip' => $ip,
+            'code' => $code
             )
         )
     );
