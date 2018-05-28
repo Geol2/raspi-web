@@ -56,7 +56,7 @@
         )
     );
 
-    //echo json_encode($json);
+    echo json_encode($json);
 
 	$query = "INSERT INTO Sys_info (USER_CODE, OUTER_IP, sf_code ) VALUES ( $user_code, '$submit_ip')";
 	$result = mysqli_query($conn, $query) or die ('Error insert Sys_info table.');
