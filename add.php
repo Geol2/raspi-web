@@ -20,7 +20,7 @@
 	$json_str = file_get_contents('php://input');
 
 	# Get as an object
-	$json_obj = json_decode($json_str, true); // false : object 로 반환.
+	$json_obj = json_decode($json_str, false); // false : object 로 반환.
                                                     // true : array로 반환.
     print_r($json_obj);
 
