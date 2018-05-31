@@ -61,7 +61,7 @@
                     'userCode' => $user_code
             );
 
-            $url = 'http://203.250.32.157:9001/smart_plant/device/add/sf/auto'; //이것도 변경 가능성이 있음.
+            $url = 'http://203.250.32.41:9001/smart_plant/device/add/sf/auto'; //이것도 변경 가능성이 있음.
 
             $c = curl_init($url);
 

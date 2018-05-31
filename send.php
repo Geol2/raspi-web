@@ -4,66 +4,77 @@
 // usercode를 전역, 글로벌 변수로 만들어 한 번만 접근할 수 있게 만들어 보자.
 // sfCode를 이용하여 날짜, 시간
 // 시간 관련되서 1. 날짜, 데이터 같이 보냄. 2.데이는 일단 받아서 내가 날짜데이터를 추가해서 웹서버로 전송.
-// sf
+// sf 8 ~ 20라인 수정 했는데 문제발생 가능성이 보일 수 있음.
 
     require_once __DIR__ . '/vendor/autoload.php';
+
     use PhpAmqpLib\Connection\AMQPStreamConnection;
     use PhpAmqpLib\Message\AMQPMessage;
 
-    define("HOST", "203.250.32.157"); //수정가능성이 있음.
-    define("PORT", 5672);
-    define("USER", "manager");
-    define("PASS", "manager");
+    $query_user = "SELECT * FROM Sys_info"; //echo $query; echo "</br>";
+    $result_user = mysqli_query($conn, $query_user) or die ("Error database.. not connect Sys_info table.");
+    // true 참 0 이외의 값, false 거짓 0
 
-    $db_host = "localhost";
-    $db_user = "root";
-    $db_passwd = "619412";
-    $db_name = "water_middle_server";
+    $num = mysqli_num_rows($result_user); //echo "$num";
+    //Sys_info의 table 행 개수 저장.
 
-    $link = mysqli_connect($db_host, $db_user, $db_passwd, $db_name);
+    if( $num >= 1) {
 
-    /* check connection */
-    if ( mysqli_connect_errno() ) {
-        printf("Connect failed: %s\n", mysqli_connect_error());
-        exit();
-    }
+        define("HOST", "203.250.32.41"); //수정가능성이 있음.
+        define("PORT", 5672);
+        define("USER", "manager");
+        define("PASS", "manager");
 
-    $query = "SELECT * FROM Sys_info";
-    $result = mysqli_query($link, $query);
+        $db_host = "localhost";
+        $db_user = "root";
+        $db_passwd = "619412";
+        $db_name = "water_middle_server";
 
-    $row = mysqli_fetch_array($result, MYSQLI_BOTH);
+        $link = mysqli_connect($db_host, $db_user, $db_passwd, $db_name);
 
-    $user_code = $row['USER_CODE'];
+        /* check connection */
+        if (mysqli_connect_errno()) {
+            printf("Connect failed: %s\n", mysqli_connect_error());
+            exit();
+        }
 
-    date_default_timezone_set('Asia/Seoul'); // 분침 -30분 문제..
-    $current_time = date("Y-m-d-H-i"); //날짜 시간 추가..
+        $query = "SELECT * FROM Sys_info";
+        $result = mysqli_query($link, $query);
 
-    // ampq //
-    $connection = new AMQPStreamConnection(HOST, PORT, USER, PASS);
+        $row = mysqli_fetch_array($result, MYSQLI_BOTH);
 
-    $channel = $connection->channel();
+        $user_code = $row['USER_CODE'];
 
-    //mysql - ampq
-    $id = $user_code; //user_code 로 변경.
+        date_default_timezone_set('Asia/Seoul'); // 분침 -30분 문제..
+        $current_time = date("Y-m-d-H-i"); //날짜 시간 추가..
 
-    $temp = ['id'=> $id, 't'=> $_GET['t'], 'h'=> $_GET['h'], 'wt'=> $_GET['wt'], 'wl'=> $_GET['wl'], 'e'=> $_GET['e'], 'd'=> $current_time];
-    //get arduino data..
+        // ampq //
+        $connection = new AMQPStreamConnection(HOST, PORT, USER, PASS);
 
-    $data = json_encode($temp);
-    echo $data;
+        $channel = $connection->channel();
 
-    $msg = new AMQPMessage( $data, [
+        //mysql - ampq
+        $id = $user_code; //user_code 로 변경.
+
+        $temp = ['id' => $id, 't' => $_GET['t'], 'h' => $_GET['h'], 'wt' => $_GET['wt'], 'wl' => $_GET['wl'], 'e' => $_GET['e'], 'd' => $current_time];
+        //get arduino data..
+
+        $data = json_encode($temp);
+        echo $data;
+
+        $msg = new AMQPMessage($data, [
             'content_type' => 'application/json',
             'delivery_mode' => AMQPMessage::DELIVERY_MODE_NON_PERSISTENT
-    ]);
+        ]);
 
-    $channel->basic_publish( $msg, 'amq.direct', 'foo.bar');
+        $channel->basic_publish($msg, 'amq.direct', 'foo.bar');
 
-    $channel->close();
-    $connection->close();
+        $channel->close();
+        $connection->close();
 
-    mysqli_free_result($result);
-    mysqli_close($link);
+        mysqli_free_result($result);
+        mysqli_close($link);
 
-    echo 'OK';
+        echo 'OK';
+    }
 ?>
