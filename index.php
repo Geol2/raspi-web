@@ -70,7 +70,7 @@
             curl_setopt($c, CURLOPT_HTTPHEADER, array('Content-Type: application/json')); //전송할 데이터를 JSON으로 가공하기.
             curl_setopt($c, CURLOPT_POSTFIELDS, json_encode($fields)); //
 
-            print curl_exec($c); // ex.. {"status":"OK","msg":"success","data":{"code":129,"ip":"192.168.4.13"}}
+            //print curl_exec($c); // ex.. {"status":"OK","msg":"success","data":{"code":129,"ip":"192.168.4.13"}}
 
             $result = curl_exec($c); //
 
