@@ -46,18 +46,18 @@
         $data_code = $value['code'];
         $data_ip = $value['ip'];
     }
-*/
+*//*
     $json = array(
         'user_code' => $user_code,
         'submit_ip' => $submit_ip,
-        'sf_code' => array(
-            array (
-            'ip' => $data_ip,
-            'code' => $data_code
-            )
-        )
+        //'sf_code' => array(
+        //    array (
+        //    'ip' => $data_ip,
+        //    'code' => $data_code
+        //    )
+        //)
     );
-
+*/
     //echo json_encode($json);
 
 	$query = "INSERT INTO Sys_info (USER_CODE, OUTER_IP ) VALUES ( $user_code, '$submit_ip')";
