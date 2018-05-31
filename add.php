@@ -34,10 +34,10 @@
 */
 
     // 실제로 받는 값들..
-/*
+
 	$user_code = $json_obj->{"user_code"};
 	$submit_ip = $json_obj->{"submit_ip"};
-
+/*
     //json 데이터 뿌리기
     foreach ($json_obj["sf_code"] as $key => $value) {
         //echo $value['code']."<br/>";
@@ -60,8 +60,8 @@
 
     //echo json_encode($json);
 
-//	$query = "INSERT INTO Sys_info (USER_CODE, OUTER_IP, sf_code ) VALUES ( $user_code, '$submit_ip')";
-//	$result = mysqli_query($conn, $query) or die ('Error insert Sys_info table.');
+	$query = "INSERT INTO Sys_info (USER_CODE, OUTER_IP ) VALUES ( $user_code, '$submit_ip')";
+	$result = mysqli_query($conn, $query) or die ('Error insert Sys_info table.');
 
     //echo json_encode($sf_key);// user_code 와 sf_code 안의 ip, code를 받아오는 부분을 출력한다. php의 배열은 동적이라 따로 정해두지 않아도 알아서 출력이 된다고 한다.
 
