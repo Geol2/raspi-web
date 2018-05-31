@@ -22,7 +22,7 @@
 	# Get as an object
 	$json_obj = json_decode($json_str, false); // false : object 로 반환.
                                                     // true : array로 반환.
-    print_r($json_obj);
+    //print_r($json_obj);
 
 	//명시적인 값들..
 /*
