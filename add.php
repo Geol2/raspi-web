@@ -22,48 +22,21 @@
 	# Get as an object
 	$json_obj = json_decode($json_str, false); // false : object 로 반환.
                                                     // true : array로 반환.
-    //print_r($json_obj);
-
-	//명시적인 값들..
-/*
-    $user_code = "1";
-    $submit_ip = "203.250.32.123";
-
-    $ip = "192.168.4.3";
-    $code = "0";
-*/
 
     // 실제로 받는 값들..
-
 	$user_code = $json_obj->{"user_code"};
 	$submit_ip = $json_obj->{"submit_ip"};
 
     //json 데이터 뿌리기
     foreach ($json_obj->{"sf_code"} as $key => $value) {
-        //echo $value['code']."<br/>";
-        //echo $value['ip']."<br/>";
         $data_code = $value->{"code"};
         $data_ip = $value->{"ip"};
 
-        //$data_code = $value['code'];
-        //$data_ip = $value['ip'];
         $query_sf = "UPDATE product_info SET sf_code = $data_code WHERE INNER_IP = '$data_ip'";
         $result_sf = mysqli_query($conn, $query_sf) or die ('Error insert product_table table.');
     }
 
-    /*
-    $json = array(
-        'user_code' => $user_code,
-        'submit_ip' => $submit_ip,
-        //'sf_code' => array(
-        //    array (
-        //    'ip' => $data_ip,
-        //    'code' => $data_code
-        //    )
-        //)
-    );
-*/
-    //echo json_encode($json);
+
 
 	$query = "INSERT INTO Sys_info (USER_CODE, OUTER_IP ) VALUES ( $user_code, '$submit_ip')";
 	$result = mysqli_query($conn, $query) or die ('Error insert Sys_info table.');
