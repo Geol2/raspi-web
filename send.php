@@ -77,4 +77,7 @@
 
         echo 'OK';
     }
+    else {
+        echo 'dont send';
+    }
 ?>
