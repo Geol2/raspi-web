@@ -3,6 +3,8 @@
 //Sys_info 를 웹서버에서 수동으로 추가해주는 부분.
 //자동으로 추가해주는 부분을 만들어 보자.
 //sf_code 추가.
+//index.php에서 innerIp가 들어가 있는 상태에서 공유기를 추가.>??
+
 
 	header("Access-Control-Allow-Origin: *");
 	header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
@@ -18,10 +20,10 @@
 	$json_str = file_get_contents('php://input');
 
 	# Get as an object
-	$json_obj = json_decode($json_str, false); // false : object 로 반환.
+	$json_obj = json_decode($json_str, true); // false : object 로 반환.
                                                     // true : array로 반환.
-
-
+    print_r($json_obj);
+    
 	//명시적인 값들..
 /*
     $user_code = "1";
@@ -32,7 +34,6 @@
 */
 
     // 실제로 받는 값들..
-
 	$user_code = $json_obj->{"user_code"};
 	$submit_ip = $json_obj->{"submit_ip"};
 
