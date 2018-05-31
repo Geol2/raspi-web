@@ -23,7 +23,7 @@
 	$json_obj = json_decode($json_str, true); // false : object 로 반환.
                                                     // true : array로 반환.
     print_r($json_obj);
-    
+
 	//명시적인 값들..
 /*
     $user_code = "1";
@@ -34,6 +34,7 @@
 */
 
     // 실제로 받는 값들..
+/*
 	$user_code = $json_obj->{"user_code"};
 	$submit_ip = $json_obj->{"submit_ip"};
 
@@ -45,7 +46,7 @@
         $data_code = $value['code'];
         $data_ip = $value['ip'];
     }
-
+*/
     $json = array(
         'user_code' => $user_code,
         'submit_ip' => $submit_ip,
