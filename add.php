@@ -42,9 +42,11 @@
     foreach ($json_obj["sf_code"] as $key => $value) {
         //echo $value['code']."<br/>";
         //echo $value['ip']."<br/>";
+        $data_code = $value->{"code"};
+        $data_ip = $value->{"ip"};
 
-        $data_code = $value['code'];
-        $data_ip = $value['ip'];
+        //$data_code = $value['code'];
+        //$data_ip = $value['ip'];
         $query_sf = "UPDATE product_info SET sf_code = $data_code WHERE INNER_IP = '$data_ip'";
         $result_sf = mysqli_query($conn, $query_sf) or die ('Error insert product_table table.');
     }
