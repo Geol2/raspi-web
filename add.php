@@ -39,7 +39,7 @@
 	$submit_ip = $json_obj->{"submit_ip"};
 
     //json 데이터 뿌리기
-    foreach ($json_obj["sf_code"] as $key => $value) {
+    foreach ($json_obj->{"sf_code"} as $key => $value) {
         //echo $value['code']."<br/>";
         //echo $value['ip']."<br/>";
         $data_code = $value->{"code"};
