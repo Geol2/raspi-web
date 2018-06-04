@@ -1,5 +1,6 @@
 
 <?php
+//API서버에 AP가 등록된 후, AP가 어떤 사용자에게 등록되었는지에 대한 정보를 저장
 //Sys_info 를 웹서버에서 수동으로 추가해주는 부분.
 //자동으로 추가해주는 부분을 만들어 보자.
 //sf_code 추가.
@@ -23,7 +24,7 @@
 	$json_obj = json_decode($json_str, false); // false : object 로 반환.
                                                     // true : array로 반환.
 
-    // 실제로 받는 값들..
+    // 실제로 받는 값들.. {"user_code" : " ", "submit_ip" : " ", "sf_code": [ {"code" : " ", "ip" : " " } ] }
 	$user_code = $json_obj->{"user_code"};
 	$submit_ip = $json_obj->{"submit_ip"};
 

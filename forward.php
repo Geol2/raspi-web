@@ -9,7 +9,7 @@ $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connect
 
 
 <?php
-// 포워딩 페이지 작성.
+// 포워딩 페이지 작성. 전달 받은 제어코드 값을 수경재배기 장비에게 전달해주는 역할 수행
 // 웹서버에서 버튼을 누르면 라즈베리가 받아서 유저코드의 값을 통하여 아두이노 장비로 ip주소와 cmd 값을 넘겨줘야 한다.
 
     header('Access-Control-Allow-Origin: *');

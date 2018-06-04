@@ -1,6 +1,7 @@
 
 
 <?php
+// AP의 등록정보를 삭제하고, 연결된 수경재배기들 정보 또한 삭제
 // product_info 와 Sys_info 두 개의 테이블의 내용을 삭제.
     header('Access-Control-Allow-Origin: * ');
     header('Access-Control-Allow-Headers: Origin, X-Requested-With, Contentent-Type, Accept');

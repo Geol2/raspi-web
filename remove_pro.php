@@ -1,5 +1,6 @@
 
 <?php
+// AP에 연결된 수경재배기 중 삭제가 요청된 수경재배기의 정보를 삭제
 // product_info 의 테이블의 내용만 삭제.
 
     header('Access-Control-Allow-Origin: * ');
@@ -17,11 +18,13 @@
     $json_str = file_get_contents('php://input');
 
     # Get as an object
-    $json_obj = json_decode($json_str);
+    $json_obj = json_decode($json_str, false); // Object로 받아서 변수에 저장.
 
+
+    $sfCode = $json_obj -> {"sfCode"};
     //echo $json_obj;
 
-    $query = "DELETE FROM product_info";
+    $query = "DELETE FROM product_info WHERE sf_code= $sfCode ";
     $result = mysqli_query($conn, $query) or die ('Error Querying database.');
 
     $key = ['result'=>'OK'];
