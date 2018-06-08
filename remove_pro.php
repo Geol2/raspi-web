@@ -21,10 +21,10 @@
     $json_obj = json_decode($json_str, false); // Object로 받아서 변수에 저장.
 
 
-    $sfCode = $json_obj -> {"sfCode"};
+    $sfCode = $json_obj -> {"sf_code"};
     //echo $json_obj;
 
-    $query = "DELETE FROM product_info WHERE sf_code= $sfCode ";
+    $query = "DELETE FROM product_info WHERE sf_code= $sfCode";
     $result = mysqli_query($conn, $query) or die ('Error Querying database.');
 
     $key = ['result'=>'OK'];
