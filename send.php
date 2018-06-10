@@ -21,7 +21,7 @@
 
     if( $num >= 1) {
 
-        define("HOST", "203.250.32.41"); //수정가능성이 있음.
+        define("HOST", "203.250.32.43"); //수정가능성이 있음.
         define("PORT", 5672);
         define("USER", "manager");
         define("PASS", "manager");
@@ -40,7 +40,7 @@
         }
 
         $query = "SELECT * FROM Sys_info";
-        $result = mysqli_query($link, $query);
+        $result = mysqli_query($link, $query) or ("Not select Sys_info Table");
 
         $row = mysqli_fetch_array($result, MYSQLI_BOTH);
 
@@ -57,8 +57,11 @@
         //mysql - ampq
         $id = $user_code; //user_code 로 변경.
 
-        $temp = ['id' => $id, 't' => $_GET['t'], 'h' => $_GET['h'], 'wt' => $_GET['wt'], 'wl' => $_GET['wl'], 'e' => $_GET['e'], 'd' => $current_time];
+        $temp = ['id' => $id, 't' => $_GET['t'], 'h' => $_GET['h'], 'wt' => $_GET['wt'], 'wl' => $_GET['wl'], 'e' => $_GET['e'], 'd' => $current_time, 'ip' => $ip];
         //get arduino data..
+
+        $query_1 = "SELECT sf_code FROM product_info WHERE INNER_IP = '$ip' "; // product_info의 INNER_IP가 $ip인 칼럼의 sf_code를 찾는다.
+        $result_1 = mysqli_query($link, $query_1) or die ("Not select sf_code column");
 
         $data = json_encode($temp);
         echo $data;
