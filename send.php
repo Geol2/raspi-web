@@ -14,7 +14,7 @@
 
     $conn = mysqli_connect("localhost", "root", "619412", "water_middle_server");
     $query_user = "SELECT * FROM Sys_info"; //echo $query; echo "</br>";
-    $result_user = mysqli_query($conn, $query_user) or die ("Error database.. not connect Sys_info table.");
+    $result_user = mysqli_query($conn, $query_user) or die ("Error database.. not select Sys_info table.");
     // true 참 0 이외의 값, false 거짓 0
 
     $num = mysqli_num_rows($result_user); //echo "$num";
@@ -48,7 +48,7 @@
         $user_code = $row['USER_CODE'];
 
         date_default_timezone_set('Asia/Seoul'); // 분침 -30분 문제..
-        $current_time = date("Y-m-d-H-i"); //날짜 시간 추가..
+        $current_time = date("Y-m-d-H-i-s"); //날짜 시간 추가..
 
         // ampq //
         $connection = new AMQPStreamConnection(HOST, PORT, USER, PASS);
@@ -83,6 +83,6 @@
         echo 'OK';
     }
     else {
-        echo 'dont send';
+        echo 'Not send';
     }
 ?>
