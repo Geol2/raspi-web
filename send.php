@@ -12,8 +12,9 @@
     use PhpAmqpLib\Connection\AMQPStreamConnection;
     use PhpAmqpLib\Message\AMQPMessage;
 
+    $conn = mysqli_connect("localhost", "root", "619412", "water_middle_server");
     $query_user = "SELECT * FROM Sys_info"; //echo $query; echo "</br>";
-    $result_user = mysqli_query($link, $query_user) or die ("Error database.. not connect Sys_info table.");
+    $result_user = mysqli_query($conn, $query_user) or die ("Error database.. not connect Sys_info table.");
     // true 참 0 이외의 값, false 거짓 0
 
     $num = mysqli_num_rows($result_user); //echo "$num";
