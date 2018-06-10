@@ -60,8 +60,8 @@
         $temp = ['id' => $id, 't' => $_GET['t'], 'h' => $_GET['h'], 'wt' => $_GET['wt'], 'wl' => $_GET['wl'], 'e' => $_GET['e'], 'd' => $current_time, 'sf' => $_GET['sf'] ];
         //get arduino data..
 
-        $query_1 = "SELECT sf_code FROM product_info WHERE INNER_IP = '$ip' "; // product_info의 INNER_IP가 $ip인 칼럼의 sf_code를 찾는다.
-        $result_1 = mysqli_query($link, $query_1) or die ("Not select sf_code column"); // 못찾으면 에러 구문 발생. 찾으면 실행.
+        //$query_1 = "SELECT sf_code FROM product_info WHERE INNER_IP = '$ip' "; // product_info의 INNER_IP가 $ip인 칼럼의 sf_code를 찾는다.
+        //$result_1 = mysqli_query($link, $query_1) or die ("Not select sf_code column"); // 못찾으면 에러 구문 발생. 찾으면 실행.
 
         $data = json_encode($temp);
         echo $data;
