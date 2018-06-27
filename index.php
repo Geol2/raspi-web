@@ -21,7 +21,7 @@
     //printf("PORT : %s<br/>", $using_port);
     echo "QUERY_STRING_IP : ".$ip; echo "</br>";
     if( $ip ){
-        $sfCode= split(".",$money)[3];//$ip로부터 ip의 D class추출
+        $sfCode= explode(".",$ip)[3];//$ip로부터 ip의 D class추출
         $mode = 'Y'; // mode 수동'n' / 자동'y' 모드
         $state = 'N'; // 수경재배기 생육 상태. 'n' : 생육x, 'y':셍육o.
         $register = 'N'; //등록 상태
