@@ -14,7 +14,7 @@
 
 	$return_arr = array();
 
-	$query = "SELECT INNER_IP FROM product_info";
+	$query = "SELECT INNER_IP FROM PRODUCT_INFO";
 	$result = mysqli_query($conn, $query) or die ('Error Querying database.');
     //echo "$result";
 
