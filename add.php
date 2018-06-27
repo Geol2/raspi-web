@@ -15,7 +15,7 @@
 	$json_obj = json_decode($json_str);
 	$ap_code = $json_obj->{"ap_code"};
 	$public_ip = $json_obj->{"public_ip"};
-	$query = "INSERT INTO Sys_info (USER_CODE, PUBLIC_IP ) VALUES ( $ap_code, '$public_ip')";
+	$query = "INSERT INTO SYS_INFO (USER_CODE, PUBLIC_IP ) VALUES ( $ap_code, '$public_ip')";
 	$result = mysqli_query($conn, $query) or die ('Error database.');
 	$key = ['result'=>'OK'];
 	echo json_encode($key);

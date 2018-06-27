@@ -26,17 +26,17 @@
         $state = 'N'; // 수경재배기 생육 상태. 'n' : 생육x, 'y':셍육o.
         $register = 'N'; //등록 상태
 
-        $query = "INSERT INTO product_info (INNER_IP, MODE, STATE, REGISTER, SF_CODE) VALUES ('$ip', '$mode', '$state', '$register', '$sfCode')";
+        $query = "INSERT INTO PRODUCT_INFO (INNER_IP, MODE, STATE, REGISTER, SF_CODE) VALUES ('$ip', '$mode', '$state', '$register', '$sfCode')";
         $result_ip = mysqli_query($conn, $query) or die ('Error database.. not connect product table.');
         echo '  Customer added.'; echo "</br>";
         // 아랫줄부터 user_code의 존재여부를 확인 후 POST 방식으로 전송함.
-        $query_user = "SELECT COUNT(*) FROM Sys_info";
+        $query_user = "SELECT COUNT(*) FROM SYS_INFO";
         $count = mysqli_query($conn, $query_user) or die ("Error database.. not connect Sys_info table.");
         // true 참 0 이외의 값, false 거짓 0
         //Sys_info의 table 행 개수 저장.
         
         if( $count == 1) {//user_code가 존재한다면.
-            $exist_query = "SELECT * FROM Sys_info";
+            $exist_query = "SELECT * FROM SYS_INFO";
             $exist_result = mysqli_query($conn, $exist_query) or die ("Error database.. not connect Sys_info 2 table.");
             $row = mysqli_fetch_array($exist_result, MYSQLI_ASSOC);
             $ap_code = $row['AP_CODE']; //ap_code를 변수에 넣음.

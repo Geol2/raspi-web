@@ -46,7 +46,7 @@
 	//$json = json_decode($str1, true);
     $conn_user = mysqli_connect($db_host1, $db_user1, $db_passwd1, $db_name1) or die("Connected Failed!!!!");
 
-    $query_user = "SELECT * FROM Sys_info";
+    $query_user = "SELECT * FROM SYS_INFO";
 	$result_user = mysqli_query($conn_user, $query_user);
 	//true 참 0 이외의 값 , false 거짓 0 //
 	$num = mysqli_num_rows($result_user);

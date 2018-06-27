@@ -13,7 +13,7 @@
     use PhpAmqpLib\Message\AMQPMessage;
 
     $conn = mysqli_connect("localhost", "root", "619412", "water_middle_server");
-    $query_user = "SELECT * FROM Sys_info"; //echo $query; echo "</br>";
+    $query_user = "SELECT * FROM SYS_INFO"; //echo $query; echo "</br>";
     $result_user = mysqli_query($conn, $query_user) or die ("Error database.. not select Sys_info table.");
     // true 참 0 이외의 값, false 거짓 0
 
@@ -40,7 +40,7 @@
             exit();
         }
 
-        $query = "SELECT * FROM Sys_info";
+        $query = "SELECT * FROM SYS_INFO";
         $result = mysqli_query($link, $query) or ("Not select Sys_info Table");
 
         $row = mysqli_fetch_array($result, MYSQLI_BOTH);

@@ -14,10 +14,10 @@
 
     $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connected Failed!!!!");
 
-    $query_delete_pro = "DELETE FROM product_info";
+    $query_delete_pro = "DELETE FROM PRODUCT_INFO";
     $result = mysqli_query($conn, $query_delete_pro) or die ('Error Querying database.');
 
-    $query_delete_sys = "DELETE FROM Sys_info";
+    $query_delete_sys = "DELETE FROM SYS_INFO";
     $result1 = mysqli_query($conn, $query_delete_sys) or die ('Error Querying database.');
 
     $key = ['result'=>'OK'];

@@ -24,7 +24,7 @@
     $sfCode = $json_obj -> {"sf_code"};
     //echo $json_obj;
 
-    $query = "DELETE FROM product_info WHERE sf_code= $sfCode";
+    $query = "DELETE FROM PRODUCT_INFO WHERE SF_CODE = $sfCode";
     $result = mysqli_query($conn, $query) or die ('Error Querying database.');
 
     $key = ['result'=>'OK'];
