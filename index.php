@@ -30,12 +30,12 @@
         $result_ip = mysqli_query($conn, $query) or die ('Error database.. not connect product table.');
         echo '  Customer added.'; echo "</br>";
         // 아랫줄부터 user_code의 존재여부를 확인 후 POST 방식으로 전송함.
-        $query_user = "SELECT COUNT(*) FROM SYS_INFO";
-        $count = mysqli_query($conn, $query_user) or die ("Error database.. not connect Sys_info table.");
+        $query_user = "SELECT * FROM SYS_INFO"; //echo $query; echo "</br>";
+        $result_user = mysqli_query($conn, $query_user) or die ("Error database.. not connect Sys_info table.");
         // true 참 0 이외의 값, false 거짓 0
+        $num = mysqli_num_rows($result_user); //echo "$num";
         //Sys_info의 table 행 개수 저장.
-        
-        if( $count == 1) {//user_code가 존재한다면.
+        if( $num >= 1) {
             $exist_query = "SELECT * FROM SYS_INFO";
             $exist_result = mysqli_query($conn, $exist_query) or die ("Error database.. not connect Sys_info 2 table.");
             $row = mysqli_fetch_array($exist_result, MYSQLI_ASSOC);
