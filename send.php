@@ -55,7 +55,7 @@
         $query_ap = "SELECT AP_CODE FROM SYSINFO"; // 쿼리문 작성.
         $result_ap = mysqli_query($link, $query_ap) or ("Not select SYS_INFO Table at AP_CODE"); // 쿼리문 실행.
 
-        $ap_value = mysqli_fetch_array($result_ap, MYSQLI_BOTH); // 데이터 값을 표현해주는 방식을 ~만들고.
+        $ap_value = mysqli_fetch_array($result_ap); // 데이터 값을 표현해주는 방식을 ~만들고.
 
         $value = $ap_value['AP_CODE'];// row의 0행값을 뽑아서 ~저장.
 
