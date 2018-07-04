@@ -47,27 +47,31 @@
 
         $user_code = $row['USER_CODE'];
 
+
+        //mysql - ampq
+        $id = $user_code; //user_code 로 변경.
+
+
         //시간 짜기
         date_default_timezone_set('Asia/Seoul'); // 분침 -30분 문제..
         $current_time = date("Y-m-d-H-i-s"); //날짜 시간 추가..
+
 
         // ampq //
         $connection = new AMQPStreamConnection(HOST, PORT, USER, PASS);
 
         $channel = $connection->channel();
 
-        //mysql - ampq
-        $id = $user_code; //user_code 로 변경.
 
         // ap_code를 추출하여 $temp.에 삽입.
         $query_ap = "SELECT AP_CODE FROM SYSINFO"; // 쿼리문 작성.
         $result_ap = mysqli_query($link, $query_ap) or ("Not select SYS_INFO Table at AP_CODE"); // 쿼리문 실행.
 
-        while ( $ap_value = mysqli_fetch_array($result_ap, MYSQLI_BOTH) ) { // 데이터 값을 표현해주는 방식을 ~만들고.
-            $value = $ap_value['AP_CODE'];// row의 0행값을 뽑아서 ~저장.
+        $ap_value = mysqli_fetch_array($result_ap, MYSQLI_BOTH) // 데이터 값을 표현해주는 방식을 ~만들고.
 
-            printf("%d", $ap_value['AP_CODE']);
-        }
+        $value = $ap_value['AP_CODE'];// row의 0행값을 뽑아서 ~저장.
+
+        printf("%d", $value);
 
         $temp = ['t' => $_GET['t'], 'h' => $_GET['h'], 'wt' => $_GET['wt'], 'wl' => $_GET['wl'], 'e' => $_GET['e'], 'd' => $current_time, 'sf' => '11', 'ap' => $value ];
         //$temp = ['t' => $_GET['t'], 'h' => $_GET['h'], 'wt' => $_GET['wt'], 'wl' => $_GET['wl'], 'e' => $_GET['e'], 'd' => $current_time, 'sf' => $_GET['sf'] ];
