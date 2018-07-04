@@ -59,7 +59,7 @@
 
         $value = $ap_value['AP_CODE'];// row의 0행값을 뽑아서 ~저장.
 
-        print_r($ap_value);
+        printf("$d",$value);
 
         $temp = ['t' => $_GET['t'], 'h' => $_GET['h'], 'wt' => $_GET['wt'], 'wl' => $_GET['wl'], 'e' => $_GET['e'], 'd' => $current_time, 'sf' => 11, 'ap' => $value ];
         //$temp = ['t' => $_GET['t'], 'h' => $_GET['h'], 'wt' => $_GET['wt'], 'wl' => $_GET['wl'], 'e' => $_GET['e'], 'd' => $current_time, 'sf' => $_GET['sf'] ];
