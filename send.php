@@ -57,9 +57,9 @@
 
         $ap_value = mysqli_fetch_array($result_ap, MYSQLI_BOTH); // 데이터 값을 표현해주는 방식을 ~만들고.
 
-        $value = $ap_value[0];// row의 0행값을 뽑아서 ~저장.
+        $value = $ap_value['AP_CODE'];// row의 0행값을 뽑아서 ~저장.
 
-        //printf("%d", $value);
+        printf("%s", $ap_value['AP_CODE']);
 
         $temp = ['t' => $_GET['t'], 'h' => $_GET['h'], 'wt' => $_GET['wt'], 'wl' => $_GET['wl'], 'e' => $_GET['e'], 'd' => $current_time, 'sf' => 11, 'ap' => $value ];
         //$temp = ['t' => $_GET['t'], 'h' => $_GET['h'], 'wt' => $_GET['wt'], 'wl' => $_GET['wl'], 'e' => $_GET['e'], 'd' => $current_time, 'sf' => $_GET['sf'] ];
