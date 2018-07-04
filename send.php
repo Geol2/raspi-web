@@ -57,7 +57,7 @@
 
         $ap_value = mysqli_fetch_array($result_ap, MYSQLI_BOTH); // 데이터 값을 표현해주는 방식을 ~만들고.
 
-        $value = $ap_value['AP_CODE'];// row의 0행값을 뽑아서 ~저장.
+        $value = $ap_value[0];// row의 0행값을 뽑아서 ~저장.
 
         //printf("%d", $value);
 
