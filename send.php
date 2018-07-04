@@ -55,11 +55,15 @@
         $query_ap = "SELECT AP_CODE FROM SYSINFO"; // 쿼리문 작성.
         $result_ap = mysqli_query($link, $query_ap) or ("Not select SYS_INFO Table at AP_CODE"); // 쿼리문 실행.
 
-        while( $row = mysqli_fetch_array($result_ap)){
-            echo '<tr><td>'.$row['AP_CODE'].'</td>>'.
-                '<td>'.$row['PUBLIC_IP'].'</td></td>';
+        echo '<table class="text-center"><tr>' .
+            '<th>AP_CODE</th><th>PUBLIC_IP</th>' .
+            '</tr>';
+        while( $row = mysqli_fetch_array($result_ap) ) {
+            echo '<tr><td>' . $row['AP_CODE'] . '</td>' .
+                '<td class="text-right">' . $row['PUBLIC_IP'] . '</td></tr>';
         }
 
+        echo '</table>';
         //$ap_value = mysqli_fetch_array($result_ap, MYSQLI_BOTH); // 데이터 값을 표현해주는 방식을 ~만들고.
         //$value = $ap_value['AP_CODE'];// row의 0행값을 뽑아서 ~저장.
 
