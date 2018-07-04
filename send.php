@@ -60,7 +60,7 @@
             '</tr>';
         while( $row = mysqli_fetch_array($result_ap) ) {
             echo '<tr><td>' . $row['AP_CODE'] . '</td>' .
-                '<td class="text-right">' . $row['PUBLIC_IP'] . '</td></tr>';
+                '<td>' . $row['PUBLIC_IP'] . '</td></tr>';
         }
 
         echo '</table>';
