@@ -58,7 +58,22 @@
         //mysql - ampq
         $id = $user_code; //user_code 로 변경.
 
-        $temp = ['t' => $_GET['t'], 'h' => $_GET['h'], 'wt' => $_GET['wt'], 'wl' => $_GET['wl'], 'e' => $_GET['e'], 'd' => $current_time, 'sf' => $_GET['sf'] ];
+        // ap_code를 추출하여 $temp.에 삽입.
+        $query_ap = "SELECT AP_CODE FROM SYSINFO WHERE AP_CODE = 121 ";
+        $result_ap = mysqli_query($link, $query_ap) or ("Not select SYS_INFO Table at AP_CODE");
+
+        $ap_value = mysqli_fetch_array($result_ap); // 값을 표현해주는 방식
+        $value = $ap_value[0]; // row 값을 뽑아서 저장.
+
+        $temp = ['t' => $_GET['t'], 'h' => $_GET['h'], 'wt' => $_GET['wt'], 'wl' => $_GET['wl'], 'e' => $_GET['e'], 'd' => $current_time, 'sf' => 11, 'ap' => $value ];
+        //$temp = ['t' => $_GET['t'], 'h' => $_GET['h'], 'wt' => $_GET['wt'], 'wl' => $_GET['wl'], 'e' => $_GET['e'], 'd' => $current_time, 'sf' => $_GET['sf'] ];
+        // t: temperature
+        // h : 습도
+        // wt : 수온
+        // wl : 수위
+        // e : 조도
+        // d : 시간
+        // sf : sf코드 ip의 D클래스
         //get arduino data..
 
         //$query_1 = "SELECT sf_code FROM product_info WHERE INNER_IP = '$ip' "; // product_info의 INNER_IP가 $ip인 칼럼의 sf_code를 찾는다.
