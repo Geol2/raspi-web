@@ -52,7 +52,7 @@
 
 
         // ap_code를 추출하여 $temp.에 삽입.
-        $query_ap = "SELECT AP_CODE FROM SYSINFO"; // 쿼리문 작성.
+        $query_ap = "SELECT AP_CODE FROM SYS_INFO"; // 쿼리문 작성.
         $result_ap = mysqli_query($link, $query_ap) or ("Not select SYS_INFO Table at AP_CODE"); // 쿼리문 실행.
 
         echo '<table class="text-center"><tr>' .
