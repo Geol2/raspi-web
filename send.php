@@ -47,6 +47,7 @@
 
         $user_code = $row['USER_CODE'];
 
+        //시간 짜기
         date_default_timezone_set('Asia/Seoul'); // 분침 -30분 문제..
         $current_time = date("Y-m-d-H-i-s"); //날짜 시간 추가..
 
@@ -64,6 +65,7 @@
 
         $ap_value = mysqli_fetch_array($result_ap, MYSQLI_BOTH); // 데이터 값을 표현해주는 방식을 ~만들고.
         $value = $ap_value['AP_CODE']; // row의 0행값을 뽑아서 ~저장.
+
         echo $value;
 
         $temp = ['t' => $_GET['t'], 'h' => $_GET['h'], 'wt' => $_GET['wt'], 'wl' => $_GET['wl'], 'e' => $_GET['e'], 'd' => $current_time, 'sf' => 11, 'ap' => $value ];
@@ -93,6 +95,7 @@
         $channel->close();
         $connection->close();
 
+        mysqli_free_result($result_ap);
         mysqli_free_result($result);
         mysqli_close($link);
 
