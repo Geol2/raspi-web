@@ -6,7 +6,7 @@
 // sfCode를 이용하여 날짜, 시간
 // 시간 관련되서 1. 날짜, 데이터 같이 보냄. 2.데이는 일단 받아서 내가 날짜데이터를 추가해서 웹서버로 전송.
 // sf 8 ~ 20라인 수정 했는데 문제발생 가능성이 보일 수 있음.
-
+/*
     class Settings{
         private static $instance;
         private $settings;
@@ -34,7 +34,7 @@
             }
         }
     }// end class;
-
+*/
     require_once __DIR__ . '/vendor/autoload.php';
 
     use PhpAmqpLib\Connection\AMQPStreamConnection;
