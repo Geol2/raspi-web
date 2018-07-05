@@ -25,7 +25,8 @@ class Settings{
             }
         }
     }
-}// end class;*/
+}// end class;
+*/
 ?>
 
 <?php
