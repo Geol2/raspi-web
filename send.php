@@ -13,8 +13,8 @@
     use PhpAmqpLib\Message\AMQPMessage;
 
     //ip 접근 하기 위해 만듬.
-    $settings = Settings::getInstance('php.ini');
-    $ip_setting = $settings->ip;
+    $ip_settings = Settings::getInstance('php.ini');
+    $ip_setting = $ip_settings->ip;
 
     $conn = mysqli_connect("localhost", "root", "619412", "water_middle_server");
     $query_user = "SELECT * FROM SYS_INFO"; //echo $query; echo "</br>";
