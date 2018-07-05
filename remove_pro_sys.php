@@ -21,6 +21,7 @@
     $result1 = mysqli_query($conn, $query_delete_sys) or die ('Error Querying database.');
 
     $key = ['result'=>'OK'];
+
     echo json_encode($key);
 
     echo "Delete Sys_info and product_info";
