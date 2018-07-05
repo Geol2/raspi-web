@@ -38,7 +38,7 @@
     }// end class;
 
     $ip_url_settings = Settings::getInstance('php.ini');
-    $ip_url_setting = $ip_url_settings->ip_url;
+    //$ip_url_setting = $ip_url_settings->ip_url;
 
     //require_once __DIR__ .'/vendor/autoload.php';
     $ip = $_GET['ip']; //Query_string
