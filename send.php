@@ -26,7 +26,7 @@
 
     if( $num >= 1) {
 
-        define("HOST", $ip_setting); //수정가능성이 있음.
+        //define("HOST", 'ip_setting'); //수정가능성이 있음.
         define("PORT", 5672);
         define("USER", "manager");
         define("PASS", "manager");
@@ -50,7 +50,7 @@
 
 
         // ampq //
-        $connection = new AMQPStreamConnection(HOST, PORT, USER, PASS);
+        $connection = new AMQPStreamConnection($ip_setting, PORT, USER, PASS);
 
         $channel = $connection->channel();
 
