@@ -12,6 +12,10 @@
     use PhpAmqpLib\Connection\AMQPStreamConnection;
     use PhpAmqpLib\Message\AMQPMessage;
 
+    //ip 접근 하기 위해 만듬.
+    $settings = Settings::getInstance('php.ini');
+    $ip_setting = $settings->ip;
+
     $conn = mysqli_connect("localhost", "root", "619412", "water_middle_server");
     $query_user = "SELECT * FROM SYS_INFO"; //echo $query; echo "</br>";
     $result_user = mysqli_query($conn, $query_user) or die ("Error database.. not select Sys_info table.");
@@ -22,7 +26,7 @@
 
     if( $num >= 1) {
 
-        define("HOST", "203.250.32.47"); //수정가능성이 있음.
+        define("HOST", $ip_setting); //수정가능성이 있음.
         define("PORT", 5672);
         define("USER", "manager");
         define("PASS", "manager");
