@@ -7,35 +7,8 @@
 // 시간 관련되서 1. 날짜, 데이터 같이 보냄. 2.데이는 일단 받아서 내가 날짜데이터를 추가해서 웹서버로 전송.
 // sf 8 ~ 20라인 수정 했는데 문제발생 가능성이 보일 수 있음.
 
-    class Settings{
-        private static $instance;
-        private $settings;
-
-        private function __construct($ini_file) {
-            $this->settings = parse_ini_file($ini_file, true);
-        }
-
-        public static function getInstance($ini_file) {
-            if(! isset(self::$instance)) {
-                self::$instance = new Settings($ini_file);
-            }
-            return self::$instance;
-        }
-
-        public function __get($setting) {
-            if(array_key_exists($setting, $this->settings)) {
-                return $this->settings[$setting];
-            } else {
-                foreach($this->settings as $section) {
-                    if(array_key_exists($setting, $section)) {
-                        return $section[$setting];
-                    }
-                }
-            }
-        }
-    }// end class;
-
     require_once __DIR__ . '/vendor/autoload.php';
+    require_once __DIR__ . '/path_ip_class.php';
 
     use PhpAmqpLib\Connection\AMQPStreamConnection;
     use PhpAmqpLib\Message\AMQPMessage;
