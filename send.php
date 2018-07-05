@@ -26,7 +26,7 @@
 
     if( $num >= 1) {
 
-        const HOST = '203.250.32.47'; //수정가능성이 있음.
+        define("HOST", "203.250.32.47"); //수정가능성이 있음.
         define("PORT", 5672);
         define("USER", "manager");
         define("PASS", "manager");
