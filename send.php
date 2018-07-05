@@ -8,7 +8,6 @@
 // sf 8 ~ 20라인 수정 했는데 문제발생 가능성이 보일 수 있음.
 
     require_once __DIR__ . '/vendor/autoload.php';
-    require_once __DIR__ . '/index.php';
 
     use PhpAmqpLib\Connection\AMQPStreamConnection;
     use PhpAmqpLib\Message\AMQPMessage;
