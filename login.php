@@ -11,7 +11,7 @@
 
     <form method = "POST" action = "/login_check.php">
         id <input type = "text" name = "id"> <br>
-        pw <input type = "password" name = "pw"> <br>
+        pwd <input type = "password" name = "pwd"> <br>
         <input type = "submit" value = "login">
     </form>
     <button onclick="location.href='sign_up.php'"> sign up </button>
