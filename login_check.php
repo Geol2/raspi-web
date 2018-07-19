@@ -33,7 +33,7 @@ if($result->num_rows==1){
     }
 }
 else {
-    echo "틀린 id나 패스워드";
+    echo "틀린 id나 패스워드1";
 }
 
 ?>
