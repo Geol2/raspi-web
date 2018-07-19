@@ -1,6 +1,5 @@
 <?php
     include ("config_db.php");
-    session_start();
 ?>
 
 <html>
@@ -10,7 +9,7 @@
 
     <h1>LOGIN </h1>
 
-    <form method = "POST" action = "login.php">
+    <form method = "POST" action = "login_check.php">
         id <input type = "text" name = "id"> <br>
         pw <input type = "password" name = "pw"> <br>
         <input type = "submit" value = "login">
