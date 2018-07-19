@@ -15,5 +15,6 @@ echo "홈(로그인) 성공"; echo "\n";
 echo "<a href=logout.php>logout</a>"; echo "\n";
 
 
-echo
+$ip_print = $_SERVER['REMOTE_ADDR'];
+echo $ip_print;
 ?>
