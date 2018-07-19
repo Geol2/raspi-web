@@ -16,7 +16,7 @@ $email = $_POST['email'];
 $query = "INSERT INTO LOGIN_INFO (id, pwd, email) values ('$id', '$pwd', '$email')";
 
 if($conn -> query($query)){
-    echo "sucess login";
+    echo "<script> document.location.href='http://203.250.35.169/login.php'; </script>";
 } else {
     echo "fail login";
 }
