@@ -7,7 +7,7 @@
     <head> </head>
 
     <body>
-    <h1>INPUT LOGIN </h1>
+    <h1>LOGIN </h1>
         <form method = "POST" action = "login.php">
             id <input type = "text" name = "id"> <br>
             pw <input type = "password" name = "pw"> <br>
