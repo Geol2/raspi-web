@@ -4,7 +4,7 @@
         private $settings;
 
         private function __construct($ini_file) {
-            $this->settings = parse_ini_file($ini_file, true);
+            $this->settings = parse_ini_file($ini_file, true); // 배열로 파싱.
         }
 
         public static function getInstance($ini_file) {
