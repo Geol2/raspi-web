@@ -1,35 +1,46 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: big94
+ * Date: 2018-07-19
+ * Time: 오후 9:16
+ */
+
 include ("config_db.php");
-session_start();
+
+$id = $_POST['id'];
+$pwd = md5($_POST['pwd']);
+$pwd2 = md5($_POST['pwd2']);
+$email = $_POST['email'];
+
+$query = "INSERT INTO LOGIN_INFO (userid, userpwd, useremail) values ('$id', '$pwd', '$email')";
+
+
+if($pwd != $pwd2) {
+    echo "비밀번호가 서로 다릅니다.";
+    echo "<a href = sign_up.php> back page</a>";
+    exit();
+}
+
+if($id == NULL || $pwd == NULL || $pwd2 == NULL || $email == NULL) {
+    echo "빈 칸을 모두 채워야 합니다.";
+    echo "<a href = sign_up.php> back page</a>";
+    exit();
+}
+
+$check_id = "SELECT * FROM LOGIN_INFO WHERE userid='$id' ";
+
+$result = $conn->query($check_id);
+if($result -> num_rows == 1) {
+    echo "중복된 id입니다.";
+    echo "<a href='sign_up.php'> back page </a>";
+    exit();
+}
+
+if($conn -> query($query)){
+    echo "<script> document.location.href='http://203.250.35.169/login.php'; </script>";
+} else {
+    echo "fail login";
+}
 
 ?>
-
-    <html>
-
-        <head> </head>
-
-        <body>
-        <h1>INPUT</h1>
-        <form name="join" method="post" action="/memberSave.php">
-            <table border="1">
-                <tr>
-                    <td>ID</td>
-                    <td><input type="text" size="30" name="id"></td>
-                </tr>
-                <tr>
-                    <td>Password</td>
-                    <td><input type="password" size="30" name="pwd"></td>
-                </tr>
-                <tr>
-                    <td>Confirm Password</td>
-                    <td><input type="password" size="30" name="pwd2"></td>
-                </tr>
-                    <td>e-mail</td>
-                    <td><input type="text" size="30" name="email"></td>
-                </tr>
-                <input type=submit value="submit"><input type=reset value="rewrite">
-            </table>
-        </form>
-        </body>
-
-    </html>
