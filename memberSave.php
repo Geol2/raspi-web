@@ -33,12 +33,12 @@ if($id == NULL || $pwd == NULL || $pwd2 == NULL || $email == NULL) {
     exit();
 }
 
-$check = "SELECT * FROM LOGIN_INFO WHERE id='$id' ";
+$check_id = "SELECT * FROM LOGIN_INFO WHERE id='$id' ";
 
-$result = $conn->query($check);
+$result = $conn->query($check_id);
 
 if($result -> num_rows == 1) {
     echo "중복된 id입니다.";
-    echo "<a href='sign_up.php'> back page </a>"
+    echo "<a href='sign_up.php'> back page </a>";
 }
 

@@ -27,10 +27,6 @@ session_start();
                     <td>e-mail</td>
                     <td><input type="text" size="30" name="email"></td>
                 </tr>
-                </tr>
-                    <td>Confirm e-mail</td>
-                    <td><input type="text" size="30" name="email"></td>
-                </tr>
                 <input type=submit value="submit"><input type=reset value="rewrite">
             </table>
         </form>
