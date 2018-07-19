@@ -12,7 +12,7 @@ session_start();
 $id = $_POST['id'];
 $pwd = md5($_POST['pwd']);
 
-$check = "SELECT * FROM id WHERE id='$id'";
+$check = "SELECT * FROM LOGIN_INFO WHERE id='$id'";
 $result = $conn->query($check);
 
 if($result -> num_rows == 1){
