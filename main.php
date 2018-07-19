@@ -11,10 +11,10 @@ if(!isset($_SESSION['userid']))
     header('Location : ./login.php');
 }
 
-echo "홈(로그인) 성공"; echo "\n";
-echo "<a href=logout.php>logout</a>"; echo "\n";
+echo "홈(로그인) 성공</br>";
+echo "<a href=logout.php>logout</a> </br>";
 
 
 $ip_print = $_SERVER['REMOTE_ADDR'];
-echo $ip_print;
+echo $ip_print."</br>";
 ?>
