@@ -13,7 +13,6 @@ $pwd = md5($_POST['pwd']);
 $pwd2 = md5($_POST['pwd2']);
 $email = $_POST['email'];
 
-$query = "INSERT INTO LOGIN_INFO (userid, userpwd, useremail) values ('$id', '$pwd', '$email')";
 
 
 if($pwd != $pwd2) {
@@ -37,10 +36,9 @@ if($result -> num_rows == 1) {
     exit();
 }
 
-if($conn -> query($query)){
-    echo "<script> document.location.href='http://203.250.35.169/login.php'; </script>";
-} else {
-    echo "fail login";
+$query = mysqli_query($conn,"INSERT INTO LOGIN_INFO (userid, userpwd, useremail) VALUES ('$id', '$pwd', '$email')");
+if($query) {
+    echo "sign up success";
 }
 
 ?>
