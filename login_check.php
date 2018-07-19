@@ -20,7 +20,7 @@ if($result->num_rows==1){
     if($row['userpwd'] == $pwd){
         $_SESSION['userid'] = $id;
 
-        if(isset($_SESSION['id'])){
+        if(isset($_SESSION['userid'])){
             header('Location: ./main.php');
         }
         else {
