@@ -9,6 +9,6 @@
 session_start();
 $res = session_destroy();
 if($res){
-    header('Location : 203.250.32.169/login.html');
+    header('Location : localhost/login.html');
 }
 ?>
