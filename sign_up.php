@@ -39,6 +39,7 @@ if($result -> num_rows == 1) {
 $query = mysqli_query($conn,"INSERT INTO LOGIN_INFO (userid, userpwd, useremail) VALUES ('$id', '$pwd', '$email')");
 if($query) {
     echo "sign up success";
+    echo "<script> document.location.href='target_url'; </script>";
 }
 
 ?>
