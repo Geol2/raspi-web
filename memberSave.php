@@ -13,7 +13,7 @@ $pwd = md5($_POST['pwd']);
 $pwd2 = md5($_POST['pwd2']);
 $email = $_POST['email'];
 
-$query = "INSERT INTO LOGIN_INFO (id, pwd, email) values ('$id', '$pwd', '$email')";
+$query = "INSERT INTO LOGIN_INFO (userid, userpwd, useremail) values ('$id', '$pwd', '$email')";
 
 
 if($pwd != $pwd2) {
@@ -28,7 +28,7 @@ if($id == NULL || $pwd == NULL || $pwd2 == NULL || $email == NULL) {
     exit();
 }
 
-$check_id = "SELECT * FROM LOGIN_INFO WHERE id='$id' ";
+$check_id = "SELECT * FROM LOGIN_INFO WHERE userid='$id' ";
 
 $result = $conn->query($check_id);
 if($result -> num_rows == 1) {
