@@ -12,15 +12,15 @@ session_start();
 $id = $_POST['id'];
 $pwd = md5($_POST['pwd']);
 
-$check = "SELECT * FROM LOGIN_INFO WHERE id='$id'";
+$check = "SELECT * FROM LOGIN_INFO WHERE userid='$id'";
 $result = $conn->query($check);
 
 if($result -> num_rows == 1) {
     $row = $result->fetch_array(MYSQLI_ASSOC);
-    if($row['pwd'] == $pwd) { // MYSQLI_ASSOC 필드명으로 첨자 가능
-        $_SESSION['id'] = $id; // 로그인 성공 시 세션 변수 만들기
+    if($row['userpwd'] == $pwd) { // MYSQLI_ASSOC 필드명으로 첨자 가능
+        $_SESSION['userid'] = $id; // 로그인 성공 시 세션 변수 만들기
 
-        if(isset($_SESSION['id'])) // 세션 변수가 참일 때,
+        if(isset($_SESSION['userid'])) // 세션 변수가 참일 때,
         {
             header('Location: ./main.php'); // 로그인 성공시 페이지 이동.
         }
