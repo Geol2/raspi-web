@@ -14,6 +14,6 @@
         pwd <input type = "password" name = "pwd"> <br>
         <input type = "submit" value = "login">
     </form>
-    <button onclick="location.href='sign_up.php'"> sign up </button>
+    <button onclick="location.href='sign_up.html'"> sign up </button>
     </body>
 </html>
