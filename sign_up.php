@@ -21,7 +21,7 @@ if($pwd != $pwd2) {
 
 if($id == NULL || $pwd == NULL || $pwd2 == NULL || $email == NULL) {
     echo "빈 칸을 모두 채워야 합니다.";
-    echo "<a href = sign_up.php> back page</a>";
+    echo "<a href = sign_up.html> back page</a>";
     exit();
 }
 
@@ -30,7 +30,7 @@ $check_id = "SELECT * FROM LOGIN_INFO WHERE userid='$id' ";
 $result = $conn->query($check_id);
 if($result -> num_rows == 1) {
     echo "중복된 id입니다.";
-    echo "<a href='sign_up.php'> back page </a>";
+    echo "<a href='sign_up.html'> back page </a>";
     exit();
 }
 
