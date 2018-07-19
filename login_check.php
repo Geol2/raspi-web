@@ -10,7 +10,7 @@ include("config_db.php");
 session_start();
 
 $id = $_POST['id'];
-$pwd = $_POST['pwd'];
+$pwd = md5($_POST['pwd']);
 
 $check = "SELECT * FROM LOGIN_INFO WHERE userid='$id'";
 $result = $conn->query($check);
