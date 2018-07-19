@@ -12,7 +12,10 @@
             id <input type = "text" name = "id"> <br>
             pw <input type = "password" name = "pw"> <br>
             <input type = "submit" value = "login">
-            <input type = "submit" value = "sign up">
+        </form>
+
+        <form method = "POST" action = "sign_up.php">
+            <input type = "submit" value = "sign_up">
         </form>
     </body>
 </html>
