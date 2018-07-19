@@ -13,8 +13,6 @@ $pwd = md5($_POST['pwd']);
 $pwd2 = md5($_POST['pwd2']);
 $email = $_POST['email'];
 
-echo $pwd;
-
 if($pwd != $pwd2) {
     echo "비밀번호가 서로 다릅니다.";
     echo "<a href = sign_up.php> back page</a>";
