@@ -17,6 +17,7 @@ $result = $conn->query($check);
 
 if($result -> num_rows == 1) {
     $row = $result->fetch_array(MYSQLI_ASSOC);
+    echo $pwd;
     if($row['userpwd'] == $pwd) { // MYSQLI_ASSOC 필드명으로 첨자 가능
         $_SESSION['userid'] = $id; // 로그인 성공 시 세션 변수 만들기
 
