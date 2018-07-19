@@ -16,5 +16,5 @@ echo "<a href=logout.php>logout</a> </br>";
 
 
 $ip_print = $_SERVER['REMOTE_ADDR'];
-echo $ip_print."</br>";
+echo "현재 접속한 장치의 아이피 : ".$ip_print."</br>";
 ?>
