@@ -11,7 +11,7 @@ if(!isset($_SESSION['userid']))
     header('Location : ./login.php');
 }
 
-echo "홈(로그인) 성공";
+echo "홈(로그인) 성공\n";
 
 echo "<a href=logout.php>logout</a>";
 
