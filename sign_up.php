@@ -10,7 +10,7 @@ session_start();
 
         <body>
         <h1>INPUT LOGIN </h1>
-        <form name="join" method="post" action="memberSave.php">
+        <form name="join" method="post" action="/memberSave.php">
             <table border="1">
                 <tr>
                     <td>ID</td>
