@@ -2,17 +2,23 @@
     <head>
         <title>login page</title>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width" initial-scale="1">
+        <link rel="stylesheet" href="css/bootstrap.css">
     </head>
 
     <body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>LOGIN </h1>
 
-    <h1>LOGIN </h1>
+            <form method = "POST" action = "/login_check.php">
+                id <input type = "text" name = "id"> <br>
+                pwd <input type = "password" name = "pwd"> <br>
+                <input type = "submit" value = "login">
+            </form>
+            <button onclick="location.href='sign_up.html'"> sign up </button>
+        </div>
+    </div>
 
-    <form method = "POST" action = "/login_check.php">
-        id <input type = "text" name = "id"> <br>
-        pwd <input type = "password" name = "pwd"> <br>
-        <input type = "submit" value = "login">
-    </form>
-    <button onclick="location.href='sign_up.html'"> sign up </button>
     </body>
 </html>
