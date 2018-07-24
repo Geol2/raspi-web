@@ -35,6 +35,7 @@ function ip_name()
     </head>
 
     <body>
+    <?php session_start()?>
         Hello World!.
     </body>
 </html>
