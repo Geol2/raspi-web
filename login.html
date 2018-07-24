@@ -7,18 +7,23 @@
     </head>
 
     <body>
-    <div class="container">
-        <div class="jumbotron">
-            <h1 class="text-center"> 로그인 페이지 </h1>
-            <p class="text-center"> 공유기에 로그인해주시거나 회원가입을 해주세요.</p>
+        <style type="text/css">
+            .jumbotron{
+                background-image: url("images/login_page.jpg");
+            }
+        </style>
+        <div class="container">
+            <div class="jumbotron">
+                <h1 class="text-center"> 공유기 관리 로그인 </h1>
+                <p class="text-center"> 로그인해주시거나 회원가입을 해주세요.</p>
 
-            <form method = "POST" action = "/login_check.php">
-                id <input type = "text" name = "id"> <br>
-                pwd <input type = "password" name = "pwd"> <br>
-                <button class="btn btn-primary" href="login_check.html" type = "submit" > 로그인 </button>
-            </form> <p class="text-left"> <a class="btn btn-primary btn-lg" href="sign_up.html" role="button"> 회원가입 </a></p>
+                <form method = "POST" action = "/login_check.php">
+                    id <input type = "text" name = "id"> <br>
+                    pwd <input type = "password" name = "pwd"> <br>
+                    <button class="btn btn-primary" href="login_check.html" type = "submit" > 로그인 </button>
+                </form> <p class="text-left"> <a class="btn btn-primary btn-lg" href="sign_up.html" role="button"> 회원가입 </a></p>
+            </div>
         </div>
-    </div>
 
     </body>
 </html>
