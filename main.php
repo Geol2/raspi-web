@@ -17,7 +17,7 @@
 
     $ip_print = $_SERVER['REMOTE_ADDR'];
     echo "현재 접속한 장치의 아이피 : " . $ip_print . "</br>";
-    
+
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +30,13 @@
     </head>
 
     <body>
-    <?php session_start()?>
-        Hello World!.
+        <div class="container">
+            <div class="jumbotron">
+                <h1 class="text-center"> 공유기에 로그인 하였습니다.</h1>
+                <p class="text-center"> 하잇! </p>
+                <p class="text-center"> <a class="btn btn-primary btn-lg" href="logout.php" role="button"> 로그아웃 </a></p>
+
+            </div>
+        </div>
     </body>
 </html>
