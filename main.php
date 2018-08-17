@@ -1,24 +1,3 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: big94
- * Date: 2018-07-20
- * Time: 오전 2:17
- */
-
-
-    session_start();
-
-    if (!isset($_SESSION['userid'])) {
-        header('Location : ./login.php');
-    }
-    echo "홈(로그인) 성공</br>";
-    echo "<a href=logout.php>logout</a> </br>";
-
-    $ip_print = $_SERVER['REMOTE_ADDR'];
-    echo "현재 접속한 장치의 아이피 : " . $ip_print . "</br>";
-
-?>
 
 <!DOCTYPE html>
 <html>
@@ -61,6 +40,28 @@
             <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
                 <h1 class="mb-0"> NAT LOGIN SUCCESS.</h1>
                 <p class="text-center"> <a class="btn btn-primary btn-lg" href="logout.php" role="button"> Logout </a></p>
+                <?php
+                /**
+                 * Created by PhpStorm.
+                 * User: big94
+                 * Date: 2018-07-20
+                 * Time: 오전 2:17
+                 */
+
+
+                session_start();
+
+                if (!isset($_SESSION['userid'])) {
+                    header('Location : ./login.php');
+                }
+                echo "홈(로그인) 성공</br>";
+                echo "<a href=logout.php>logout</a> </br>";
+
+                $ip_print = $_SERVER['REMOTE_ADDR'];
+                echo "<p>"."현재 접속한 장치의 아이피 : "."</p>" . $ip_print . "</br>";
+
+                ?>
+
             </section>
             <div class="jumbotron">
 
