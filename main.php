@@ -58,10 +58,11 @@
         </nav>
 
         <div class="container-fluid p-0">
+            <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
+                <h1 class="mb-0"> NAT LOGIN SUCCESS.</h1>
+                <p class="text-center"> <a class="btn btn-primary btn-lg" href="logout.php" role="button"> Logout </a></p>
+            </section>
             <div class="jumbotron">
-                <h1 class="text-center"> 공유기에 로그인 하였습니다.</h1>
-                <p class="text-center"> 하잇! </p>
-                <p class="text-center"> <a class="btn btn-primary btn-lg" href="logout.php" role="button"> 로그아웃 </a></p>
 
             </div>
         </div>
