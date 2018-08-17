@@ -1,3 +1,14 @@
+<?php
+if(strtolower(basename($_SERVER['SCRIPT_NAME']))=='login.php') {
+header('Pragma: no-cache'); // HTTP/1.0
+header('Cache-Control: no-cache'); // HTTP/1.1
+header('Expires: -1'); // rfc2616 - Section 14.21
+echo '<meta http-equiv="Cache-Control" content="no-cache"/>'.PHP_EOL
+.'<meta http-equiv="Expires" content="-1"/>'.PHP_EOL
+.'<meta http-equiv="Pragma" content="no-cache"/>'.PHP_EOL
+.'<meta http-equiv="Pragma" content="no-store"/>'.PHP_EOL;
+}
+?>
 
 <!DOCTYPE html>
 <html>
