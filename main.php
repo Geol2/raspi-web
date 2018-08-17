@@ -72,7 +72,7 @@ header('
             </section>
 
             <hr class="m-0">
-            
+
             <section class="resume-section p-3 p-lg-5 d-flex d-column" id="setting_nat">
                 <div class="my-auto">
                     <h3 class="mb-5"> NAT SETTING</h3>
