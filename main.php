@@ -1,5 +1,5 @@
 <?php
-if(strtolower(basename($_SERVER['SCRIPT_NAME']))=='login.php') {
+if(strtolower(basename($_SERVER['SCRIPT_NAME']))=='main.php') {
 header('Pragma: no-cache'); // HTTP/1.0
 header('Cache-Control: no-cache'); // HTTP/1.1
 header('Expires: -1'); // rfc2616 - Section 14.21
