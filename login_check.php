@@ -51,24 +51,15 @@
                 }
                 else {
                     echo "세션 저장 실패";
-                    header('Pragma: no-cache'); // HTTP/1.0
-                    header('Cache-Control: no-cache'); // HTTP/1.1
-                    header('Expires: -1'); // rfc2616 - Section 14.21
                 }
             }
             else
             {
                 echo "틀린 id나 패스워드";
-                header('Pragma: no-cache'); // HTTP/1.0
-                header('Cache-Control: no-cache'); // HTTP/1.1
-                header('Expires: -1'); // rfc2616 - Section 14.21
             }
         }
         else {
             echo "틀린 id나 패스워드1";
-            header('Pragma: no-cache'); // HTTP/1.0
-            header('Cache-Control: no-cache'); // HTTP/1.1
-            header('Expires: -1'); // rfc2616 - Section 14.21
         }
 
         ?>

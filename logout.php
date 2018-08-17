@@ -9,6 +9,6 @@
 session_start();
 $res = session_destroy();
 if($res){
-    echo "<script> document.location.href='/login.html'; </script>";
+    echo "<script> document.location.href='/login.php'; </script>";
 }
 ?>
