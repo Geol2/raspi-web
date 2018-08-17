@@ -47,8 +47,13 @@
 
         <div class="container-fluid p-0">
             <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
-                <h1 class="mb-0"> <p>NAT LOGIN SUCCESS.</p> </h1>
-                <p> <a class="mb-1" href="logout.php" role="button"> Logout </a></p>
+                <div class="my-auto">
+                    <div class="lead mb-5">
+                        <h1 class="mb-0"> NAT LOGIN SUCCESS. </h1>
+                    </div>
+
+                    <p> <a class="mb-1" href="logout.php" role="button"> Logout </a></p>
+                </div>
             </section>
 
             <section class="resume-section p-3 p-lg-5 d-flex d-column" id="setting_nat">
