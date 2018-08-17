@@ -1,17 +1,3 @@
-<?php
-header(' 
-    Cache-Control: no-store, 
-    no-cache, 
-    private, 
-    max-age=0, 
-    must-revalidate, 
-    post-check=0, 
-    pre-check=0; 
-    Pragma: no-cache; 
-    Expires: Sat, 26 jul 1997 05:00:00 GMT; 
- ');
-?>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -62,6 +48,17 @@ header('
                 if(isset($_SESSION['userid'])) // 세션 변수가 참일 때,
                 {
                     header('Location: ./main.php'); // 로그인 성공시 페이지 이동.
+                    header(' 
+                                    Cache-Control: no-store, 
+                                    no-cache, 
+                                    private, 
+                                    max-age=0, 
+                                    must-revalidate, 
+                                    post-check=0, 
+                                    pre-check=0; 
+                                    Pragma: no-cache; 
+                                    Expires: Sat, 26 jul 1997 05:00:00 GMT; 
+                                 ');
                 }
                 else {
                     echo "세션 저장 실패";
