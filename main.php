@@ -50,6 +50,8 @@
                 <div class="my-auto">
                     <div class="lead mb-5">
                         <h1 class="mb-0"> NAT LOGIN SUCCESS. </h1>
+                        <h2 class="mb-1"> Hello NAT!</h2>
+                        <p class="mb-2"> Experience NAT.</p>
                     </div>
 
                     <p> <a class="mb-1" href="logout.php" role="button"> Logout </a></p>
