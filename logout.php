@@ -24,7 +24,7 @@ header('
 session_start();
 $res = session_destroy();
 if($res){
-    echo "<script> document.location.replace('/login.php'); </script>";
+    echo "<script> document.location.replace('203.250.35.169/login.php'); </script>";
     //echo "<script> document.location.href='/login.php'; </script>";
 }
 ?>
