@@ -61,38 +61,36 @@ include ("config_db.php");
                 <hr class="m-0">
 
                 <section class="resume-section p-3 p-lg-5 d-flex d-column" id="signup">
-                <div class="my-auto">
-                    <div class="lead mb-5">
-                        <h2 class="mb-5"> Sign up</h2>
-                        <h3 class="mb-0"> Get Infomaion</h3>
+                    <div class="my-auto">
+                        <div class="lead mb-5">
+                            <h2 class="mb-5"> Sign up</h2>
+                            <h3 class="mb-0"> Get Infomaion</h3>
 
-                        <form class="form-horizontal" method="post" action="sign_up.php">
-                            <label for="id_label" class="col-sm-10 control-label"> ID </label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" id="id_label" name="id" placeholder="ID" size="30">
-                            </div>
+                            <form class="form-horizontal" method="post" action="sign_up.php">
+                                <label for="id_label" class="col-sm-10 control-label"> ID </label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="id_label" name="id" placeholder="ID" size="30">
+                                </div>
 
-                            <label for="pwd_label" class="col-sm-10 control-label"> PASSWORD </label>
-                            <div class="col-sm-8">
-                                <input type="password" class="form-control" id="pwd_label" name="pwd" placeholder="PASSWORD" size="30">
-                            </div>
+                                <label for="pwd_label" class="col-sm-10 control-label"> PASSWORD </label>
+                                <div class="col-sm-8">
+                                    <input type="password" class="form-control" id="pwd_label" name="pwd" placeholder="PASSWORD" size="30">
+                                </div>
 
-                            <label for="pwd2_label" class="col-sm-10 control-label"> CONFIRM PASSWORD </label>
-                            <div class="col-sm-8">
-                                <input type="password" class="form-control" id="pwd2_label" name="pwd2" placeholder="CONFIRM PASSWORD" size="30">
-                            </div>
+                                <label for="pwd2_label" class="col-sm-10 control-label"> CONFIRM PASSWORD </label>
+                                <div class="col-sm-8">
+                                    <input type="password" class="form-control" id="pwd2_label" name="pwd2" placeholder="CONFIRM PASSWORD" size="30">
+                                </div>
 
-                            <label for="email_label" class="col-sm-10 control-label"> E-MAIL </label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" id="email_label" name="email" placeholder="E-MAIL" size="30">
-                            </div>
-                            <button type="submit" class="btn btn-primary" id="join_submit" href="sign_up.php"> 회원가입 </button>
-                        </form>
+                                <label for="email_label" class="col-sm-10 control-label"> E-MAIL </label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="email_label" name="email" placeholder="E-MAIL" size="30">
+                                </div>
+                                <button type="submit" class="btn btn-primary" id="join_submit" href="sign_up.php"> 회원가입 </button>
+                            </form>
 
+                        </div>
                     </div>
-                </div>
-
-
                 </section>
 
                 <hr class="m-0">
@@ -110,67 +108,5 @@ include ("config_db.php");
 
             <!-- Custom scripts for this template -->
             <script src="js/resume.min.js"></script>
-
         </body>
-
-
-        <div class="container">
-            <div class="jumbotron">
-                <div class="form-group">
-                    <h1 class="text-center"> 회원가입 </h1>
-                    <p class="text-center"> 회원가입 정보를 입력해주세요.</p>
-
-                    <form class="form-horizontal" method="post" action="sign_up.php">
-                        <label for="id_label" class="col-sm-2 control-label"> ID </label>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control" id="id_label" name="id" placeholder="ID" size="30">
-                        </div>
-
-                        <label for="pwd_label" class="col-sm-2 control-label"> PASSWORD </label>
-                        <div class="col-sm-4">
-                            <input type="password" class="form-control" id="pwd_label" name="pwd" placeholder="PASSWORD" size="30">
-                        </div>
-
-                        <label for="pwd2_label" class="col-sm-2 control-label"> CONFIRM PASSWORD </label>
-                        <div class="col-sm-4">
-                            <input type="password" class="form-control" id="pwd2_label" name="pwd2" placeholder="CONFIRM PASSWORD" size="30">
-                        </div>
-
-                        <label for="email_label" class="col-sm-2 control-label"> E-MAIL </label>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control" id="email_label" name="email" placeholder="E-MAIL" size="30">
-                        </div>
-                        <button type="submit" class="btn btn-primary" id="join_submit" href="sign_up.php"> 회원가입 </button>
-                    </form>
-                </div>
-            </div>
-
-                <!--
-            <h1 class="text-left"> 회원가입 </h1>
-                <form class="col-sm-6 col-md-offset-3" name="join" method="post" action="./sign_up.php">
-                    <table border="1">
-                        <tr>
-                            <td>ID</td>
-                            <td><input class="form-control" type="text" size="30" name="id"></td>
-                        </tr>
-                        <tr>
-                            <td>Password</td>
-                            <td><input class="form-control" type="password" size="30" name="pwd"></td>
-                        </tr>
-                        <tr>
-                            <td>Confirm Password</td>
-                            <td><input class="form-control" type="password" size="30" name="pwd2"></td>
-                        </tr>
-                        <tr>
-                            <td>e-mail</td>
-                            <td><input class="form-control" type="text" size="30" name="email"></td>
-                        </tr>
-                        <input type=submit value="submit"><input type=reset value="rewrite">
-                    </table>
-                </form> -->
-            </div>
-        </div>
-
-        </body>
-
     </html>
