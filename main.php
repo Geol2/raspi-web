@@ -80,7 +80,8 @@ header('
                         session_start();
 
                         if (!isset($_SESSION['userid'])) {
-                            header('Location : ./login.php');
+                            //header('Location : ./login.php');
+                            echo "<script> location.replace('/login.php');</script>";
                         }
 
                         echo "<a class='mb-1' href=logout.php>logout</a> <br>";
