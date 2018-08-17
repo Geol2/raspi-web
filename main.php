@@ -66,20 +66,18 @@
                          * Date: 2018-07-20
                          * Time: 오전 2:17
                          */
-
-
                         session_start();
 
                         if (!isset($_SESSION['userid'])) {
                             header('Location : ./login.php');
                         }
 
-                        echo "<a href=logout.php>logout</a> <br>";
+                        echo "<a class='mb-1' href=logout.php>logout</a> <br>";
                         ?>
-                        
+
                         <?php
                         $ip_print = $_SERVER['REMOTE_ADDR'];
-                        echo "<p class='mb-5'>"."현재 접속한 장치의 아이피 : "."</p>" . $ip_print . "</br>";
+                        echo "<p class='mb-5'>"."현재 접속한 장치의 아이피 : " . $ip_print ."</p>"."</br>";
                         ?>
                     </div>
                 </div>
