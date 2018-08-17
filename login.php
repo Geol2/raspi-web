@@ -78,7 +78,7 @@
                     <form class="form-horizontal" method = "POST" action = "/login_check.php">
                         <input class="form-control text-left" type = "text" name = "id" placeholder="ID">
                         <input class="form-control text-left" type = "password" id="input_pwd" name = "pwd" placeholder="PASSWORD">
-
+                        <br>
                         <button class="btn btn-primary" href="login_check.html" type = "submit" >LOGIN</button>
                     </form> <p class="text-left"> <a class="btn btn-primary btn-lg" href="sign_up.html" role="button"> Sign UP </a></p>
                 </div>
