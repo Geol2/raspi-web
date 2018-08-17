@@ -62,7 +62,9 @@
             }
         }
         else {
-            echo "틀린 id나 패스워드1";
+            //echo "틀린 id나 패스워드1";
+            echo "<script>alert('로그인 실패.');</script>";
+            echo "<script>location.replace('/main.php');</script>";
         }
 
         ?>
