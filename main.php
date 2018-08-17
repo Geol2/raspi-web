@@ -39,7 +39,10 @@
         <div class="container-fluid p-0">
             <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
                 <h1 class="mb-0"> NAT LOGIN SUCCESS.</h1>
-                <p class="text-center"> <a class="btn btn-primary btn-lg" href="logout.php" role="button"> Logout </a></p>
+                <p> <a class="btn btn-primary btn-lg" href="logout.php" role="button"> Logout </a></p>
+            </section>
+
+            <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
                 <?php
                 /**
                  * Created by PhpStorm.
@@ -61,11 +64,7 @@
                 echo "<p>"."현재 접속한 장치의 아이피 : "."</p>" . $ip_print . "</br>";
 
                 ?>
-
             </section>
-            <div class="jumbotron">
-
-            </div>
         </div>
     </body>
 </html>
