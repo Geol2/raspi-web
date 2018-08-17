@@ -59,7 +59,7 @@
             <section class="resume-section p-3 p-lg-5 d-flex d-column" id="setting_nat">
                 <div class="my-auto">
                     <h3 class="mb-5"> NAT SETTING</h3>
-                    
+
                     <div class="lead mb-5">
                         <?php
                         session_start();
@@ -73,7 +73,7 @@
 
                         <?php
                         $ip_print = $_SERVER['REMOTE_ADDR'];
-                        echo "<h3 class='mb-0'>"."현재 접속한 장치의 아이피 : " . $ip_print ."</h3>"."</br>";
+                        echo "<p>"."Currently connected IP : " . $ip_print ."</p>"."</br>";
                         ?>
                     </div>
                 </div>
