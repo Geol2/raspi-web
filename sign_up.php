@@ -18,7 +18,7 @@ $email = $_POST['email'];
 if($pwd != $pwd2) {
     //echo "비밀번호가 서로 다릅니다.";
     //echo "<a href = sign_up.php> back page</a>";
-    echo "<script>alert('회원가입 실패.');</script>";
+    echo "<script>alert('회원가입 실패. 비밀번호가 서로 다릅니다.');</script>";
     echo "<script>location.replace('/sign_up.php');</script>";
     exit();
 }
