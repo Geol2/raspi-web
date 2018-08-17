@@ -1,4 +1,9 @@
 <?php
+header("Pragma: no-cache");
+header("Cache-Control: no-cache,must-revalidate");
+?>
+
+<?php
 /**
  * Created by PhpStorm.
  * User: big94
