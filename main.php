@@ -57,27 +57,33 @@
             </section>
 
             <section class="resume-section p-3 p-lg-5 d-flex d-column" id="setting_nat">
-                <?php
-                /**
-                 * Created by PhpStorm.
-                 * User: big94
-                 * Date: 2018-07-20
-                 * Time: 오전 2:17
-                 */
+                <div class="my-auto">
+                    <div class="lead mb-5">
+                        <?php
+                        /**
+                         * Created by PhpStorm.
+                         * User: big94
+                         * Date: 2018-07-20
+                         * Time: 오전 2:17
+                         */
 
 
-                session_start();
+                        session_start();
 
-                if (!isset($_SESSION['userid'])) {
-                    header('Location : ./login.php');
-                }
+                        if (!isset($_SESSION['userid'])) {
+                            header('Location : ./login.php');
+                        }
 
-                echo "<a href=logout.php>logout</a> <br>";
+                        echo "<a href=logout.php>logout</a> <br>";
+                        ?>
+                        
+                        <?php
+                        $ip_print = $_SERVER['REMOTE_ADDR'];
+                        echo "<p class='mb-5'>"."현재 접속한 장치의 아이피 : "."</p>" . $ip_print . "</br>";
+                        ?>
+                    </div>
+                </div>
 
-                $ip_print = $_SERVER['REMOTE_ADDR'];
-                echo "<p>"."현재 접속한 장치의 아이피 : "."</p>" . $ip_print . "</br>";
-
-                ?>
             </section>
         </div>
 
