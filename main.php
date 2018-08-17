@@ -75,7 +75,7 @@
 
                         <?php
                         $ip_print = $_SERVER['REMOTE_ADDR'];
-                        echo "<p>"."Currently connected IP : " . $ip_print ."</p>"."</br>";
+                        echo "<p>"."Currently connected device IP : " . $ip_print ."</p>"."</br>";
                         ?>
                     </div>
                 </div>
