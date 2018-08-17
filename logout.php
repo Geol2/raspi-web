@@ -1,4 +1,19 @@
 <?php
+header(' 
+    Cache-Control: no-store, 
+    no-cache, 
+    private, 
+    max-age=0, 
+    must-revalidate, 
+    post-check=0, 
+    pre-check=0; 
+    Pragma: no-cache; 
+    Expires: Sat, 26 jul 1997 05:00:00 GMT; 
+ ');
+?>
+
+
+<?php
 /**
  * Created by PhpStorm.
  * User: big94
