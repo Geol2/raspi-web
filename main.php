@@ -60,12 +60,6 @@
                 <div class="my-auto">
                     <div class="lead mb-5">
                         <?php
-                        /**
-                         * Created by PhpStorm.
-                         * User: big94
-                         * Date: 2018-07-20
-                         * Time: 오전 2:17
-                         */
                         session_start();
 
                         if (!isset($_SESSION['userid'])) {
@@ -77,7 +71,7 @@
 
                         <?php
                         $ip_print = $_SERVER['REMOTE_ADDR'];
-                        echo "<p class='mb-5'>"."현재 접속한 장치의 아이피 : " . $ip_print ."</p>"."</br>";
+                        echo "<h3 class='mb-0'>"."현재 접속한 장치의 아이피 : " . $ip_print ."</h3>"."</br>";
                         ?>
                     </div>
                 </div>
