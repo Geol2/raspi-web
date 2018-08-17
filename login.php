@@ -28,7 +28,7 @@
                 padding: 10px;
                 font-size: 16px;
                 height: auto;
-                width: 25%;
+                width: auto;
             }
         </style>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
