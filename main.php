@@ -66,8 +66,8 @@
                 if (!isset($_SESSION['userid'])) {
                     header('Location : ./login.php');
                 }
-                echo "홈(로그인) 성공</br>";
-                echo "<a href=logout.php>logout</a> </br>";
+
+                echo "<a href=logout.php>logout</a> <br> </br>";
 
                 $ip_print = $_SERVER['REMOTE_ADDR'];
                 echo "<p>"."현재 접속한 장치의 아이피 : "."</p>" . $ip_print . "</br>";
