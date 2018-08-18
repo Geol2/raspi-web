@@ -96,11 +96,13 @@ header('
                         echo "<p>"."Currently connected device IP : " . $ip_print ."</p>"."</br>";
                         ?>
 
+                        <?php $query = mysqli_query($conn,"SELECT * FROM SYS_INFO") or die ("Error database.. not select Sys_info table."); ?>
+
                         <div class="subheading mb-3">NAT SYS_INFOMAION</div>
                         <ul class="fa-ul mb-0">
                             <li>
                                 <i class="fa-li fa fa-check"></i>
-                                <?php $query = mysqli_query($conn,"SELECT * FROM SYS_INFO"); ?></li>
+                               <?php ?></li>
                             <li>
                                 <i class="fa-li fa fa-check"></i>
                                 <?php ?></li>
