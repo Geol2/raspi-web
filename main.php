@@ -96,18 +96,18 @@ header('
                         echo "<p>"."Currently connected device IP : " . $ip_print ."</p>"."</br>";
                         ?>
 
-                        <?php $query = mysqli_query($conn,"SELECT * FROM SYS_INFO") or die ("Error database.. not select Sys_info table."); ?>
+                        <?php $query = "SELECT * FROM SYS_INFO"; $select_query = mysqli_query($conn, $query) or die ("Error database.. not select Sys_info table."); ?>
 
                         <div class="subheading mb-3">NAT SYS_INFOMAION</div>
                         <ul class="fa-ul mb-0">
-                            <?php while($row = mysqli_fetch_array($query)) { ?>
+                            <?php while($row = mysqli_fetch_array($select_query)) { ?>
                             <li>
                                 <i class="fa-li fa fa-check"></i>
-                               <?= $row['AP_CODE'] ?> </li>
+                               <?php $row['AP_CODE'] ?> </li>
                             <li>
                                 <i class="fa-li fa fa-check"></i>
-                                <?= $row['PUBLIC_IP'] ?> </li><br>
-                            <? } mysqli_close($conn); ?>
+                                <?php $row['PUBLIC_IP'] ?> </li><br>
+                            <?php } mysqli_close($conn); ?>
                         </ul>
                     </div>
                 </div>
