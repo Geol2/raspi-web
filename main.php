@@ -107,7 +107,7 @@ header('
                             <li>
                                 <i class="fa-li fa fa-check"></i>
                                 <?= $row['PUBLIC_IP'] ?> </li><br>
-                            <? } mysqli_close($conn) ?>
+                            <? } mysqli_close($conn); ?>
                         </ul>
                     </div>
                 </div>
