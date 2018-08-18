@@ -92,8 +92,15 @@ header('
                         ?>
 
                         <?php
+                        // IP 조회
                         $ip_print = $_SERVER['REMOTE_ADDR'];
                         echo "<p>"."Currently connected device IP : " . $ip_print ."</p>"."</br>";
+                        //맥주소 조회
+                        exec("arp -H ether -n -a ".$REMOTE_ADDR."",$values);
+                        $parts = explode(' ',$values[0]);
+
+                        출처: http://windowshyun.tistory.com/12 [;]
+                        echo "<p> MAC Address : </p>".$parts."<br>";
                         ?>
 
                         <?php
