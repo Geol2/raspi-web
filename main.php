@@ -98,9 +98,7 @@ header('
                         //맥주소 조회
                         exec("arp -H ether -n -a ".$REMOTE_ADDR."",$values);
                         $parts = explode(' ',$values[0]);
-
-                        출처: http://windowshyun.tistory.com/12 [;]
-                        echo "<p> MAC Address : </p>".$parts."<br>";
+                        echo "<p> MAC Address : ".$parts[3]."</p><br>";
                         ?>
 
                         <?php
