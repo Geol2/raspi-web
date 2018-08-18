@@ -96,17 +96,30 @@ header('
                         echo "<p>"."Currently connected device IP : " . $ip_print ."</p>"."</br>";
                         ?>
 
-                        <?php $query = "SELECT * FROM SYS_INFO"; $select_query = mysqli_query($conn, $query) or die ("Error database.. not select Sys_info table."); ?>
+                        <?php
+                        $query = "SELECT * FROM SYS_INFO"; $select_query1 = mysqli_query($conn, $query) or die ("Error database.. Not select SYS_INFO table.");
+                        $query_PRO = "SELECT * FROM PRODUCT_INFO"; $select_query2 = mysqli_query($conn, $query) or die ("Error database.. Not select PRODUCT_INFO table.");
+                        ?>
 
                         <div class="subheading mb-3">NAT SYS_INFOMAION</div>
                         <ul class="fa-ul mb-0">
-                            <?php while($row = mysqli_fetch_array($select_query)) { ?>
+                            <?php while($row1 = mysqli_fetch_array($select_query1)) { ?>
                             <li>
                                 <i class="fa-li fa fa-check"></i>
-                                <?php echo $row['AP_CODE'].", ".$row['PUBLIC_IP'] ?> </li><br>
+                                <?php echo "SYS_INFO : ".$row1['AP_CODE'].", ".$row1['PUBLIC_IP'] ?> </li><br>
+                            <?php } mysqli_close($conn); ?>
+                        </ul>
+
+                        <div class="subheading mb-3">NAT PRODUCT_INFOMAION</div>
+                        <ul class="fa-ul mb-0">
+                            <?php while($row2 = mysqli_fetch_array($select_query2)) { ?>
+                                <li>
+                                    <i class="fa-li fa fa-check"></i>
+                                    <?php echo "PRODUCT_INFO : ".$row2['SF_CODE'].", ".$row2['PUBLIC_IP'] ?> </li><br>
                             <?php } mysqli_close($conn); ?>
                         </ul>
                     </div>
+
                 </div>
 
             </section>
