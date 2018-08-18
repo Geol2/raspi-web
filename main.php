@@ -10,6 +10,8 @@ header('
     Pragma: no-cache; 
     Expires: Sat, 26 jul 1997 05:00:00 GMT; 
  ');
+
+    $conn = mysqli_connect("localhost", "root", "619412", "water_middle_server");
 ?>
 
 <!DOCTYPE html>
@@ -98,7 +100,7 @@ header('
                         <ul class="fa-ul mb-0">
                             <li>
                                 <i class="fa-li fa fa-check"></i>
-                                <?php ?></li>
+                                <?php $query = mysqli_query($conn,"SELECT * FROM SYS_INFO"); ?></li>
                             <li>
                                 <i class="fa-li fa fa-check"></i>
                                 <?php ?></li>
