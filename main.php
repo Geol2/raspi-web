@@ -105,10 +105,9 @@ header('
                         <ul class="fa-ul mb-0">
                             <li>
                                 <i class="fa-li fa fa-check"></i>
-                                SYWS_INFO </li>
+                                SYS_INFO TABLE</li><br>
                             <?php while($row1 = mysqli_fetch_array($select_query1)) { ?>
                             <li>
-                                <i class="fa-li fa fa-check"></i>
                                 <?php echo "AP_CODE, IP : ".$row1['AP_CODE'].", ".$row1['PUBLIC_IP'] ?> </li><br>
                             <?php } ?>
                         </ul>
@@ -117,7 +116,7 @@ header('
                         <ul class="fa-ul mb-0">
                             <li>
                                 <i class="fa-li fa fa-check"></i>
-                                PRODUCT_INFO </li>
+                                PRODUCT_INFO </li><br>
                             <?php while($row2 = mysqli_fetch_array($select_query2)) { ?>
                                 <li>
                                     <?php echo "SF_CODE, IP : ".$row2['SF_CODE'].", ".$row2['INNER_IP'] ?> </li><br>
