@@ -97,8 +97,8 @@ header('
                         ?>
 
                         <?php
-                        $query = "SELECT * FROM SYS_INFO"; $select_query1 = mysqli_query($conn, $query) or die ("Error database.. Not select SYS_INFO table.");
-                        $query_PRO = "SELECT * FROM PRODUCT_INFO"; $select_query2 = mysqli_query($conn, $query) or die ("Error database.. Not select PRODUCT_INFO table.");
+                        $query_SYS = "SELECT * FROM SYS_INFO"; $select_query1 = mysqli_query($conn, $query_SYS) or die ("Error database.. Not select SYS_INFO table.");
+                        $query_PRO = "SELECT * FROM PRODUCT_INFO"; $select_query2 = mysqli_query($conn, $query_PRO) or die ("Error database.. Not select PRODUCT_INFO table.");
                         ?>
 
                         <div class="subheading mb-3">NAT SYS_INFOMAION</div>
@@ -107,7 +107,7 @@ header('
                             <li>
                                 <i class="fa-li fa fa-check"></i>
                                 <?php echo "SYS_INFO : ".$row1['AP_CODE'].", ".$row1['PUBLIC_IP'] ?> </li><br>
-                            <?php } mysqli_close($conn); ?>
+                            <?php } ?>
                         </ul>
 
                         <div class="subheading mb-3">NAT PRODUCT_INFOMAION</div>
@@ -115,7 +115,7 @@ header('
                             <?php while($row2 = mysqli_fetch_array($select_query2)) { ?>
                                 <li>
                                     <i class="fa-li fa fa-check"></i>
-                                    <?php echo "PRODUCT_INFO : ".$row2['SF_CODE'].", ".$row2['PUBLIC_IP'] ?> </li><br>
+                                    <?php echo "PRODUCT_INFO : ".$row2['SF_CODE'].", ".$row2['INNER_IP'] ?> </li><br>
                             <?php } mysqli_close($conn); ?>
                         </ul>
                     </div>
