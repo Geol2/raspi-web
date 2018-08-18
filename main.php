@@ -103,16 +103,11 @@ header('
                             <?php while($row = mysqli_fetch_array($query)) { ?>
                             <li>
                                 <i class="fa-li fa fa-check"></i>
-                               <?php $row['AP_CODE'] ?> </li>
+                               <?= $row['AP_CODE'] ?> </li>
                             <li>
                                 <i class="fa-li fa fa-check"></i>
-                                <?php $row ['PUBLIC_IP'] ?> </li>
-                            <li>
-                                <i class="fa-li fa fa-check"></i>
-                                <?php ?></li>
-                            <li>
-                                <i class="fa-li fa fa-check"></i>
-                                <?php ?></li>
+                                <?= $row['PUBLIC_IP'] ?> </li><br>
+                            <? } mysqli_close($conn) ?>
                         </ul>
                     </div>
                 </div>
