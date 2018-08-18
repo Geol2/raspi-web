@@ -100,12 +100,13 @@ header('
 
                         <div class="subheading mb-3">NAT SYS_INFOMAION</div>
                         <ul class="fa-ul mb-0">
+                            <?php while($row = mysqli_fetch_array($query)) { ?>
                             <li>
                                 <i class="fa-li fa fa-check"></i>
-                               <?php ?></li>
+                               <?php $row['AP_CODE'] ?> </li>
                             <li>
                                 <i class="fa-li fa fa-check"></i>
-                                <?php ?></li>
+                                <?php $row ['PUBLIC_IP'] ?> </li>
                             <li>
                                 <i class="fa-li fa fa-check"></i>
                                 <?php ?></li>
