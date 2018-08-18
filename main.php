@@ -103,10 +103,7 @@ header('
                             <?php while($row = mysqli_fetch_array($select_query)) { ?>
                             <li>
                                 <i class="fa-li fa fa-check"></i>
-                               <?php echo $row['AP_CODE'] ?> </li>
-                            <li>
-                                <i class="fa-li fa fa-check"></i>
-                                <?php echo $row['PUBLIC_IP'] ?> </li><br>
+                                <?php echo $row['AP_CODE'].", ".$row['PUBLIC_IP'] ?> </li><br>
                             <?php } mysqli_close($conn); ?>
                         </ul>
                     </div>
