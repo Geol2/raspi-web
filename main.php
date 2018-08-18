@@ -106,9 +106,10 @@ header('
                             <li>
                                 <i class="fa-li fa fa-check"></i>
                                 SYS_INFO TABLE</li><br>
+                            <?php echo "AP_CODE &nbsp &nbsp IP<br>" ?>
                             <?php while($row1 = mysqli_fetch_array($select_query1)) { ?>
                             <li>
-                                <?php echo "AP_CODE &nbsp &nbsp IP<br>".$row1['AP_CODE']."&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ".$row1['PUBLIC_IP'] ?> </li><br>
+                                <?php echo $row1['AP_CODE']."&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ".$row1['PUBLIC_IP'] ?> </li><br>
                             <?php } ?>
                         </ul>
 
