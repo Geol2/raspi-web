@@ -94,20 +94,20 @@ header('
                         echo "<p>"."Currently connected device IP : " . $ip_print ."</p>"."</br>";
                         ?>
 
-                        <div class="subheading mb-3">Workflow</div>
+                        <div class="subheading mb-3">NAT SYS_INFOMAION</div>
                         <ul class="fa-ul mb-0">
                             <li>
                                 <i class="fa-li fa fa-check"></i>
-                                Mobile-First, Responsive Design</li>
+                                <?php ?></li>
                             <li>
                                 <i class="fa-li fa fa-check"></i>
-                                Cross Browser Testing &amp; Debugging</li>
+                                <?php ?></li>
                             <li>
                                 <i class="fa-li fa fa-check"></i>
-                                Cross Functional Teams</li>
+                                <?php ?></li>
                             <li>
                                 <i class="fa-li fa fa-check"></i>
-                                Agile Development &amp; Scrum</li>
+                                <?php ?></li>
                         </ul>
                     </div>
                 </div>
