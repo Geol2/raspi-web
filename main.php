@@ -86,13 +86,29 @@ header('
                             echo "<script> location.replace('/login.php');</script>";
                         }
 
-                        echo "<a class='mb-1' href=logout.php>logout</a> <br>";
+                        echo "<a class='mb-1' href=logout.php>Logout</a> <br>";
                         ?>
 
                         <?php
                         $ip_print = $_SERVER['REMOTE_ADDR'];
                         echo "<p>"."Currently connected device IP : " . $ip_print ."</p>"."</br>";
                         ?>
+
+                        <div class="subheading mb-3">Workflow</div>
+                        <ul class="fa-ul mb-0">
+                            <li>
+                                <i class="fa-li fa fa-check"></i>
+                                Mobile-First, Responsive Design</li>
+                            <li>
+                                <i class="fa-li fa fa-check"></i>
+                                Cross Browser Testing &amp; Debugging</li>
+                            <li>
+                                <i class="fa-li fa fa-check"></i>
+                                Cross Functional Teams</li>
+                            <li>
+                                <i class="fa-li fa fa-check"></i>
+                                Agile Development &amp; Scrum</li>
+                        </ul>
                     </div>
                 </div>
 
