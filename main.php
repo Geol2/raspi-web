@@ -103,19 +103,25 @@ header('
 
                         <div class="subheading mb-3">NAT SYS_INFOMAION</div>
                         <ul class="fa-ul mb-0">
+                            <li>
+                                <i class="fa-li fa fa-check"> SYS_INFO</i>
+                            </li>
                             <?php while($row1 = mysqli_fetch_array($select_query1)) { ?>
                             <li>
                                 <i class="fa-li fa fa-check"></i>
-                                <?php echo "SYS_INFO : ".$row1['AP_CODE'].", ".$row1['PUBLIC_IP'] ?> </li><br>
+                                <?php echo "AP_CODE, IP : ".$row1['AP_CODE'].", ".$row1['PUBLIC_IP'] ?> </li><br>
                             <?php } ?>
                         </ul>
 
                         <div class="subheading mb-3">NAT PRODUCT_INFOMAION</div>
                         <ul class="fa-ul mb-0">
+                            <li>
+                                <i class="fa-li fa fa-check"> PRODUCT_INFO</i>
+                            </li>
                             <?php while($row2 = mysqli_fetch_array($select_query2)) { ?>
                                 <li>
                                     <i class="fa-li fa fa-check"></i>
-                                    <?php echo "PRODUCT_INFO : ".$row2['SF_CODE'].", ".$row2['INNER_IP'] ?> </li><br>
+                                    <?php echo "SF_CODE, IP : ".$row2['SF_CODE'].", ".$row2['INNER_IP'] ?> </li><br>
                             <?php } mysqli_close($conn); ?>
                         </ul>
                     </div>
