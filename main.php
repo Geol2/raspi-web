@@ -98,7 +98,7 @@ header('
                         //맥주소 조회
                         exec("arp -H ether -n -a ".$_SERVER["REMOTE_ADDR"]."",$values);
                         $parts = explode(' ',$values[0]);
-                        print $parts[2];
+                        print $parts[3];
                         ?>
 
                         <?php
