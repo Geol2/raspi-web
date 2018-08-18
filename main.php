@@ -121,8 +121,8 @@ header('
                             <?php echo "SF_CODE &nbsp &nbsp IP<br>" ?>
                             <?php while($row2 = mysqli_fetch_array($select_query2)) { ?>
                                 <li>
-                                    <?php echo $row2['SF_CODE']."&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ".$row2['INNER_IP'] ?> </li><br>
-                            <?php } mysqli_close($conn); ?>
+                                    <?php echo $row2['SF_CODE']."&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ".$row2['INNER_IP'] ?> </li>
+                            <?php }  mysqli_close($conn); ?> <br>
                         </ul>
                     </div>
 
