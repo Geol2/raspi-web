@@ -96,7 +96,7 @@ header('
                         $ip_print = $_SERVER['REMOTE_ADDR'];
                         echo "<p>"."Currently connected device IP : " . $ip_print ."</p>"."</br>";
                         //맥주소 조회
-                        exec("arp -H ether -n -a ".$REMOTE_ADDR."",$values);
+                        exec("sudo arp -H ether -n -a ".$REMOTE_ADDR."",$values);
                         $parts = explode(' ',$values[0]);
                         print $parts[3];
                         ?>
