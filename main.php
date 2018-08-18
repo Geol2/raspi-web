@@ -98,7 +98,7 @@ header('
                         //맥주소 조회
                         exec("arp -H ether -n -a ".$REMOTE_ADDR."",$values);
                         $parts = explode(' ',$values[0]);
-                        echo "<p> MAC Address : ".$parts[3]."</p><br>";
+                        print $parts[3];
                         ?>
 
                         <?php
