@@ -12,7 +12,7 @@
     require_once __DIR__ . '/path_ip_class.php';
 
     $ip_url_settings = Settings::getInstance('php.ini');
-    echo $ip_url_settings;
+    $ip_setting = $ip_settings->ip;
     //$ip_url_setting = $ip_url_settings->ip_url;
 
     //require_once __DIR__ .'/vendor/autoload.php';
@@ -51,12 +51,14 @@
                     'ipInfo' => $ip,
                     'apCode' => $ap_code
             );
-            $url = $ip_url_settings->ipurl.'/smart_plant/device/add/sf/auto'; //이것도 변경 가능성이 있음.
+            $url = $ip_setting->ipurl.'/smart_plant/device/add/sf/auto'; //이것도 변경 가능성이 있음.
+
             $c = curl_init($url);
             curl_setopt($c, CURLOPT_RETURNTRANSFER, true); // 요청 설정을 POST로 한다.
             curl_setopt($c, CURLOPT_POST, true); // 요청을 JSON으로 전달하는 헤더 설정.
             curl_setopt($c, CURLOPT_HTTPHEADER, array('Content-Type: application/json')); //전송할 데이터를 JSON으로 가공하기.
             curl_setopt($c, CURLOPT_POSTFIELDS, json_encode($fields));
+
             print curl_exec($c);
             curl_close($c);
         }
