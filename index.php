@@ -14,7 +14,7 @@
     $ip_url_settings = Settings::getInstance('php.ini');
     $ip_setting = $ip_url_settings->ip;
     //$ip_url_setting = $ip_url_settings->ip_url;
-    echo $ip_setting;
+    //echo $ip_setting;
     //require_once __DIR__ .'/vendor/autoload.php';
     $ip = $_GET['ip']; //Query_string
     //$site = $_SERVER['DOCUMENT_ROOT']; //index.php road
@@ -51,7 +51,7 @@
                     'ipInfo' => $ip,
                     'apCode' => $ap_code
             );
-            $url = $ip_setting->ipurl.'/smart_plant/device/add/sf/auto'; //이것도 변경 가능성이 있음.
+            $url = $ip_setting->ipurl.':9001/smart_plant/device/add/sf/auto'; //이것도 변경 가능성이 있음.
 
             $c = curl_init($url);
             curl_setopt($c, CURLOPT_RETURNTRANSFER, true); // 요청 설정을 POST로 한다.
