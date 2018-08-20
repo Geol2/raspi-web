@@ -29,7 +29,7 @@
     if( $ip ){
         $sfCode= explode(".",$ip)[3];//$ip로부터 ip의 D class추출
         $mode = 'Y'; // mode 수동'n' / 자동'y' 모드
-        $state = 'N'; // 수경재배기 생육 상태. 'n' : 생육x, 'y':셍육o.
+        $state = 'N'; // 수경재배기 생육 상태. 'n' : 생육x, 'y':생육o.
         $register = 'N'; //등록 상태
 
         $query = "INSERT INTO PRODUCT_INFO (INNER_IP, MODE, STATE, REGISTER, SF_CODE) VALUES ('$ip', '$mode', '$state', '$register', '$sfCode')";
@@ -51,7 +51,7 @@
                     'ipInfo' => $ip,
                     'apCode' => $ap_code
             );
-            $url = $ip_setting.':9001/smart_plant/device/add/sf/auto'; //이것도 변경 가능성이 있음.
+            $url = $ip_setting.':9001/smart_plant/device/add/sf/auto'; //이것도 변경 가능성이 있음. -> ip세팅 완료.!
 
             $c = curl_init($url);
             curl_setopt($c, CURLOPT_RETURNTRANSFER, true); // 요청 설정을 POST로 한다.

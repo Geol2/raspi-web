@@ -19,5 +19,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="htdocs" />
+    <orderEntry type="module" module-name="blog" />
   </component>
 </module>
