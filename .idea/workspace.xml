@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e704b227-543e-4217-8743-8aaa5f6f2f58" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/html.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/html.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/send.php" beforeDir="false" afterPath="$PROJECT_DIR$/send.php" afterDir="false" />
-    </list>
+    <list default="true" id="e704b227-543e-4217-8743-8aaa5f6f2f58" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,8 +20,8 @@
             <file leaf-file-name="web.php" pinned="false" current-in-tab="true">
               <entry file="file://$USER_HOME$/AppData/Roaming/SPB_Data/blog/routes/web.php">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="272">
-                    <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+                  <state relative-caret-position="425">
+                    <caret line="34" column="2" lean-forward="true" selection-start-line="34" selection-start-column="2" selection-end-line="34" selection-end-column="2" />
                   </state>
                 </provider>
               </entry>
@@ -39,7 +33,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="send.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="send.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/send.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
@@ -65,8 +59,17 @@
       <file leaf-file-name="login.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/AppData/Roaming/SPB_Data/blog/resources/views/login.blade.php">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="master.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$USER_HOME$/AppData/Roaming/SPB_Data/blog/resources/views/layouts/master.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
-              <caret line="10" column="6" lean-forward="true" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
@@ -83,9 +86,10 @@
         <option value="$PROJECT_DIR$/main.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$USER_HOME$/AppData/Roaming/SPB_Data/blog/resources/views/welcome.blade.php" />
-        <option value="$USER_HOME$/AppData/Roaming/SPB_Data/blog/routes/web.php" />
-        <option value="$USER_HOME$/AppData/Roaming/SPB_Data/blog/resources/views/login.blade.php" />
         <option value="$PROJECT_DIR$/send.php" />
+        <option value="$USER_HOME$/AppData/Roaming/SPB_Data/blog/resources/views/login.blade.php" />
+        <option value="$USER_HOME$/AppData/Roaming/SPB_Data/blog/resources/views/layouts/master.blade.php" />
+        <option value="$USER_HOME$/AppData/Roaming/SPB_Data/blog/routes/web.php" />
       </list>
     </option>
   </component>
@@ -163,12 +167,7 @@
               <item name="blog" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="errors" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="html" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -211,12 +210,12 @@
       <workItem from="1534616967000" duration="2394000" />
       <workItem from="1534759826888" duration="8355000" />
       <workItem from="1534775258142" duration="647000" />
-      <workItem from="1534783434797" duration="4141000" />
+      <workItem from="1534783434797" duration="4873000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25151000" />
+    <option name="totallyTimeSpent" value="25883000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1129" height="1167" extended-state="0" />
@@ -486,24 +485,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/send.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="50" column="41" selection-start-line="50" selection-start-column="41" selection-end-line="50" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$USER_HOME$/AppData/Roaming/SPB_Data/blog/resources/views/login.blade.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Roaming/SPB_Data/blog/resources/views/layouts/master.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="10" column="6" lean-forward="true" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/AppData/Roaming/SPB_Data/blog/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/send.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="50" column="41" selection-start-line="50" selection-start-column="41" selection-end-line="50" selection-end-column="41" />
+        <state relative-caret-position="425">
+          <caret line="34" column="2" lean-forward="true" selection-start-line="34" selection-start-column="2" selection-end-line="34" selection-end-column="2" />
         </state>
       </provider>
     </entry>
