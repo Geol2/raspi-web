@@ -51,7 +51,7 @@
                     'ipInfo' => $ip,
                     'apCode' => $ap_code
             );
-            $url = $ip_setting->ipurl.':9001/smart_plant/device/add/sf/auto'; //이것도 변경 가능성이 있음.
+            $url = $ip_setting.':9001/smart_plant/device/add/sf/auto'; //이것도 변경 가능성이 있음.
 
             $c = curl_init($url);
             curl_setopt($c, CURLOPT_RETURNTRANSFER, true); // 요청 설정을 POST로 한다.
