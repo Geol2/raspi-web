@@ -12,6 +12,7 @@
     require_once __DIR__ . '/path_ip_class.php';
 
     $ip_url_settings = Settings::getInstance('php.ini');
+    echo $ip_url_settings;
     //$ip_url_setting = $ip_url_settings->ip_url;
 
     //require_once __DIR__ .'/vendor/autoload.php';
