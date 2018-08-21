@@ -24,13 +24,7 @@ $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connect
 
     $cmd = $json_obj -> {"cmd"};
     $dest = $json_obj -> {"dest"};
-
-    $query_ap="SELECT AP_CODE FROM SYS_INFO ";
-    $result_query_ap = mysqli_query($conn, $query_ap) or ("Error database connenct SYS_INFO");
-
-    echo $result_query_ap;
-
-    $user_code = $json_obj -> {"apCode"}; //명시적으로 줄거라서 일단 주석 침. cmd, dest도 마찬가지
+    $ap_code = $json_obj -> {"apCode"}; //명시적으로 줄거라서 일단 주석 침. cmd, dest도 마찬가지
 
     //$cmd = 5;
     //$dest = "192.168.4.11";
@@ -41,16 +35,16 @@ $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connect
     $key = ['cmd' => $cmd, 'dest' => $dest]; // 받아온 cmd, userCode 값을 key에 넣음.
     //echo json_encode($key);
 
-    $query = "SELECT USER_CODE FROM SYS_INFO WHERE USER_CODE = '$user_code'"; //Sys_info 테이블의 USER_CODE와 $user_code를 비교하여 맞는 USER_CODE를 받는 쿼리문.
+    $query = "SELECT USER_CODE FROM SYS_INFO WHERE AP_CODE = '$ap_code'"; //Sys_info 테이블의 USER_CODE와 $user_code를 비교하여 맞는 USER_CODE를 받는 쿼리문.
     $result_query = mysqli_query($conn, $query) or die ("Error Database connect!!");
 
     while($data = mysqli_fetch_array($result_query)){
 
         //print_r($data); // 유져코드 출력 완료. ( 배열로 출력됨. )
 
-        $user_code_data = $data['USER_CODE']; //user_code 값을 변수에 저장.
+        $ap_code_data = $data['AP_CODE']; //user_code 값을 변수에 저장.
 
-        if( $user_code == $user_code_data) { //데이터베이스의 유저코드와 서버에서 받아온 유저코드가 같으면
+        if( $ap_code == $ap_code_data) { //데이터베이스의 유저코드와 서버에서 받아온 유저코드가 같으면
             //echo "success"; //출력 완료.
 
             $ardu_url = $dest."".$cmd_string; // 요청 url 주소.
