@@ -7,7 +7,7 @@
  */
     require_once __DIR__ .'/config_db.php';
     require_once __DIR__ .'/connect_inner_ip.php';
-    
+
     $ip = $_SERVER['REMOTE_ADDR'];
 
     $sfcode= explode(".",$ip)[3];//$ip로부터 ip의 D class추출
@@ -27,6 +27,6 @@
         echo "<script>location.replace('/main.php');</script>";
     }
     else{
-        echo "<script>location.replace('/error.php');</script>";
+        echo "<script>alert('추가할 수 없습니다.');</script>";
     }
 ?>
