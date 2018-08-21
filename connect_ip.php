@@ -1,7 +1,7 @@
 <?php
 
-    foreach (range(1, 20) as $ip_d_num){
-        
+    foreach (range(1, 20)){
+
         print_r( range(1, 20, 1));
     }
 ?>
