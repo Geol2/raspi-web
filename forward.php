@@ -35,7 +35,7 @@ $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connect
     $key = ['cmd' => $cmd, 'dest' => $dest]; // 받아온 cmd, userCode 값을 key에 넣음.
     //echo json_encode($key);
 
-    $query = "SELECT USER_CODE FROM SYS_INFO WHERE AP_CODE = '$ap_code'"; //Sys_info 테이블의 USER_CODE와 $user_code를 비교하여 맞는 USER_CODE를 받는 쿼리문.
+    $query = "SELECT AP_CODE FROM SYS_INFO WHERE AP_CODE = '$ap_code'"; //Sys_info 테이블의 USER_CODE와 $user_code를 비교하여 맞는 USER_CODE를 받는 쿼리문.
     $result_query = mysqli_query($conn, $query) or die ("Error Database connect!!");
 
     while($data = mysqli_fetch_array($result_query)){
