@@ -104,6 +104,7 @@ header('
 
                         <form class="form-horizontal" method = "POST" action = "<?php $_SERVER['PHP_SELF']?>">
                             <button class="btn btn-primary" type = "submit" >Add Device</button>
+                            <button class="btn btn-primary" type = "submit" >Delete Device</button>
                         </form>
 
 
