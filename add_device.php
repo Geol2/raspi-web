@@ -14,12 +14,12 @@
 
     $inner_ip = $ip;
     echo $inner_ip;
-    
+
     $mode = 'Y';
     $state = 'N';
     $register = 'N';
 
-    $query_add_device = "INSERT INTO PRODUCT_INFO ( SF_CODE, INNER_IP, MODE, STATE, REGISTER) VALUES ('$sfcode', $inner_ip, '$mode', '$state', '$register')";
+    $query_add_device = "INSERT INTO PRODUCT_INFO ( SF_CODE, INNER_IP, MODE, STATE, REGISTER) VALUES ('$sfcode', '$inner_ip', '$mode', '$state', '$register')";
     $result = $conn->query($query_add_device);
 
     if($result) {
