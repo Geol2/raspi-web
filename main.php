@@ -102,9 +102,8 @@ header('
                         echo "<p> Device MAC : ".$parts[3]."</p><br>";
                         ?>
 
-                        <form class="form-horizontal" method = "POST" action = "<?php $_SERVER['PHP_SELF']?>">
-                            <button class="btn btn-primary" type = "submit" >Add Device</button>
-                            <button class="btn btn-primary" type = "submit" >Delete Device</button>
+                        <form class="form-horizontal" method = "POST" action = "/add_device.php">
+                            <button class="btn btn-primary" href="add_device.php" type = "submit" >Add Device</button><br>
                         </form>
 
 
