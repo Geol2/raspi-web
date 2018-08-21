@@ -103,6 +103,7 @@ header('
                         ?>
 
                         <button type="submit" class="btn btn-primary" id="join_submit" href="check_sign_up.php"> Add device</button><br>
+                        <button type="submit" class="btn btn-primary" id="join_submit" href="check_sign_up.php"> delete device</button><br>
 
 
                         <?php
