@@ -28,5 +28,6 @@
     }
     else{
         echo "<script>alert('추가할 수 없습니다.');</script>";
+        echo "<script>location.replace('/main.php');</script>";
     }
 ?>
