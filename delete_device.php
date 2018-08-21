@@ -10,8 +10,8 @@
 
     $ip = $_SERVER['REMOTE_ADDR'];
 
-    $query_add_device = "DELETE FROM PRODUCT_INFO WHERE INNER_IP = $ip";
-    $result = $conn->query($query_add_device);
+    $query_delete_device = "DELETE FROM PRODUCT_INFO WHERE INNER_IP = $ip";
+    $result = $conn->query($query_delete_device) or die("ㅠㅠ");
 
     if($result) {
         echo "<script>location.replace('/main.php');</script>";
