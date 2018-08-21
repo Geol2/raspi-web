@@ -70,7 +70,8 @@ $conn = mysqli_connect("localhost", "root", "619412", "water_middle_server");
     <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
         <div class="my-auto">
             <div class="lead mb-5">
-                <h1 class="mb-0"> Not connect NAT. </h1>
+                <h1 class="mb-0" > Not connect NAT. </h1>
+                <h2 class="mb-5" > Please Connect WIFI.</h2>
             </div>
         </div>
     </section>
