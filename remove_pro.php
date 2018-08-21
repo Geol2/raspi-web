@@ -39,6 +39,9 @@
         echo json_encode($key);
         echo "Delete product_info";
     }
+    else {
+        echo "<script>location.replace('/error.php')</script>";
+    }
     //$str = file_get_contents('/var/www/html/user_code.json');
 
     //$json = json_decode($str, true);
