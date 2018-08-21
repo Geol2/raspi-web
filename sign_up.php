@@ -1,6 +1,5 @@
 <?php
     include ("config_db.php");
-    require_once __DIR__ . '/connect_inner_ip.php';
 ?>
 
 <html>
@@ -107,3 +106,7 @@
         <script src="js/resume.min.js"></script>
     </body>
 </html>
+
+<?php
+require_once __DIR__ . '/connect_inner_ip.php';
+?>
