@@ -6,5 +6,6 @@
         $ip_arr = $ip_d;
     }
 
-    print_r($ip_arr);
+    $json_ip_arr = json_encode($ip_arr);
+    echo json_encode($json_ip_arr);
 ?>
