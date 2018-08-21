@@ -66,7 +66,7 @@
                         <h2 class="mb-5"> Sign up</h2>
                         <h3 class="mb-0"> Get Infomaion</h3>
 
-                        <form class="form-horizontal" method="post" action="sign_up.php">
+                        <form class="form-horizontal" method="post" action="check_sign_up.php">
                             <label for="id_label" class="col-sm-10 control-label"> ID </label>
                             <div class="col-sm-8">
                                 <input type="text" class="form-control" id="id_label" name="id" placeholder="ID" size="30">
@@ -87,7 +87,7 @@
                                 <input type="text" class="form-control" id="email_label" name="email" placeholder="E-MAIL" size="30">
                             </div>
                             <br>
-                            <button type="submit" class="btn btn-primary" id="join_submit" href="<?php echo "<script> location.href = check_sign_up.php" ?>"> Sign Up </button>
+                            <button type="submit" class="btn btn-primary" id="join_submit" href="check_sign_up.php"> Sign Up </button>
                         </form>
 
                     </div>
