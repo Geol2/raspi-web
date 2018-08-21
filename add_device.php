@@ -23,9 +23,9 @@
     $result = $conn->query($query_add_device);
 
     if($result) {
-        echo "ok";
+        echo "<script>location.replace('/main.php');</script>";
     }
     else{
-        echo "false";
+        echo "<script>location.replace('/error.php');</script>";
     }
 ?>
