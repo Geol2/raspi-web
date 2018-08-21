@@ -71,7 +71,7 @@ $conn = mysqli_connect("localhost", "root", "619412", "water_middle_server");
         <div class="my-auto">
             <div class="lead mb-5">
                 <h1 class="mb-0" > Not connect NAT. </h1>
-                <h2 class="mb-5" > Please Connect WIFI.</h2>
+                <h2 class="mb-5" > Please Connect WIFI OR server!!</h2>
             </div>
         </div>
     </section>
