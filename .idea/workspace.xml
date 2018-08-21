@@ -33,8 +33,8 @@
       <file leaf-file-name="sign_up.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sign_up.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="936">
-              <caret line="111" selection-start-line="111" selection-end-line="111" />
+            <state relative-caret-position="595">
+              <caret line="89" column="103" lean-forward="true" selection-start-line="89" selection-start-column="103" selection-end-line="89" selection-end-column="103" />
             </state>
           </provider>
         </entry>
@@ -273,12 +273,12 @@
       <workItem from="1534775258142" duration="647000" />
       <workItem from="1534783434797" duration="10438000" />
       <workItem from="1534794927126" duration="8805000" />
-      <workItem from="1534845622183" duration="16367000" />
+      <workItem from="1534845622183" duration="16711000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56620000" />
+    <option name="totallyTimeSpent" value="56964000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1494" height="1167" extended-state="0" />
@@ -440,9 +440,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/phpinfo.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -470,6 +467,9 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/check_sign_up.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -479,8 +479,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sign_up.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="936">
-          <caret line="111" selection-start-line="111" selection-end-line="111" />
+        <state relative-caret-position="595">
+          <caret line="89" column="103" lean-forward="true" selection-start-line="89" selection-start-column="103" selection-end-line="89" selection-end-column="103" />
         </state>
       </provider>
     </entry>
