@@ -10,13 +10,12 @@
     $ip = $_SERVER['REMOTE_ADDR'];
 
     $sfcode= explode(".",$ip)[3];//$ip로부터 ip의 D class추출
-
     $inner_ip = $ip;
     $mode = 'Y';
     $state = 'N';
     $register = 'N';
 
-    $query_adddevice = "INSERT INTO PRODUCT_INFO ( SF_CODE, INNER_IP, MODE, STATE, REGISTER) VALUES ('$sf_code', $inner_ip, '$mode', '$state', '$register')";
+    $query_adddevice = "INSERT INTO PRODUCT_INFO ( SF_CODE, INNER_IP, MODE, STATE, REGISTER) VALUES ('$sfcode', $inner_ip, '$mode', '$state', '$register')";
     $conn->query($query_adddevice);
 
     if($conn) {
