@@ -24,7 +24,13 @@ $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connect
 
     $cmd = $json_obj -> {"cmd"};
     $dest = $json_obj -> {"dest"};
-    $user_code = $json_obj -> {"userCode"}; //명시적으로 줄거라서 일단 주석 침. cmd, dest도 마찬가지
+
+    $query_ap="SELECT AP_CODE FROM SYS_INFO ";
+    $result_query_ap = mysqli_query($conn, $query_ap) or ("Error database connenct SYS_INFO");
+
+    echo $result_query_ap;
+
+    $user_code = $json_obj -> {"apCode"}; //명시적으로 줄거라서 일단 주석 침. cmd, dest도 마찬가지
 
     //$cmd = 5;
     //$dest = "192.168.4.11";
