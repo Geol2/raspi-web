@@ -9,7 +9,7 @@
     require_once __DIR__ .'/connect_inner_ip.php';
 
     $ip = $_SERVER['REMOTE_ADDR'];
-    $data = explode(".", 3);
+    $data = explode(".", $ip)[3];
 
     $query_delete_device = "DELETE FROM PRODUCT_INFO WHERE SF_CODE = $data";
     $result = $conn->query($query_delete_device) or die("ㅠㅠ");
