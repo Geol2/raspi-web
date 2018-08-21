@@ -17,9 +17,9 @@
     $register = 'N';
 
     $query_adddevice = "INSERT INTO PRODUCT_INFO ( SF_CODE, INNER_IP, MODE, STATE, REGISTER) VALUES ('$sfcode', $inner_ip, '$mode', '$state', '$register')";
-    $conn->query($query_adddevice);
+    $result = $conn->query($query_adddevice);
 
-    if($conn) {
+    if($result) {
         echo "ok";
     }
     else{
