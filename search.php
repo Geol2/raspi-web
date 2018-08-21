@@ -48,7 +48,7 @@
 		//$conn_user = mysqli_connect($db_host1, $db_user1, $db_passwd1, $db_name1) or die("Connected Failed!!!!");
 
 		$query_user = "SELECT * FROM SYS_INFO";
-		$result_user = mysqli_query($conn, $query_user) or die;
+		$result_user = mysqli_query($conn, $query_user) or die('Error Quering database.');
 		//true 참 0 이외의 값 , false 거짓 0 //
 		$num = mysqli_num_rows($result_user);
 		// 데이터베이스의개수.
