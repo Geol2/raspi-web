@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e704b227-543e-4217-8743-8aaa5f6f2f58" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/add_device.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/main.php" afterDir="false" />
-    </list>
+    <list default="true" id="e704b227-543e-4217-8743-8aaa5f6f2f58" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,47 +14,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="remove_pro.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/remove_pro.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="39" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="8" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="add.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/add.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="35" column="2" lean-forward="true" selection-start-line="35" selection-start-column="2" selection-end-line="35" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="30" column="59" lean-forward="true" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="59" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="main.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
+            <state relative-caret-position="425">
               <caret line="105" column="122" lean-forward="true" selection-start-line="105" selection-start-column="122" selection-end-line="105" selection-end-column="122" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add_device.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="add_device.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/add_device.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+            <state relative-caret-position="255">
+              <caret line="15" column="17" lean-forward="true" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/login.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="680">
+              <caret line="88" column="22" lean-forward="true" selection-start-line="88" selection-start-column="22" selection-end-line="88" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -68,42 +46,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
               <caret line="12" column="26" lean-forward="true" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forward.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/forward.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/login.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="88" column="22" lean-forward="true" selection-start-line="88" selection-start-column="22" selection-end-line="88" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login_check.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/login_check.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="33" selection-start-line="33" selection-end-line="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sign_up.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sign_up.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="90" column="134" lean-forward="true" selection-start-line="90" selection-start-column="28" selection-end-line="90" selection-end-column="134" />
             </state>
           </provider>
         </entry>
@@ -296,12 +238,12 @@
       <workItem from="1534775258142" duration="647000" />
       <workItem from="1534783434797" duration="10438000" />
       <workItem from="1534794927126" duration="8805000" />
-      <workItem from="1534845622183" duration="23795000" />
+      <workItem from="1534845622183" duration="24114000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64048000" />
+    <option name="totallyTimeSpent" value="64367000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1494" height="1167" extended-state="0" />
@@ -504,24 +446,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="105" column="122" lean-forward="true" selection-start-line="105" selection-start-column="122" selection-end-line="105" selection-end-column="122" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/forward.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="88" column="22" lean-forward="true" selection-start-line="88" selection-start-column="22" selection-end-line="88" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -532,6 +460,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="30" column="59" lean-forward="true" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="105" column="122" lean-forward="true" selection-start-line="105" selection-start-column="122" selection-end-line="105" selection-end-column="122" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/check_sign_up.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -539,17 +481,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/add_device.php">
+    <entry file="file://$PROJECT_DIR$/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+        <state relative-caret-position="680">
+          <caret line="88" column="22" lean-forward="true" selection-start-line="88" selection-start-column="22" selection-end-line="88" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/add_device.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="30" column="59" lean-forward="true" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="59" />
+        <state relative-caret-position="255">
+          <caret line="15" column="17" lean-forward="true" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
         </state>
       </provider>
     </entry>
