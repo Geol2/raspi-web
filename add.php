@@ -1,7 +1,14 @@
 <?php
 //Sys_info 를 웹서버에서 수동으로 추가해주는 부분.
 //자동으로 추가해주는 부분을 만들어 보자.
-	header("Access-Control-Allow-Origin: *");
+    require_once __DIR__ . '/path_ip_class.php';
+
+    $ip_url_settings = Settings::getInstance('php.ini');
+    $ip_setting = $ip_url_settings->ip;
+
+
+
+    header("Access-Control-Allow-Origin: *");
 	header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 	header("Content-Type: application/json");
 	$db_host = "localhost";

@@ -9,11 +9,8 @@
 ?>
 
 <?php
-    require_once __DIR__ . '/path_ip_class.php';
     require_once __DIR__ . '/connect_inner_ip.php';
 
-    $ip_url_settings = Settings::getInstance('php.ini');
-    $ip_setting = $ip_url_settings->ip;
     //$ip_url_setting = $ip_url_settings->ip_url;
     //echo $ip_setting;
     //require_once __DIR__ .'/vendor/autoload.php';
