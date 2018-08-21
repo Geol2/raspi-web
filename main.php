@@ -106,6 +106,10 @@ header('
                             <button class="btn btn-primary" href="add_device.php" type = "submit" >Add Device</button><br>
                         </form>
 
+                        <form class="form-horizontal" method = "POST" action = "/delete_device.php">
+                            <button class="btn btn-primary" href="delete_device.php" type = "submit" >Delete Device</button><br>
+                        </form>
+
 
                         <?php
                         $query_SYS = "SELECT * FROM SYS_INFO"; $select_query1 = mysqli_query($conn, $query_SYS) or die ("Error database.. Not select SYS_INFO table.");
