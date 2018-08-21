@@ -87,7 +87,7 @@
                                 <input type="text" class="form-control" id="email_label" name="email" placeholder="E-MAIL" size="30">
                             </div>
                             <br>
-                            <button type="submit" class="btn btn-primary" id="join_submit" href="/check_sign_up.php"> Sign Up </button>
+                            <button type="submit" class="btn btn-primary" id="join_submit" href="check_sign_up.php"> Sign Up </button>
                         </form>
 
                     </div>
