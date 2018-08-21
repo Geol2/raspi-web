@@ -6,7 +6,8 @@
  * Time: 오전 7:29
  */
     require_once __DIR__ .'/config_db.php';
-
+    require_once __DIR__ .'/connect_inner_ip.php';
+    
     $ip = $_SERVER['REMOTE_ADDR'];
 
     $sfcode= explode(".",$ip)[3];//$ip로부터 ip의 D class추출
