@@ -3,6 +3,6 @@
     for($i=0; $i<20; $i++){
         $connect_ip = array("192.168.4.".$i);
     }
-    print_r($ip);
+    print_r($connect_ip);
 
 ?>
