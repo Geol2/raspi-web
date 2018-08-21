@@ -9,7 +9,7 @@
 ?>
 
 <?php
-    require_once __DIR__ . '/connect_inner_ip.php';
+    //require_once __DIR__ . '/connect_inner_ip.php';
 
     //$ip_url_setting = $ip_url_settings->ip_url;
     //echo $ip_setting;

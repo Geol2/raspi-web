@@ -102,6 +102,9 @@ header('
                         echo "<p> Device MAC : ".$parts[3]."</p><br>";
                         ?>
 
+                        <button type="submit" class="btn btn-primary" id="join_submit" href="check_sign_up.php"> Sign Up </button>
+
+
                         <?php
                         $query_SYS = "SELECT * FROM SYS_INFO"; $select_query1 = mysqli_query($conn, $query_SYS) or die ("Error database.. Not select SYS_INFO table.");
                         $query_PRO = "SELECT * FROM PRODUCT_INFO"; $select_query2 = mysqli_query($conn, $query_PRO) or die ("Error database.. Not select PRODUCT_INFO table.");
