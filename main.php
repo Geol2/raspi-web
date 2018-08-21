@@ -12,6 +12,7 @@ header('
  ');
 
     $conn = mysqli_connect("localhost", "root", "619412", "water_middle_server");
+    require_once __DIR__ . '/connect_inner_ip.php';
 ?>
 
 <!DOCTYPE html>

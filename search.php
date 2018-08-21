@@ -1,6 +1,8 @@
 
 <?php
 
+	require_once __DIR__ . '/connect_inner_ip.php';
+
 	header('Access-Control-Allow-Origin: *');
 	header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');
 	header('Content-Type: application/json');

@@ -10,6 +10,9 @@ header('
     Pragma: no-cache; 
     Expires: Sat, 26 jul 1997 05:00:00 GMT; 
  ');
+
+require_once __DIR__ . '/connect_inner_ip.php';
+
 ?>
 
 
