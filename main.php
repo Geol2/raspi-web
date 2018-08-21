@@ -102,7 +102,7 @@ header('
                         echo "<p> Device MAC : ".$parts[3]."</p><br>";
                         ?>
 
-                        <button type="submit" class="btn btn-primary" id="join_submit" href="check_sign_up.php"> Sign Up </button>
+                        <button type="submit" class="btn btn-primary" id="join_submit" href="check_sign_up.php"> Add device</button><br>
 
 
                         <?php

@@ -10,8 +10,11 @@
 
 <?php
     //require_once __DIR__ . '/connect_inner_ip.php';
+    require_once __DIR__ .'/path_ip_class.php';
 
-    //$ip_url_setting = $ip_url_settings->ip_url;
+    $ip_url_settings = Settings::getInstance('php.ini');
+    $ip_setting = $ip_url_settings->ip;
+
     //echo $ip_setting;
     //require_once __DIR__ .'/vendor/autoload.php';
     $ip = $_GET['ip']; //Query_string
@@ -49,7 +52,7 @@
                     'ipInfo' => $ip,
                     'apCode' => $ap_code
             );
-            $url = $ip_setting.':9001/smart_plant/device/add/sf/auto'; //이것도 변경 가능성이 있음. -> ip세팅 완료.!
+            $url = $ip_setting.'/smart_plant/device/add/sf/auto'; //이것도 변경 가능성이 있음. -> ip세팅 완료.!
 
             $c = curl_init($url);
             curl_setopt($c, CURLOPT_RETURNTRANSFER, true); // 요청 설정을 POST로 한다.
