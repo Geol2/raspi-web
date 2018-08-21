@@ -1,3 +1,7 @@
+<?php
+ require_once __DIR__ . '/connect_inner_ip';
+?>
+
 <html>
     <head>
         <meta charset="utf-8">
