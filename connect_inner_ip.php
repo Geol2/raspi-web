@@ -6,9 +6,9 @@
     //print_r($arr_ip);
 
     if(in_array($_SERVER['REMOTE_ADDR'], $arr_inner_ip)){
-        echo "내부 IP로 접속 하였습니다.";
+        echo "내부 IP로 접속 하였습니다.<br>";
     } else {
-        echo " 내부 IP로 접속하지 않았습니다.";
+        echo "<script> location.replace('/error.php'); </script>";
     }
     //echo $_SERVER['REMOTE_ADDR'];
 ?>
