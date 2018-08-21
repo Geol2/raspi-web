@@ -1,3 +1,6 @@
 <?php
-        print_r( range(1, 20) );
+    $i = 1;
+    while( $i <= 20 ){
+        array("192.168.4.".$i);
+    }
 ?>
