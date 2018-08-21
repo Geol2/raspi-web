@@ -1,5 +1,8 @@
 
 <?php
+// AP의 정보와, 연결된 수경재배기들의 정보들을 JSON포맷으로 제공
+// Sys_info의 내용을 조회에서 공유기의 추가중복을 방지하게 하기 위해 만듦.-->
+
 	require_once __DIR__ .'/path_ip_class.php';
 
 	$ip_url_settings = Settings::getInstance('php.ini');
@@ -32,9 +35,6 @@
 			array_push($return_arr, $row_array);
 		}
 		//mysqli_close($conn);
-
-		// AP의 정보와, 연결된 수경재배기들의 정보들을 JSON포맷으로 제공
-		// Sys_info의 내용을 조회에서 공유기의 추가중복을 방지하게 하기 위해 만듦.-->
 
 		//header('Access-Control-Allow-Origin: *');
 		//header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');

@@ -6,7 +6,7 @@
     require_once __DIR__ .'/path_ip_class.php';
 
     $ip_url_settings = Settings::getInstance('php.ini');
-    $ip_setting = $ip_url_settings->ip_url;
+    $ip_setting = $ip_url_settings->ip;
 
     #접속 권한
     if($ip_setting == $_SERVER['REMOTE_ADDR']) {
