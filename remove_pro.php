@@ -40,6 +40,7 @@
         echo "Delete product_info";
     }
     else {
+        echo "<script>alert('무언가 잘못되었습니다.')</script>";
         echo "<script>location.replace('/error.php');</script>";
     }
     //$str = file_get_contents('/var/www/html/user_code.json');
