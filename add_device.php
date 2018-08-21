@@ -11,11 +11,7 @@
     $ip = $_SERVER['REMOTE_ADDR'];
 
     $sfcode= explode(".",$ip)[3];//$ip로부터 ip의 D class추출
-    echo $sfcode;
-
     $inner_ip = $ip;
-    echo $inner_ip;
-
     $mode = 'Y';
     $state = 'N';
     $register = 'N';
