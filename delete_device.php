@@ -15,6 +15,7 @@
     $result = $conn->query($query_delete_device) or die("ㅠㅠ");
 
     if($result) {
+
         echo "<script>location.replace('/main.php');</script>";
     }
     else{
