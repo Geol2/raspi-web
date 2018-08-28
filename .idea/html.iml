@@ -22,5 +22,7 @@
     <orderEntry type="module" module-name="htdocs" />
     <orderEntry type="module" module-name="blog" />
     <orderEntry type="module" module-name="myapp" />
+    <orderEntry type="module" module-name="Modern PHP" />
+    <orderEntry type="module" module-name="htdocs" />
   </component>
 </module>
