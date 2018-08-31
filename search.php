@@ -9,8 +9,7 @@
 	$ip_setting = $ip_url_settings->ip;
 
 
-
-	if($ip_setting == $_SERVER['REMOTE_ADDR']) {
+	//if($ip_setting == $_SERVER['REMOTE_ADDR']) {
 
 		header('Access-Control-Allow-Origin: *');
 		header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');
@@ -64,9 +63,9 @@
 		echo json_encode($data);
 
 		mysqli_close($conn);
-	}
-	else{
-		echo "<script>location.replace('/error.php');</script>";
-		exit();
-	}
+	//}
+	//else{
+	//	echo "<script>location.replace('/error.php');</script>";
+	//	exit();
+	//}
 ?>

@@ -6,7 +6,7 @@
     $ip_url_settings = Settings::getInstance('php.ini');
     $ip_setting = $ip_url_settings->ip;
 
-    if($ip_setting == $_SERVER['REMOTE_ADDR']) {
+    //if($ip_setting == $_SERVER['REMOTE_ADDR']) {
 
         header("Access-Control-Allow-Origin: *");
         header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
@@ -28,9 +28,9 @@
         echo json_encode($key);
         //Sys_info 의 user_code와 ouer_ip를 받아서 DB에 저장.
         mysqli_close($conn);
-    }
-    else {
-        echo "<script>location.replace('/error.php');</script>";
-        exit();
-    }
+    //}
+    //else {
+    //    echo "<script>location.replace('/error.php');</script>";
+    //    exit();
+    //}
 ?>
