@@ -75,7 +75,7 @@
             } else {
                 echo "Compare DB value, json_obj fail";
             }
-        //}
+        }
         //cmd 값..
     //}
     //else {
