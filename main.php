@@ -95,9 +95,11 @@ header('
                         <?php
                         // IP 조회
                         $ip_print = $_SERVER['REMOTE_ADDR'];
-			$out = shell_exec("/sbin/ifconfig");
+			$pattern = " ";
+			$arr_out = split($pattern, shell_exec("/sbin/ifconfig"));
                         echo "<p>"."Currently connected device IP : " . $ip_print ."</p>"."</br>";
-			echo "<p>"."Public IP2 : ".$out."</p>"."</br>";
+			echo "<p>"."Public IP2 : ".for(int i=0; i < arr_out; i++){ $arr_out[5]; }."</p>"."</br>";
+			}
                         //맥주소 조회
                         exec("arp -H ether -n -a ".$_SERVER["REMOTE_ADDR"]."",$values);
                         $parts = explode(' ',$values[0]);
