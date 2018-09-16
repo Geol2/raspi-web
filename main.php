@@ -95,10 +95,13 @@ header('
                         <?php
                         // IP 조회
                         $ip_print = $_SERVER['REMOTE_ADDR'];
-			$pattern = " ";
-			$arr_out = split($pattern, shell_exec("/sbin/ifconfig"));
+			//$string_ifconfig = exec("/sbin/ifconfig");
+			//$arr_out = explode( ' ', $string_ifconfig));
+			//for( $i = 0; $i < sizeof($arr_out); $i++){
+			//	echo $arr_out[5];
+			//}
                         echo "<p>"."Currently connected device IP : " . $ip_print ."</p>"."</br>";
-			echo "<p>"."Public IP3 : ".for($i=0; $i < sizeof($arr_out); $i++){ echo $arr_out[5]; }."</p>"."</br>";
+			echo "<p>"."Public IP3 : "."</p>"."</br>";
 			}
                         //맥주소 조회
                         exec("arp -H ether -n -a ".$_SERVER["REMOTE_ADDR"]."",$values);
