@@ -96,11 +96,14 @@ header('
                         // IP 조회
                         $ip_print = $_SERVER['REMOTE_ADDR'];
                         echo "<p>"."Currently connected device IP : " . $ip_print ."</p>"."</br>";
-			$arr_out = exec("sbin/ifconfig");
-			for($i = 0; $i < $arr_out ; $i++) {
-				echo $arr_out[5];
-			}
-                        //맥주소 조회
+
+			$temp = shell_exec("/sbin/ifconfig eth0 | grep inet | cut -d: -f2");
+			//echo $temp;
+			$ifcon_part1 = explode(" ", trim($temp));
+			//print_r($ifcon_part1);
+			echo "<p> PUBLIC IP : ".$ifcon_part1[1]."</p><br>";
+
+			//맥주소 조회
                         exec("arp -H ether -n -a ".$_SERVER["REMOTE_ADDR"]."",$values);
                         $parts = explode(' ',$values[0]);
                         echo "<p> Device MAC : ".$parts[3]."</p><br>";
