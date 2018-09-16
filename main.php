@@ -95,9 +95,9 @@ header('
                         <?php
                         // IP 조회
                         $ip_print = $_SERVER['REMOTE_ADDR'];
-			$server_ip_print = getenv(HTTP_CLIENT_IP);
+			$server_ip_print = getenv(HTTP_X_FORWARDED_FOR);
                         echo "<p>"."Currently connected device IP : " . $ip_print ."</p>"."</br>";
-			echo "<p>"."Public IP : ".$server_ip_print."</p>"."</br>";
+			echo "<p>"."Public IP2 : ".$server_ip_print."</p>"."</br>";
                         //맥주소 조회
                         exec("arp -H ether -n -a ".$_SERVER["REMOTE_ADDR"]."",$values);
                         $parts = explode(' ',$values[0]);
