@@ -5,8 +5,7 @@
 
 # RaspberryPi 3  B Model AP Mode
 
-
-ref
+reference :
 https://www.raspberrypi.org/documentation/configuration/wireless/access-point.md
 
 dnsmasq와 hostapd
@@ -205,14 +204,14 @@ sudo hostapd /etc/hostapd/hostapd.conf
 
 에러는 ```Line2 : invalid/unknown driver 'nl80211'```
 
-라이브러리가 필요하다고 하니까 이것도 설치를 해주자.
+라이브러리가 필요하다고 하니까 이것도 설치를 한다.
 
 
 ```
 sudo apt-get install libssl-dev
 ```
 
-nl80211 이라는 것을 아예 못찾는 것 같으니까 다운로드부터 받도록하자.
+nl80211 이라는 것을 아예 못찾는 것 같으니까 다운로드부터 받도록 한다.
 
 ```
 git clone git://w1.fi/srv/git/hostap.git
@@ -220,48 +219,11 @@ git clone git://w1.fi/srv/git/hostap.git
 cd hostap/hostapd
 ```
 
-Or you can get a stable release (0.6.8 or later recommended) by downloading the tarball from http://w1.fi/hostapd/ as follows:
+Or you can get a stable release (0.6.8 or later recommended)  
+  by downloading the tarball from http://w1.fi/hostapd/ as follows:
 
-http://w1.fi/hostapd/ 이 링크에 들어가면 2018.02.21. 기준으로 가장 최근버젼인 2.6 버젼을 다운로드 받도록 하였다.
-
-```
-wget http://w1.fi/releases/hostapd-x.y.z.tar.gz
-
-tar xzvf hostapd-x.y.z.tar.gz
-
-cd hostapd-x.y.z/hostapd
-```
-
-여기서 x.y.z.는 버젼이다. 나는 ~ hostapd-2.6.tar.gz 라고 해주었다.
-상황에 따라 맞게 타이핑 쳐주자.
-
-```
-cp defconfig .config
-
-nano .config
-```
-
-```.config ```파일로 들어가서 찾아준다.
-
-```
-#CONFIG_DRIVER_NL80211=y
-```
-
-\#부분을 없앤다. 최근버젼인 2.6버젼에는 애초에 #이 없었다.
-
-Next, compile hostapd:
-
-```
-make
-```
-
-```
-cd hostap/hostapd
-```
-
-Or you can get a stable release (0.6.8 or later recommended) by downloading the tarball from http://w1.fi/hostapd/ as follows:
-
-http://w1.fi/hostapd/ 이 링크에 들어가면 2018.02.21. 기준으로 가장 최근버젼인 2.6 버젼을 다운로드 받도록 한다.
+http://w1.fi/hostapd/ 이 링크에 들어가면 2018.02.21. 기준으로  
+가장 최근버젼인 2.6 버젼을 다운로드 받도록 한다.
 
 ```
 wget http://w1.fi/releases/hostapd-x.y.z.tar.gz
@@ -285,7 +247,8 @@ nano .config
 /#CONFIG_DRIVER_NL80211=y
 ```
 
-/#부분을 없앤다. 최근버젼인 2.6버젼에는 애초에 #이 없었다. /는 깃허브에 올릴려고 추가적으로 붙인 것이니 원래 없는 부분... 신경쓰지 말자!!
+/#부분을 없앤다. 최근버젼인 2.6버젼에는 애초에 #이 없었다.  
+/는 깃허브에 올릴려고 추가적으로 붙인 것이니 원래 없는 부분... 신경쓰지 말자!!
 
 Next, compile hostapd:
 
