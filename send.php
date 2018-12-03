@@ -24,7 +24,7 @@
     $num = mysqli_num_rows($result_user); //echo "$num";
     //Sys_info의 table 행 개수 저장.
 
-    
+
     if( $num >= 1) {
 
         //define("HOST", "203.250.32.47"); //수정가능성이 있음.
@@ -67,8 +67,10 @@
         //$ap_value = mysqli_fetch_array($result_ap, MYSQLI_BOTH); // 데이터 값을 표현해주는 방식을 ~만들고.
         //$value = $ap_value['AP_CODE'];// row의 0행값을 뽑아서 ~저장.
 
-        $query_sf = "SELECT STAMP FROM PRODUCT_INFO WHERE SF_CODE = '$_GET['sf']'";
-        $result_sf = mysqli_query($link, $query_sf) or die ("Not select table Product_table at query_sf");
+
+        $sf_code = $_GET['sf'];
+        $query_sf = "SELECT STAMP FROM PRODUCT_INFO WHERE SF_CODE = '$sf_code'";
+        $result_sf = mysqli_query($link, $query_sf) or ("Not select table Product_table at query_sf");
 
         $row = mysqli_fetch_array($result_sf);
 
@@ -106,7 +108,7 @@
         $connection->close();
 
         mysqli_free_result($result_ap);
-        mysqli_free_result($result);
+        mysqli_free_result($result_sf);
         mysqli_close($link);
 
         echo 'OK';

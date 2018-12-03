@@ -30,10 +30,9 @@
 
 		while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 			$row_array['INNER_IP'] = $row['INNER_IP'];
-			$row_stamp['STAMP'] = $row['STAMP'];
+			$row_array['STAMP'] = $row['STAMP'];
 
 			array_push($return_arr, $row_array);
-			array_push($return_arr, $row_stamp);
 		}
 		//mysqli_close($conn);
 

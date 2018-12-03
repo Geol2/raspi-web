@@ -8,7 +8,7 @@
     $ip_url_settings = Settings::getInstance('php.ini');
     $ip_setting = $ip_url_settings->ip;
 
-    #접속 권한
+    //접속 권한
     //if($ip_setting == $_SERVER['REMOTE_ADDR']) {
 
         header('Access-Control-Allow-Origin: * ');
@@ -22,22 +22,40 @@
 
         $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connected Failed!!!!");
 
-        # Get JSON as a string
+        //Get JSON as a string
         $json_str = file_get_contents('php://input');
 
-        # Get as an object
+        //Get as an object
         $json_obj = json_decode($json_str, false); // Object로 받아서 변수에 저장.
 
 
-        $sfCode = $json_obj->{"sf_code"};
-        //echo $json_obj;
+        $cmd = $json_obj->{"cmd"};
+	$dest = $json_obj->{"dest"};
+        $stamp = $json_obj->{"stamp"}; //받아온 값들.
+	//echo $json_obj;
 
-        $query = "DELETE FROM PRODUCT_INFO WHERE SF_CODE = $sfCode";
-        $result = mysqli_query($conn, $query) or die ('Error Querying database.');
+	$cmd_string = "?cmd="; //cmd querystring 만들기.
+        $query_string_data = $dest."".$cmd_string."".$cmd; //queryString변수 만듦.
 
-        $key = ['result' => 'OK'];
-        echo json_encode($key);
-        echo "Delete product_info";
+	$c = curl_init($query_string_data);
+
+	curl_setopt($c, CURLOPT_RETURNTRANSFER, true); //요청실행.
+	curl_setopt($c, CURLOPT_CONNECTTINEOUT, 10); //타임아웃 설정.
+	curl_setopt($c, CURL_SSL_VERIFYPPER, false); // use get raw.
+	$response = curl_exec($c); //submmit queryString.
+
+	if($response == "OK"){
+	$json_data = ['result' => $response];
+
+        $query_del = "DELETE FROM PRODUCT_INFO WHERE STAMP = '$stamp'";
+        $result_del = mysqli_query($conn, $query_del) or die ('Error Querying database.');
+
+	echo json_encode($json_data);
+	}
+	else {
+	    echo "Response is FAIL";
+	}
+
     //}
     //else {
     //   echo "<script>location.replace('/error.php');</script>";

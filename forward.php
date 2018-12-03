@@ -39,7 +39,7 @@
 
         $cmd_string = "?cmd=";
 
-        $key = ['cmd' => $cmd, 'dest' => $dest]; // 받아온 cmd, userCode 값을 key에 넣음.
+        //$key = ['cmd' => $cmd, 'dest' => $dest]; // 받아온 cmd, userCode 값을 key에 넣음.
         //echo json_encode($key);
 
         $query = "SELECT AP_CODE FROM SYS_INFO WHERE AP_CODE = '$ap_code'"; //Sys_info 테이블의 USER_CODE와 $user_code를 비교하여 맞는 USER_CODE를 받는 쿼리문.
@@ -47,30 +47,51 @@
 
         while ($data = mysqli_fetch_array($result_query)) {
 
-            //print_r($data); // 유져코드 출력 완료. ( 배열로 출력됨. )
+            //echo $data['AP_CODE']; // 유져코드 출력 완료. ( 배열로 출력됨. )
 
             $ap_code_data = $data['AP_CODE']; //user_code 값을 변수에 저장.
 
             if ($ap_code == $ap_code_data) { //데이터베이스의 유저코드와 서버에서 받아온 유저코드가 같으면
                 //echo "success"; //출력 완료.
 
-                $ardu_url = $dest . "" . $cmd_string; // 요청 url 주소.
+                //$ardu_url = $dest . "" . $cmd_string; // 요청 url 주소.
                 //echo $ardu_url;
 
-                $query_string_data = $dest . "" . $cmd_string . "" . "" . $cmd; // 쿼리스트링을 전송하기 위한 변수를 만듬.
-                //echo $query_string_data; // 출력 완료.
+		//$query_data = "http://192.168.4.6?cmd=4";
 
-                $ch = curl_init($query_string_data);
+		//json_encode($query_data);
+                $query_string_data = $dest."".$cmd_string."".$cmd; // 쿼리스트링을 전송하기 위한 변수를 만듬.
+		
+		//echo $query_string_data; // 출력 완료.
+		/*$options = Array(
+			CURLOPT_RETURNTRANSFER => TRUE,
+			CURLOPT_FOLLOWLOCATION => TRUE,
+			CURLOPT_AUTOREFERER => TRUE,
+			CURLOPT_TIMEOUT => 120,
+			CURLOPT_MAXREDIRS => 10,
+			CURLOPT_USERAGENT => "Mozilla/5.0(X11; U; Linux i686; en-US; rv:1.9.1a2pre) Gecko/2008073000 Shredder/3.0a2pre ThunderBrowse/3.2.1.8",
+			CURLOPT_URL => $query_string_data,
+		);*/
 
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); // 요청 실행.
+                $ch = curl_init();
+		//curl_setopt_array($ch, $options);
+		curl_setopt($ch, CURLOPT_URL, $query_string_data); //접속할 url 주소.
 
-                curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10); // 타임아웃 설정.
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); // 요청 실행. 결과값을 받을 것인가?
 
-                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); //get 방식을 이용한다.
+                curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10); // 타임아웃 설정. 최대 초 설정.
 
+                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); //get 방식을 이용한다. //인증서 체크.
+
+		//curl_setopt($ch, CURLOPT_POST, 1); //post, get 출력 여부.
+
+		//receive server response.
                 $response = curl_exec($ch);
 
                 $json_data = ['result' => $response];
+		/*$json_data = ['result' => 'OK'];*/
+		curl_close($ch);
+
                 echo json_encode($json_data);
             } else {
                 echo "Compare DB value, json_obj fail";
