@@ -9,9 +9,7 @@
     $ip_url_settings = Settings::getInstance('php.ini');
     $ip_setting = $ip_url_settings->ip;
 
-    //if($ip_setting == $_SERVER['REMOTE_ADDR']) {
-
-        header('Access-Control-Allow-Origin: * ');
+        header('Access-Control-Allow-Origin: '.$ip_setting .'');
         header('Access-Control-Allow-Headers: Origin, X-Requested-With, Contentent-Type, Accept');
         header('Content-Type: application/json');
 
@@ -31,21 +29,6 @@
         $key = ['result' => 'OK'];
 
         echo json_encode($key);
-
         echo "Delete Sys_info and product_info";
-    //}
-
-    //else {
-    //    echo "<script>location.replace('/error.php');</script>";
-    //    exit();
-    //}
-    //$str = file_get_contents('/var/www/html/user_code.json');
-
-	//$json = json_decode($str, true);
-
-	//if( array_key_exists("user_code", $json)) {
-	//	unlink('/var/www/html/user_code.json');
-	//}
-
 ?>
 

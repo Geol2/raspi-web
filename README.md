@@ -276,22 +276,22 @@ sudo /usr/sbin/hostapd /etc/hostapd/hostapd.conf
 ----------------------------
  ![archi](https://user-images.githubusercontent.com/20119461/51072154-64e74500-169f-11e9-8ed7-ee398543d1f6.PNG)
 
-
 ----------------------------
 # connect_inner_ip.php
 ```
-역할 : 미들서버에 접속여부를 판단해주는 관련 코드파일.
+역할 : 미들서버에 내부에서의 접속 여부를 판단해주는 관련 코드파일.
 
 $arr_inner_ip = array_map(function ($n) { return sprintf('192.168.4.%d', $n); }, range($first, $end));
-    //print_r($arr_ip);
+  //print_r($arr_ip);
 
-    if(in_array($_SERVER['REMOTE_ADDR'], $arr_inner_ip)){
-        echo "내부 IP로 접속 하였습니다.<br>";
-    } else {
-        echo "<script> location.replace('/error.php'); </script>";
-    }
-
+  if(in_array($_SERVER['REMOTE_ADDR'], $arr_inner_ip)){
+      echo "내부 IP로 접속 하였습니다.<br>";
+  } else {
+      echo "<script> location.replace('/error.php'); </script>";
+  }
 ```
+![connect_inner_ip](https://user-images.githubusercontent.com/20119461/51072393-6dda1580-16a3-11e9-8a11-07aa8424bd4b.png)
+
 # add.php
 ```
 역할 : 미들서버 등록 코드 파일.
@@ -312,6 +312,8 @@ $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connect
   echo json_encode($key);
 
 ```
+
+
 
 # forward.php
 ```

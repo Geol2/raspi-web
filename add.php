@@ -1,6 +1,6 @@
 <?php
-//Sys_info 를 웹서버에서 수동으로 추가해주는 부분.
-//자동으로 추가해주는 부분을 만들어 보자.
+//미들서버 등록 코드 파일.
+
     require_once __DIR__ . '/path_ip_class.php';
 
     $ip_url_settings = Settings::getInstance('php.ini');
@@ -8,9 +8,10 @@
 
     //if($ip_setting == $_SERVER['REMOTE_ADDR']) {
 
-        header("Access-Control-Allow-Origin: *");
+        header("Access-Control-Allow-Origin: *"); //CORS 에러 잡기.
         header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
         header("Content-Type: application/json");
+
         $db_host = "localhost";
         $db_user = "root";
         $db_passwd = "619412";
