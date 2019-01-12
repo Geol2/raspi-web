@@ -448,7 +448,7 @@ $ip = $_GET['ip']; //Query_string, 재배기 IP를 받아옴.
             print curl_exec($c);
             curl_close($c);
 ```
-![index flow](https://user-images.githubusercontent.com/20119461/51075538-fb335f00-16cf-11e9-8bff-149da51c7e1b.png)
+![index flow](https://user-images.githubusercontent.com/20119461/51075624-5fa2ee00-16d1-11e9-83f7-62d213b5326d.png)
 
 # remove_pro_sys.php
 ```

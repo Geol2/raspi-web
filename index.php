@@ -14,10 +14,6 @@
     $ip_url_settings = Settings::getInstance('php.ini');
     $ip_setting = $ip_url_settings->ip;
 
-    header("Access-Control-Allow-Origin: '$ip_setting'"); //CORS 에러 잡기.
-    header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
-    header("Content-Type: application/json");
-    
     $ip = $_GET['ip']; //Query_string
     
     echo "QUERY_STRING_IP : ".$ip; echo "</br>";
