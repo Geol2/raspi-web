@@ -332,7 +332,7 @@ $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connect
   echo json_encode($key);
 
 ```
-![add flow 2](https://user-images.githubusercontent.com/20119461/51074758-2dd85a00-16c6-11e9-88fa-61c50e74a7e6.png)
+![add flow 2](https://user-images.githubusercontent.com/20119461/51074913-3893ee80-16c8-11e9-842c-64329f2c9e6b.png)
 
 # connect_inner_ip.php
 ```
