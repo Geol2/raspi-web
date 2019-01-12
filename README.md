@@ -453,16 +453,35 @@ $ip = $_GET['ip']; //Query_string, 재배기 IP를 받아옴.
 # remove_pro_sys.php
 ```
 역할 : 미들서버 제거 시 수행되는 관련 코드파일.
+내용 : 미들서버 제거 요청 받았을 때 수행되는 파일이다. 모든 재배기 정보와 미들서버 정보가 없어진다.
 
+$query_delete_pro = "DELETE FROM PRODUCT_INFO";
+        $result = mysqli_query($conn, $query_delete_pro) or die ('Error Querying database.');
+
+        $query_delete_sys = "DELETE FROM SYS_INFO";
+        $result1 = mysqli_query($conn, $query_delete_sys) or die ('Error Querying database.');
+
+        $key = ['result' => 'OK'];
+
+        echo json_encode($key);
 ```
+![remove_pro_sys flow](https://user-images.githubusercontent.com/20119461/51075850-8f072a00-16d4-11e9-9249-6d940992752a.png)
+
+
 # remove_pro.php
 ```
 역할 : 재배기 제거 시 수행되는 관련 코드파일.
+내용 : 재배기 제거 요청을 받았을 때 수행되는 파일이다. 재배기 정보만 사라진다.
 ```
+
+
 # send.php
 ```
 역할 : 재배기에서 받은 데이터들을 API로 보내주는 코드파일.
 ```
+![send](https://user-images.githubusercontent.com/20119461/51076545-3e47ff00-16dd-11e9-8dff-4683351a2179.PNG)
+
+
 # login.php
 ```
 역할 : 미들서버 관리자 페이지로 로그인 할 때 사용되는 코드파일.
@@ -470,4 +489,9 @@ $ip = $_GET['ip']; //Query_string, 재배기 IP를 받아옴.
 # main.php
 ```
 역할 : 관리자 페이지를 브라우저로 출력해주는 코드파일.
+```
+
+# logout.php
+```
+역할 : 관리자 페이지의 로그아웃.
 ```
