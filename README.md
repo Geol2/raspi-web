@@ -361,6 +361,8 @@ $json_str = file_get_contents("php://input");
 
 ```
 
+![forward flow](https://user-images.githubusercontent.com/20119461/51073318-59e9e000-16b2-11e9-95ac-5e25d5a5ea68.png)
+
 # index.php
 ```
 역할 : 재배기에 등록 시 수행되는 관련 코드파일.
