@@ -25,14 +25,14 @@
         $sfCode= explode(".",$ip)[3];//$ip로부터 ip의 D class추출
         $mode = 'Y'; // mode 수동'n' / 자동'y' 모드
         $state = 'N'; // 수경재배기 생육 상태. 'n' : 생육x, 'y':생육o.
-        $register = 'N'; //등록 상태
+        $register = 'N'; // 등록 상태
         date_default_timezone_set('Asia/Seoul');
         $stamp = strtotime('now'); //시간 넣기
 
         $query = "INSERT INTO PRODUCT_INFO (INNER_IP, MODE, STATE, REGISTER, SF_CODE, STAMP) VALUES ('$ip', '$mode', '$state', '$register', '$sfCode', '$stamp')";
         $result_ip = mysqli_query($conn, $query) or die ('Error database.. not connect product table.');
         echo '  Customer added.'; echo "</br>";
-        // 아랫줄부터 user_code의 존재여부를 확인 후 POST 방식으로 전송함.
+
         $query_user = "SELECT * FROM SYS_INFO"; //echo $query; echo "</br>";
         $result_user = mysqli_query($conn, $query_user) or die ("Error database.. not connect Sys_info table.");
         // true 참 0 이외의 값, false 거짓 0
