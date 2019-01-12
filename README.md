@@ -486,12 +486,21 @@ $query_delete_pro = "DELETE FROM PRODUCT_INFO";
 ```
 역할 : 미들서버 관리자 페이지로 로그인 할 때 사용되는 코드파일.
 ```
-# main.php
-```
-역할 : 관리자 페이지를 브라우저로 출력해주는 코드파일.
-```
+![nat log](https://user-images.githubusercontent.com/20119461/51076740-db0b9c00-16df-11e9-9cb9-55cb67a05c91.jpg)
 
 # logout.php
 ```
 역할 : 관리자 페이지의 로그아웃.
 ```
+
+# main.php
+```
+역할 : 관리자 페이지를 브라우저로 출력해주는 코드파일.
+```
+![nat info](https://user-images.githubusercontent.com/20119461/51076737-ca5b2600-16df-11e9-8244-6521bdd3e45a.jpg)
+
+# error.php
+```
+역할 : 에러페이지를 출력함.
+```
+![nat](https://user-images.githubusercontent.com/20119461/51076750-01c9d280-16e0-11e9-9af7-7b683349e761.jpg)
