@@ -272,3 +272,115 @@ sudo /usr/sbin/hostapd /etc/hostapd/hostapd.conf
 완료되었다.
 
 무선장치를 통하여 해당 SSID가 잘 검색이 되면서 작동하는지 확인한다.
+
+----------------------------
+# connect_inner_ip.php
+```
+역할 : 미들서버에 접속여부를 판단해주는 관련 코드파일.
+
+$arr_inner_ip = array_map(function ($n) { return sprintf('192.168.4.%d', $n); }, range($first, $end));
+    //print_r($arr_ip);
+
+    if(in_array($_SERVER['REMOTE_ADDR'], $arr_inner_ip)){
+        echo "내부 IP로 접속 하였습니다.<br>";
+    } else {
+        echo "<script> location.replace('/error.php'); </script>";
+    }
+
+```
+# add.php
+```
+역할 : 미들서버 등록 코드 파일.
+내용 : 등록되어있지 않은 미들서버라면 등록되고 
+      등록된 미들서버라면 등록되지 않는다.
+
+$conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connected Failed!!!!");
+  # Get JSON as a string
+  $json_str = file_get_contents('php://input');
+  # Get as an object
+  $json_obj = json_decode($json_str);
+  $ap_code = $json_obj->{"ap_code"};
+  $public_ip = $json_obj->{"public_ip"};
+  
+  $query = "INSERT INTO SYS_INFO (AP_CODE, PUBLIC_IP ) VALUES ( $ap_code, '$public_ip')";
+  $result = mysqli_query($conn, $query) or die ('Error database.');
+  $key = ['result' => 'OK'];
+  echo json_encode($key);
+```
+
+# forward.php
+```
+역할 : 재배기에 제어 명령 전송관련 코드파일.
+내용 : API 서버로부터 제어명령을 받아 재배기로 전달한 후, 수행 결과를 응답한다.
+
+$json_str = file_get_contents("php://input");
+
+        // Get as an object..
+        $json_obj = json_decode($json_str);
+
+        $cmd = $json_obj->{"cmd"};
+        $dest = $json_obj->{"dest"};
+        $ap_code = $json_obj->{"apCode"}; 
+
+        $cmd_string = "?cmd=";
+
+        
+        $query = "SELECT AP_CODE FROM SYS_INFO WHERE AP_CODE = '$ap_code'";
+        $result_query = mysqli_query($conn, $query) or die ("Error Database connect!!");
+
+        while ($data = mysqli_fetch_array($result_query)) {
+
+            $ap_code_data = $data['AP_CODE']; //user_code 값을 변수에 저장.
+
+            if ($ap_code == $ap_code_data) { //데이터베이스의 유저코드와 서버에서 받아온 유저코드가 같으면
+
+                $ch = curl_init();
+		            curl_setopt($ch, CURLOPT_URL, $query_string_data); //접속할 url 주소.
+
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); // 요청 실행. 결과값을 받을 것인가?
+
+                curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10); // 타임아웃 설정. 최대 초 설정.
+
+                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); //get 방식을 이용한다. //인증서 체크.
+                $response = curl_exec($ch);
+
+                $json_data = ['result' => $response];
+		            curl_close($ch);
+
+                echo json_encode($json_data);
+
+```
+
+# index.php
+```
+역할 : 재배기에 등록 시 수행되는 관련 코드파일.
+내용 
+
+
+
+```
+# search.php
+```
+역할 : 미들서버 조회 시 수행되는 관련 코드파일.
+```
+# remove_pro_sys.php
+```
+역할 : 미들서버 제거 시 수행되는 관련 코드파일.
+
+```
+# remove_pro.php
+```
+역할 : 재배기 제거 시 수행되는 관련 코드파일.
+```
+# send.php
+```
+역할 : 재배기에서 받은 데이터들을 API로 보내주는 코드파일.
+```
+# login.php
+```
+역할 : 미들서버 관리자 페이지로 로그인 할 때 사용되는 코드파일.
+```
+# main.php
+```
+역할 : 관리자 페이지를 브라우저로 출력해주는 코드파일.
+```
