@@ -312,6 +312,7 @@ $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connect
   echo json_encode($key);
 
 ```
+![add flow](https://user-images.githubusercontent.com/20119461/51072761-63bb1580-16a9-11e9-9845-fde8a2d40f17.png)
 
 
 
