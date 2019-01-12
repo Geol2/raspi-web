@@ -274,6 +274,10 @@ sudo /usr/sbin/hostapd /etc/hostapd/hostapd.conf
 무선장치를 통하여 해당 SSID가 잘 검색이 되면서 작동하는지 확인한다.
 
 ----------------------------
+ ![archi](https://user-images.githubusercontent.com/20119461/51072154-64e74500-169f-11e9-8ed7-ee398543d1f6.PNG)
+
+
+----------------------------
 # connect_inner_ip.php
 ```
 역할 : 미들서버에 접속여부를 판단해주는 관련 코드파일.
@@ -301,11 +305,12 @@ $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connect
   $json_obj = json_decode($json_str);
   $ap_code = $json_obj->{"ap_code"};
   $public_ip = $json_obj->{"public_ip"};
-  
+
   $query = "INSERT INTO SYS_INFO (AP_CODE, PUBLIC_IP ) VALUES ( $ap_code, '$public_ip')";
   $result = mysqli_query($conn, $query) or die ('Error database.');
   $key = ['result' => 'OK'];
   echo json_encode($key);
+
 ```
 
 # forward.php
@@ -348,6 +353,7 @@ $json_str = file_get_contents("php://input");
 		            curl_close($ch);
 
                 echo json_encode($json_data);
+            }
 
 ```
 
