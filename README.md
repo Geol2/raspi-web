@@ -278,26 +278,45 @@ sudo /usr/sbin/hostapd /etc/hostapd/hostapd.conf
 ![default](https://user-images.githubusercontent.com/20119461/51072868-ae3d9180-16ab-11e9-83bc-faed4fefbd41.png)
 
 ----------------------------
-# connect_inner_ip.php
-```
-역할 : 미들서버에 내부에서의 접속 여부를 판단해주는 관련 코드파일.
 
-$arr_inner_ip = array_map(function ($n) { return sprintf('192.168.4.%d', $n); }, range($first, $end));
-  //print_r($arr_ip);
-
-  if(in_array($_SERVER['REMOTE_ADDR'], $arr_inner_ip)){
-      echo "내부 IP로 접속 하였습니다.<br>";
-  } else {
-      echo "<script> location.replace('/error.php'); </script>";
-  }
+# search.php
 ```
-![connect_inner_ip](https://user-images.githubusercontent.com/20119461/51072393-6dda1580-16a3-11e9-8a11-07aa8424bd4b.png)
+역할 : 미들서버 조회 시 수행되는 관련 코드파일.
+내용 : 등록된 공유기가 있는지 없는지를 판단해서 API로 보내주는 코드.
+
+$query = "SELECT INNER_IP,STAMP FROM PRODUCT_INFO";
+	$result = mysqli_query($conn, $query) or die ('Error Querying database.');
+	//echo "$result";
+
+	while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+		$row_array['INNER_IP'] = $row['INNER_IP'];
+		$row_array['STAMP'] = $row['STAMP'];
+
+		array_push($return_arr, $row_array);
+	}
+
+	$query_user = "SELECT * FROM SYS_INFO";
+	$result_user = mysqli_query($conn, $query_user) or die('Error Queyring database.');
+	//true 참 0 이외의 값 , false 거짓 0 //
+	$num = mysqli_num_rows($result_user);
+	// 테이블 행의 개수.
+	$res = 'OK';
+	if ($num >= 1) {
+		$res = 'FAIL';
+		$data = ['state' => $res];
+	} else if ($num == 0) {
+		$data = ['state' => $res, 'ssid' => 'pi3-ap', 'inner_ip' => $return_arr];
+	}
+	echo json_encode($data);
+
+	mysqli_close($conn);
+```
+![search php](https://user-images.githubusercontent.com/20119461/51074853-8b20db00-16c7-11e9-8ba5-c29e5a1e9291.png)
 
 # add.php
 ```
 역할 : 미들서버 등록 코드 파일.
-내용 : 등록되어있지 않은 미들서버라면 등록되고 
-      등록된 미들서버라면 등록되지 않는다.
+내용 : search.php에 의해 등록되어있지 않은 미들서버라면 등록되고 등록된 미들서버라면 등록되지 않는다.
 
 $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connected Failed!!!!");
   # Get JSON as a string
@@ -313,7 +332,23 @@ $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connect
   echo json_encode($key);
 
 ```
-![add flow](https://user-images.githubusercontent.com/20119461/51072761-63bb1580-16a9-11e9-9845-fde8a2d40f17.png)
+![add flow 2](https://user-images.githubusercontent.com/20119461/51074758-2dd85a00-16c6-11e9-88fa-61c50e74a7e6.png)
+
+# connect_inner_ip.php
+```
+역할 : 미들서버에 내부에서의 접속 여부를 판단해주는 관련 코드파일.
+
+$arr_inner_ip = array_map(function ($n) { return sprintf('192.168.4.%d', $n); }, range($first, $end));
+  //print_r($arr_ip);
+
+  if(in_array($_SERVER['REMOTE_ADDR'], $arr_inner_ip)){
+      echo "내부 IP로 접속 하였습니다.<br>";
+  } else {
+      echo "<script> location.replace('/error.php'); </script>";
+  }
+```
+![connect_inner_ip](https://user-images.githubusercontent.com/20119461/51072393-6dda1580-16a3-11e9-8a11-07aa8424bd4b.png)
+
 
 
 
@@ -366,15 +401,59 @@ $json_str = file_get_contents("php://input");
 # index.php
 ```
 역할 : 재배기에 등록 시 수행되는 관련 코드파일.
-내용 
+내용 : 수경재배기랑 AP최초 연결 시, 수경재배기 데이터 mysql db에 저장.
+
+$ip = $_GET['ip']; //Query_string
+    
+    echo "QUERY_STRING_IP : ".$ip; echo "</br>";
+    if( $ip ){
+        $sfCode= explode(".",$ip)[3];//$ip로부터 ip의 D class추출
+        $mode = 'Y'; // mode 수동'n' / 자동'y' 모드
+        $state = 'N'; // 수경재배기 생육 상태. 'n' : 생육x, 'y':생육o.
+        $register = 'N'; //등록 상태
+        date_default_timezone_set('Asia/Seoul');
+        $stamp = strtotime('now'); //시간 넣기
+
+        $query = "INSERT INTO PRODUCT_INFO (INNER_IP, MODE, STATE, REGISTER, SF_CODE, STAMP) VALUES ('$ip', '$mode', '$state', '$register', '$sfCode', '$stamp')";
+        $result_ip = mysqli_query($conn, $query) or die ('Error database.. not connect product table.');
+        echo '  Customer added.'; echo "</br>";
+        // 아랫줄부터 user_code의 존재여부를 확인 후 POST 방식으로 전송함.
+        $query_user = "SELECT * FROM SYS_INFO"; //echo $query; echo "</br>";
+        $result_user = mysqli_query($conn, $query_user) or die ("Error database.. not connect Sys_info table.");
+        // true 참 0 이외의 값, false 거짓 0
+        $num = mysqli_num_rows($result_user); //echo "$num";
+        //Sys_info의 table 행 개수 저장.
+        if( $num >= 1) {
+            $exist_query = "SELECT * FROM SYS_INFO";
+            $exist_result = mysqli_query($conn, $exist_query) or die ("Error database.. not connect Sys_info 2 table.");
+
+            $row = mysqli_fetch_array($exist_result, MYSQLI_ASSOC);
+            $ap_code = $row['AP_CODE']; //ap_code를 변수에 넣음.
+
+            $stamp_query = "SELECT STAMP FROM PRODUCT_INFO";
+            $stamp_result = mysqli_query($conn, $stamp_query) or die ("Error database.. not connect Stamp_query.");
+
+            $fields = array(
+                    'sfCode' => $sfCode,
+                    'ipInfo' => $ip,
+                    'apCode' => $ap_code,
+                    'stamp' => $stamp
+            );
+            $url = $ip_setting.':9001/device/add/sf/auto'; //이것도 변경 가능성이 있음. -> ip세팅 완료.!
+
+            $c = curl_init($url);
+            curl_setopt($c, CURLOPT_RETURNTRANSFER, true); // 요청 설정을 POST로 한다.
+            curl_setopt($c, CURLOPT_POST, true); // 요청을 JSON으로 전달하는 헤더 설정.
+            curl_setopt($c, CURLOPT_HTTPHEADER, array('Content-Type: application/json')); //전송할 데이터를 JSON으로 가공하기.
+            curl_setopt($c, CURLOPT_POSTFIELDS, json_encode($fields));
+
+            print curl_exec($c);
+            curl_close($c);
+```
 
 
 
-```
-# search.php
-```
-역할 : 미들서버 조회 시 수행되는 관련 코드파일.
-```
+
 # remove_pro_sys.php
 ```
 역할 : 미들서버 제거 시 수행되는 관련 코드파일.

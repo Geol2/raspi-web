@@ -9,12 +9,14 @@
 ?>
 
 <?php
-    //require_once __DIR__ . '/connect_inner_ip.php';
     require_once __DIR__ .'/path_ip_class.php';
 
     $ip_url_settings = Settings::getInstance('php.ini');
     $ip_setting = $ip_url_settings->ip;
 
+    header("Access-Control-Allow-Origin: '$ip_setting'"); //CORS 에러 잡기.
+    header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+    header("Content-Type: application/json");
     
     $ip = $_GET['ip']; //Query_string
     
@@ -71,29 +73,4 @@
     else {
         echo "Please get ip...";
     }
-    
-    //$site = $_SERVER['DOCUMENT_ROOT']; //index.php road
-    //$self_ip = $_SERVER['SERVER_ADDR']; //my ip
-    //$whois_user = $_SERVER['REMOTE_ADDR']; //웹서버의 요청을 보내는 사용자ip
-    //$using_port = $_SERVER['SERVER_PORT']; //클라이언트 포트
-    //printf("Root : %s<br/>", $site);
-    //printf("SERVER_IP : %s<br/>",$self_ip);
-    //printf("USER_IP : %s<br/>", $whois_user);
-    //printf("PORT : %s<br/>", $using_port);
-    //echo $ip_setting;
-    //require_once __DIR__ .'/vendor/autoload.php';
-    //chmod("./var/www/html/inner_ip.json", 777);
-    //$is_file_exist = file_exists('/var/www/html/inner_ip.json');
-    //	$iptables_version = shell_exec("sudo iptables --version");
-    //	echo "<pre> $iptables_version </pre>";
-    ///	$port_forward = exec("sudo iptables -t nat -A PREROUTING -p tcp -i eth0 --dport 9000 -j DNAT --to 192.168.4.19:80");
-    //	echo "<pre> $port_forward </pre>";
-    //	$port_save = shell_exec('sudo sh -c "iptables-save > /etc/tables/rules.v4"');
-    //	echo "<pre> $port_save</pre>";
-    //	$iptables_show = shell_exec("/etc/iptables sudo iptables -L");
-    //	echo "<pre>$iptables_show</pre>";
-    //	$data = shell_exec("ls");
-    //	echo "<pre>$data</pre>";
-    //	echo shell_exec("<pre>whoami</pre>");
-    //	echo shell_exec("<pre>ls -al</pre>");
 ?>
