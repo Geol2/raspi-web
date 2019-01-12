@@ -479,7 +479,7 @@ $query_delete_pro = "DELETE FROM PRODUCT_INFO";
 ```
 역할 : 재배기에서 받은 데이터들을 API로 보내주는 코드파일.
 ```
-![send](https://user-images.githubusercontent.com/20119461/51076545-3e47ff00-16dd-11e9-8dff-4683351a2179.PNG)
+![send](https://user-images.githubusercontent.com/20119461/51076566-7e0ee680-16dd-11e9-9a64-1711b16e60ec.PNG)
 
 
 # login.php
