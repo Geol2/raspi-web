@@ -42,7 +42,7 @@
 		$res = 'FAIL';
 		$data = ['state' => $res];
 	} else if ($num == 0) {
-		$data = ['state' => $res, 'ssid' => 'pi3-ap', 'inner_ip' => $return_arr];
+		$data = ['state' => $res, 'ssid' => 'pi3-ap', 'inner_ip' => $return_arr]; //상태와 ssid, 수경재배기 정보를 저장.
 	}
 	echo json_encode($data);
 

@@ -282,7 +282,7 @@ sudo /usr/sbin/hostapd /etc/hostapd/hostapd.conf
 # search.php
 ```
 역할 : 미들서버 조회 시 수행되는 관련 코드파일.
-내용 : 등록된 공유기가 있는지 없는지를 판단해서 API로 보내주는 코드.
+내용 : 등록된 공유기가 있는지 없는지를 판단 여부를 API로 응답하는 코드.
 
 $query = "SELECT INNER_IP,STAMP FROM PRODUCT_INFO";
 	$result = mysqli_query($conn, $query) or die ('Error Querying database.');
@@ -311,7 +311,7 @@ $query = "SELECT INNER_IP,STAMP FROM PRODUCT_INFO";
 
 	mysqli_close($conn);
 ```
-![search php](https://user-images.githubusercontent.com/20119461/51074853-8b20db00-16c7-11e9-8ba5-c29e5a1e9291.png)
+![search flow](https://user-images.githubusercontent.com/20119461/51075010-50b83d80-16c9-11e9-99f7-28f839bd9c0c.png)
 
 # add.php
 ```
@@ -333,6 +333,7 @@ $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name) or die("Connect
 
 ```
 ![add flow 2](https://user-images.githubusercontent.com/20119461/51074913-3893ee80-16c8-11e9-842c-64329f2c9e6b.png)
+![add flow](https://user-images.githubusercontent.com/20119461/51075021-6ded0c00-16c9-11e9-9c75-6e77d5a9bdf5.png)
 
 # connect_inner_ip.php
 ```
@@ -348,9 +349,6 @@ $arr_inner_ip = array_map(function ($n) { return sprintf('192.168.4.%d', $n); },
   }
 ```
 ![connect_inner_ip](https://user-images.githubusercontent.com/20119461/51072393-6dda1580-16a3-11e9-8a11-07aa8424bd4b.png)
-
-
-
 
 # forward.php
 ```
@@ -400,10 +398,10 @@ $json_str = file_get_contents("php://input");
 
 # index.php
 ```
-역할 : 재배기에 등록 시 수행되는 관련 코드파일.
-내용 : 수경재배기랑 AP최초 연결 시, 수경재배기 데이터 mysql db에 저장.
+역할 : 재배기와 연결 시 수행되는 관련 코드파일.
+내용 : 재배기랑 AP최초 연결 시, 재배기의 데이터를 저장하며 등록된 경우 재배기의 정보를 전송.
 
-$ip = $_GET['ip']; //Query_string
+$ip = $_GET['ip']; //Query_string, 재배기 IP를 받아옴.
     
     echo "QUERY_STRING_IP : ".$ip; echo "</br>";
     if( $ip ){
@@ -450,6 +448,7 @@ $ip = $_GET['ip']; //Query_string
             print curl_exec($c);
             curl_close($c);
 ```
+![index flow](https://user-images.githubusercontent.com/20119461/51075398-274de080-16ce-11e9-94c3-79fb6944a350.png)
 
 
 
