@@ -274,7 +274,8 @@ sudo /usr/sbin/hostapd /etc/hostapd/hostapd.conf
 무선장치를 통하여 해당 SSID가 잘 검색이 되면서 작동하는지 확인한다.
 
 ----------------------------
- ![archi](https://user-images.githubusercontent.com/20119461/51072154-64e74500-169f-11e9-8ed7-ee398543d1f6.PNG)
+![archi](https://user-images.githubusercontent.com/20119461/51072154-64e74500-169f-11e9-8ed7-ee398543d1f6.PNG)
+![default](https://user-images.githubusercontent.com/20119461/51072868-ae3d9180-16ab-11e9-83bc-faed4fefbd41.png)
 
 ----------------------------
 # connect_inner_ip.php
